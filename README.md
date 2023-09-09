@@ -1,1 +1,1 @@
-# this is my project with my group
+sistem ini untuk melakuakan berbagai transaksi keuangan seperti penarikan uang tunai, cek saldo transfer dana dll melalui perintah teks yang dimasukkan. penggunaan mesin memerlukan informasi pribadi pengguna seperti rekening dan pin. sistem ini menggabungkan beberapa fitur seperti pembayaran tagihan, perubahan pin pencetakan resi,
