@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class project {
-    public static void main(String[] args) {
         Scanner scan = new Scanner (System.in);
         Scanner input = new Scanner (System.in);
 
@@ -25,6 +24,8 @@ public class project {
         int[] newSaldo = new int[100];
         String pilih;
         boolean pilihan = true;
+    public static void main(String[] args) {
+
     }
 
 
