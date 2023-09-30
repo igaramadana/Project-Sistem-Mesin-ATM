@@ -13,6 +13,7 @@ public class projectakhir {
     static String[] alamat = {"Nganjuk", "Dampit", "Blitar", "Klojen", "Sukun"};
     static int[] saldo = {1000000, 5000000, 3500000, 2500000, 4000000};
     static int[] newSaldo = new int[100];
+    static String pilih;
     static boolean login = false;
     static int countData, countCekPrib, countCek, countPerubahan, countTF, countLupaPIN;
 
@@ -44,13 +45,15 @@ private static void login() {
                 int menu = input.nextInt();
 
                 switch (menu) {
+                    case 0 -> keluarMenu();
                     case 1 -> dataNasabah();
                     case 2 -> cekSaldo();
                     case 3 -> tarikSaldo();
                     default -> login = true;
-                }
+                } break;
             } while (login);
             System.out.println("=============================================");
+            
         } else {
             System.out.println("Anda Memasukkan PIN yang salah, Silahkan Coba Lagi...");
         }
@@ -72,11 +75,20 @@ private static void dataNasabah() {
         }
     
         if (index != -1) {
-            System.out.println("Nama\t|No.Rek\t\t|ID Pengguna\t|");
-            System.out.println("---------------------------------------------");
+            System.out.println("Nama\t|No.Rek\t\t|ID Pengguna\t|\tAlamat\t|");
+            System.out.println("---------------------------------------------------------");
             System.out.print(nama[index] + "\t|");
             System.out.print("\t" + noRek[index] + "\t|");
             System.out.print("\t" + id[index] + "\t|");
+            System.out.print("\t" + alamat[index] + "\t|");
+            System.out.print("\n\nIngin melanjutkan transaksi y/t: ");
+            pilih = input.next();
+            if (pilih.equals("y")) {
+                login();
+            }else {
+                System.out.println("=============================================");
+                System.out.println("\nTerima Kasih telah menggunakan ATM :)");
+            }
             System.out.println();
         } else {
             System.out.println("PIN Nasabah tidak ditemukan.");
@@ -97,6 +109,14 @@ private static void cekSaldo() {
                 System.out.println("Nama\t\t: " + nama[i]);
                 System.out.println("Saldo anda\t: Rp. " + saldo[i]);
                 System.out.println("=============================================");
+                System.out.print("\nIngin melanjutkan transaksi y/t: ");
+                pilih = input.next();
+                if (pilih.equals("y")) {
+                    login();
+                }else {
+                System.out.println("=============================================");
+                System.out.println("\nTerima Kasih telah menggunakan ATM :)");
+                }
                 System.out.println();
             }else if (no == newNoRek[i]) {
                 test = 1;
@@ -120,25 +140,41 @@ private static void tarikSaldo() {
     System.out.println("|              Menu Tarik Tunai             |");
     System.out.println("=============================================");
     System.out.print("Masukkan nomor rekening anda : ");
-    int tf = input.nextInt();
+    int ts = input.nextInt();
 
     int test = 0;
     for (int i = 0; i < noRek.length; i++) {
-        if (tf == noRek[i]) {
+        if (ts == noRek[i]) {
             test = 1;
             System.out.print("Masukkan jumlah saldo yang ingin ditarik: ");
             int jumlahTarik = input.nextInt();
             
             if (saldo[i] >= jumlahTarik) {
-                saldo[i] -= jumlahTarik; // Mengurangi saldo
+                saldo[i] -= jumlahTarik; 
                 System.out.println("Anda telah berhasil melakukan penarikan.");
                 System.out.println("Nama\t\t: " + nama[i]);
                 System.out.println("Sisa saldo anda\t: Rp. " + saldo[i]);
                 System.out.println("=============================================");
+                System.out.print("\nIngin melanjutkan transaksi y/t: ");
+                pilih = input.next();
+                if (pilih.equals("y")) {
+                    login();
+                }else {
+                System.out.println("=============================================");
+                System.out.println("\nTerima Kasih telah menggunakan ATM :)");
+                }
                 System.out.println();
             } else {
                 System.out.println("Saldo tidak mencukupi untuk melakukan penarikan.");
                 System.out.println("=============================================");
+                System.out.print("\nIngin melanjutkan transaksi y/t: ");
+                pilih = input.next();
+                if (pilih.equals("y")) {
+                    tarikSaldo();
+                }else {
+                System.out.println("=============================================");
+                System.out.println("\nTerima Kasih telah menggunakan ATM :)");
+                }
                 System.out.println();
             }
             break;
@@ -151,6 +187,17 @@ private static void tarikSaldo() {
         System.out.println();
     }
     countTF++;
+}
+private static void keluarMenu() {
+    System.out.print("Apakah anda yakin ingin keluar y/t: ");
+    pilih = input.next();
+    if (pilih.equals("y")) {
+        System.out.println("=============================================");
+        System.out.println("    Terima Kasih telah menggunakan ATM :)    ");
+        System.out.println("            Sampai jumpa lagi                ");
+    }else {
+        login();
+    }
 }
 
 }
