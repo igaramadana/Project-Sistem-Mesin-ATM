@@ -28,21 +28,11 @@ public class Bilingual {
     static String pilih;
     static Random random = new Random();
     static void login() {
-        System.out.println("==================================================================");
-        System.out.println("------------------------------------------------------------------");
-        System.out.println(" __      _____ _    ___ ___  __  __ ___   _____ ___  \n" + //
-                " \\ \\    / / __| |  / __/ _ \\|  \\/  | __| |_   _/ _ \\ \n" + //
-                "  \\ \\/\\/ /| _|| |_| (_| (_) | |\\/| | _|    | || (_) |\n" + //
-                "   \\_/\\_/ |___|____\\___\\___/|_|  |_|___|   |_| \\___/ \n" + //
-                "                                                     ");
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("    _ _____ __  __   ___   _   _  _ _  __  _  _  ___  \n" + //
-                "   /_\\_   _|  \\/  | | _ ) /_\\ | \\| | |/ / | \\| |/ _ \\ \n" + //
-                "  / _ \\| | | |\\/| | | _ \\/ _ \\| .` | ' <  | .` | (_) |\n" + //
-                " /_/ \\_\\_| |_|  |_| |___/_/ \\_\\_|\\_|_|\\_\\ |_|\\_|\\___/ \n" + //
-                "                                                      ");
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("==================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                     WELCOME TO ATM BANKNO                      |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
         System.out.println();
 
         //pengecekan verified/diblokir
@@ -171,15 +161,11 @@ public class Bilingual {
     }
 
     private static void pengaturanAkun() {
-        System.out.println("==================================================================");
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("  ___ ___ _  _  ___   _ _____ _   _ ___    _   _  _     _   _  ___   _ _  _ \r\n" + //
-                " | _ \\ __| \\| |/ __| /_\\_   _| | | | _ \\  /_\\ | \\| |   /_\\ | |/ / | | | \\| |\r\n" + //
-                " |  _/ _|| .` | (_ |/ _ \\| | | |_| |   / / _ \\| .` |  / _ \\| ' <| |_| | .` |\r\n" + //
-                " |_| |___|_|\\_|\\___/_/ \\_\\_|  \\___/|_|_\\/_/ \\_\\_|\\_| /_/ \\_\\_|\\_\\\\___/|_|\\_|\r\n" + //
-                "                                                                            ");
-        System.out.println("------------------------------------------------------------------");
-        System.out.println("==================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                        ACCOUNT SETTING                         |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
         System.out.println();
 
         System.out.println("""
@@ -298,20 +284,18 @@ public class Bilingual {
     }
 
     private static void riwayatTransaksi() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  ___ _____      _____   ___ _____   _____ ___    _   _  _ ___   _   _  _____ ___ \n" + //
-                " | _ \\_ _\\ \\    / /_\\ \\ / /_\\_   _| |_   _| _ \\  /_\\ | \\| / __| /_\\ | |/ / __|_ _|\n" + //
-                " |   /| | \\ \\/\\/ / _ \\ V / _ \\| |     | | |   / / _ \\| .` \\__ \\/ _ \\| ' <\\__ \\| | \n" + //
-                " |_|_\\___| \\_/\\_/_/ \\_\\_/_/ \\_\\_|     |_| |_|_\\/_/ \\_\\_|\\_|___/_/ \\_\\_|\\_\\___/___|\n" + //
-                "                                                                                  ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("|                        \\YOUR RECENT TRANSACTION HISTORY//                        |");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                      TRANSACTION HISTORY                       |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                  \\YOUR RECENT TRANSACTION//                   |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
 
         System.out.println("Transaction history : ");
         for (int i = 0; i < riw; i++) {
@@ -384,15 +368,12 @@ public class Bilingual {
     }
 
     static void cekSaldo() {
-        System.out.println("======================================================================");
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("   ___   ___   _  __    ___     _     _      ___     ___  \r\n" +  //
-                "  / __| | __| | |/ /   / __|   /_\\   | |    |   \\   / _ \\ \r\n" + //
-                " | (__  | _|  | ' <    \\__ \\  / _ \\  | |__  | |) | | (_) |\r\n" + //
-                "  \\___| |___| |_|\\_\\   |___/ /_/ \\_\\ |____| |___/   \\___/ \r\n" + //
-                "                                                          ");
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("======================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                        BALANCE CHECK                           |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("      [   Enter your PIN : ");
         String inPin = input.next();
 
@@ -439,15 +420,12 @@ public class Bilingual {
     }
 
     static void tarikTunai() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  _____     _     ___   ___   _  __    _____   _   _   _  _     _     ___ \r\n" + //
-                " |_   _|   /_\\   | _ \\ |_ _| | |/ /   |_   _| | | | | | \\| |   /_\\   |_ _|\r\n" + //
-                "   | |    / _ \\  |   /  | |  | ' <      | |   | |_| | | .` |  / _ \\   | | \r\n" + //
-                "   |_|   /_/ \\_\\ |_|_\\ |___| |_|\\_\\     |_|    \\___/  |_|\\_| /_/ \\_\\ |___|\r\n" + //
-                "");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                         CASH WITHDRAW                          |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
         System.out.print("      [   Enter the balance you want to withdraw : Rp. ");
@@ -468,7 +446,7 @@ public class Bilingual {
             System.out.println("    [  -------------------------------------------------\t]");
             System.out.println("    =======================================================");
             System.out.println();
-            System.out.printf("\n    [   Cash withdrawal confirmation amounting to Rp. %.2f? y/n: ", nominalTarik);
+            System.out.printf("\n    [   Confirm cash withdrawal amounting to Rp. %.2f? y/n: ", nominalTarik);
             pilih = input.next();
             if (pilih.equalsIgnoreCase("y")) {
                 System.out.print("      [   Enter your PIN to continue the transaction : ");
@@ -547,15 +525,12 @@ public class Bilingual {
     }
 
     static void setorTunai() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  ___   ___   _____    ___    ___     _____   _   _   _  _     _     ___ \r\n" + //
-                " / __| | __| |_   _|  / _ \\  | _ \\   |_   _| | | | | | \\| |   /_\\   |_ _|\r\n" + //
-                " \\__ \\ | _|    | |   | (_) | |   /     | |   | |_| | | .` |  / _ \\   | | \r\n" + //
-                " |___/ |___|   |_|    \\___/  |_|_\\     |_|    \\___/  |_|\\_| /_/ \\_\\ |___|\r\n" + //
-                "                                                                         ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                          CASH DEPOSIT                          |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
         System.out.print("      [   Enter the balance you want to deposit : Rp. ");
@@ -576,7 +551,7 @@ public class Bilingual {
             System.out.println("    [  -------------------------------------------------\t]");
             System.out.println("    =======================================================");
             System.out.println();
-            System.out.printf("\n    [   Cash deposit confirmation amounting to Rp. %.2f? y/n: ", nominalSetor);
+            System.out.printf("\n    [   Confirm cash deposit amounting to Rp. %.2f? y/n: ", nominalSetor);
             pilih = input.next();
             if (pilih.equalsIgnoreCase("y")) {
                 System.out.print("      [   Enter your PIN to continue the transaction : ");
@@ -638,15 +613,12 @@ public class Bilingual {
     }
 
     static void transferSaldo() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  _____ ___    _   _  _ ___ ___ ___ ___   ___   _   _    ___   ___  \n" + //
-                " |_   _| _ \\  /_\\ | \\| / __| __| __| _ \\ / __| /_\\ | |  |   \\ / _ \\ \n" + //
-                "   | | |   / / _ \\| .` \\__ \\ _|| _||   / \\__ \\/ _ \\| |__| |) | (_) |\n" + //
-                "   |_| |_|_\\/_/ \\_\\_|\\_|___/_| |___|_|_\\ |___/_/ \\_\\____|___/ \\___/ \n" + //
-                "                                                                    ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                       BALANCE TRANSFER                         |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("  [   Enter your account number : ");
         String inRek = input.next();
 
@@ -741,18 +713,15 @@ public class Bilingual {
     }
 
     static void pembayaranLain() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  ___   ___   __  __   ___     _    __   __    _     ___     _     _  _     _        _     ___   _  _ \r\n" + //
-                " | _ \\ | __| |  \\/  | | _ )   /_\\   \\ \\ / /   /_\\   | _ \\   /_\\   | \\| |   | |      /_\\   |_ _| | \\| |\r\n" + //
-                " |  _/ | _|  | |\\/| | | _ \\  / _ \\   \\ V /   / _ \\  |   /  / _ \\  | .` |   | |__   / _ \\   | |  | .` |\r\n" + //
-                " |_|   |___| |_|  |_| |___/ /_/ \\_\\   |_|   /_/ \\_\\ |_|_\\ /_/ \\_\\ |_|\\_|   |____| /_/ \\_\\ |___| |_|\\_|\r\n" + //
-                "                                                                                                      ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                        OTHER PAYMENTS                          |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.println("""
                 [       Choose the menu below :
-                [       1. Purchase Credit
+                [       1. Credit Purchase
                 [       2. Electricity Payment
                 [       3. PDAM Payment
                 [       4. Single tuiton fee payment
@@ -771,15 +740,12 @@ public class Bilingual {
     }
 
     static void beliPulsa() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  ___ ___ __  __ ___ ___ _    ___   _   _  _   ___ _   _ _    ___   _   \r\n" + //
-                " | _ \\ __|  \\/  | _ ) __| |  |_ _| /_\\ | \\| | | _ \\ | | | |  / __| /_\\  \r\n" + //
-                " |  _/ _|| |\\/| | _ \\ _|| |__ | | / _ \\| .` | |  _/ |_| | |__\\__ \\/ _ \\ \r\n" + //
-                " |_| |___|_|  |_|___/___|____|___/_/ \\_\\_|\\_| |_|  \\___/|____|___/_/ \\_\\\r\n" + //
-                "                                                                        ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                        CREDIT PURCHASE                         |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.println("""
                 [       Choose a mobile operator below :
                 [       1. Indosat
@@ -801,15 +767,12 @@ public class Bilingual {
     }
 
     static void indosat() {
-        System.out.println("====================================================");
-        System.out.println("----------------------------------------------------");
-        System.out.println("  ___ _  _ ___   ___  ___   _ _____ \r\n" + //
-                " |_ _| \\| |   \\ / _ \\/ __| /_\\_   _|\r\n" + //
-                "  | || .` | |) | (_) \\__ \\/ _ \\| |  \r\n" + //
-                " |___|_|\\_|___/ \\___/|___/_/ \\_\\_|  \r\n" + //
-                "                                    ");
-        System.out.println("----------------------------------------------------");
-        System.out.println("====================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                            INDOSAT                             |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("Enter your phone number : 085-");
         String nomTelp = input.next();
         System.out.print("\nIs the phone number you entered correct? y/n: ");
@@ -843,8 +806,8 @@ public class Bilingual {
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ========================================================");
                 System.out.println();
-                System.out.println("Total payment above includes admin fees Rp. 2500");
-                System.out.printf(" Transaction confirmation to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[0]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[0]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
                     System.out.print("      [   Enter your PIN to continue the transaction : ");
@@ -919,18 +882,18 @@ public class Bilingual {
             case 2:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[1]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[1]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -944,32 +907,32 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[0], pulsa[1]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[0], pulsa[1]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |           THANKS FOR USING THIS ATM :).            |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                         break;
@@ -977,7 +940,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -989,7 +952,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                         indosat();
@@ -1001,18 +964,18 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[2]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[2]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1026,30 +989,30 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[0], pulsa[2]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[0], pulsa[2]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [  Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                         break;
@@ -1057,7 +1020,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1069,7 +1032,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                         indosat();
@@ -1329,14 +1292,11 @@ public class Bilingual {
 
     static void xl() {
         System.out.println("=============================");
-        System.out.println("-----------------------------");
-        System.out.println(" __  ___    \n" + //
-                " \\ \\/ / |   \n" + //
-                "  >  <| |__ \n" + //
-                " /_/\\_\\____|\n" + //
-                "            ");
-        System.out.println("-----------------------------");
+        System.out.println("|---------------------------|");
+        System.out.println("|            XL             |");
+        System.out.println("|---------------------------|");
         System.out.println("=============================");
+        System.out.println();
         System.out.print("Masukkan nomor telepon anda : 087-");
         String nomTelp = input.next();
         System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
@@ -1344,7 +1304,7 @@ public class Bilingual {
         if (pilih.equals("y")) {
             masuk = true;
         } else {
-            indosat();
+            xl();
         }
         System.out.println("""
                 [       Silahkan Pilih nominal dibawah ini :
@@ -1436,7 +1396,7 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
             case 2:
@@ -1515,7 +1475,7 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
             case 3:
@@ -1594,7 +1554,7 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
             case 4:
@@ -1673,7 +1633,7 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
             case 5:
@@ -1752,7 +1712,7 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
             case 6:
@@ -1831,22 +1791,19 @@ public class Bilingual {
                         System.out.println("    ======================================================");
                     }
                 } else {
-                    indosat();
+                    xl();
                 }
                 break;
         }
     }
 
     static void telkomsel() {
-        System.out.println("=================================================================");
-        System.out.println("-----------------------------------------------------------------");
-        System.out.println("  _____ ___ _    _  _____  __  __ ___ ___ _    \n" + //
-                " |_   _| __| |  | |/ / _ \\|  \\/  / __| __| |   \n" + //
-                "   | | | _|| |__| ' < (_) | |\\/| \\__ \\ _|| |__ \n" + //
-                "   |_| |___|____|_|\\_\\___/|_|  |_|___/___|____|\n" + //
-                "                                               ");
-        System.out.println("-----------------------------------------------------------------");
-        System.out.println("=================================================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                           TELKOMSEL                            |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("Masukkan nomor telepon anda : 081-");
         String nomTelp = input.next();
         System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
@@ -2350,14 +2307,11 @@ public class Bilingual {
 
     static void axis() {
         System.out.println("==========================================");
-        System.out.println("------------------------------------------");
-        System.out.println("    _   __  _____ ___ \n" + //
-                "   /_\\  \\ \\/ /_ _/ __|\n" + //
-                "  / _ \\  >  < | |\\__ \\\n" + //
-                " /_/ \\_\\/_/\\_\\___|___/\n" + //
-                "                      ");
-        System.out.println("------------------------------------------");
+        System.out.println("|----------------------------------------|");
+        System.out.println("|                 AXIS                   |");
+        System.out.println("|----------------------------------------|");
         System.out.println("==========================================");
+        System.out.println();
         System.out.print("Masukkan nomor telepon anda : 083-");
         String nomTelp = input.next();
         System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
@@ -2864,15 +2818,12 @@ public class Bilingual {
                 {"zxcvbn1234", "125000"},
                 {"poiuyt5678", "150000"},
         };
-        System.out.println("==========================================");
-        System.out.println("------------------------------------------");
-        System.out.println("  _    ___ ___ _____ ___ ___ _  __\r\n" + //
-                " | |  |_ _/ __|_   _| _ \\_ _| |/ /\r\n" + //
-                " | |__ | |\\__ \\ | | |   /| || ' < \r\n" + //
-                " |____|___|___/ |_| |_|_\\___|_|\\_\\\r\n" + //
-                "                                  ");
-        System.out.println("------------------------------------------");
-        System.out.println("==========================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                      ELECTRICITY PAYMENT                       |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("      [   Masukkan ID pelanggan PLN : ");
         String inputPln = input.next();
 
@@ -2969,15 +2920,12 @@ public class Bilingual {
     }
 
     static void bayarAir() {
-        System.out.println("==========================================");
-        System.out.println("------------------------------------------");
-        System.out.println("  ___ ___   _   __  __ \r\n" + //
-                " | _ \\   \\ /_\\ |  \\/  |\r\n" + //
-                " |  _/ |) / _ \\| |\\/| |\r\n" + //
-                " |_| |___/_/ \\_\\_|  |_|\r\n" + //
-                "                       ");
-        System.out.println("------------------------------------------");
-        System.out.println("==========================================");
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                          PDAM PAYMENT                          |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.println("""
                 [       Silahkan pilih wilayah dibawah ini :
                 [       1. Kota Malang
@@ -3415,6 +3363,12 @@ public class Bilingual {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
                 {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
         };
+        System.out.println("    ==================================================================");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    |                   SINGLE TUITON FEE PAYMENT                    |");
+        System.out.println("    |----------------------------------------------------------------|");
+        System.out.println("    ==================================================================");
+        System.out.println();
         System.out.print("      [   Masukkan kode Perguruan Tinggi : ");
         String inCode = input.next();
 
