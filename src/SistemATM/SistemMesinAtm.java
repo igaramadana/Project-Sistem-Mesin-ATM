@@ -59,7 +59,7 @@ public class SistemMesinAtm {
                     System.out.println("    ======================================================");
                     System.out.println("    ------------------------------------------------------");
                     System.out.print("      [   Status akun anda " + dataNasabah[hasil][6]);
-                    System.out.println("\n      [   Silahkan menuju Bank terdekat ");
+                    System.out.println("\n      [   Silahkan menuju Bank terdekat (!)");
                     System.out.println("    ------------------------------------------------------");
                     System.out.println("    ======================================================");
                     System.exit(0);
