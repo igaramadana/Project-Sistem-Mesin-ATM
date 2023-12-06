@@ -28,31 +28,31 @@ public class SistemMesinAtm {
     static String pilih;
     static Random random = new Random();
     static void login() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                 SELAMAT DATANG DI ATM BANKNO                   |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |            SELAMAT DATANG DI ATM BANK-NO           |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
 
         //pengecekan verified/diblokir
         if (hasil != -1 && dataNasabah[hasil][6].equals("Disabled")) {
-            System.out.println("    =======================================================");
-            System.out.println("    -------------------------------------------------------");
+            System.out.println("    ======================================================");
+            System.out.println("    ------------------------------------------------------");
             System.out.print("      [   Status akun anda " + dataNasabah[hasil][6]);
             String inputPin = input.next();
-            System.out.println("    -------------------------------------------------------");
-            System.out.println("    =======================================================");
+            System.out.println("    ------------------------------------------------------");
+            System.out.println("    ======================================================");
             System.exit(0);
         }
         //pengecekan login
         while (jumlahLogin <= 3) {
-            System.out.println("    =======================================================");
-            System.out.println("    -------------------------------------------------------");
+            System.out.println("    ======================================================");
+            System.out.println("    ------------------------------------------------------");
             System.out.print("      [   Masukkan PIN anda : ");
             String inputPin = input.next();
-            System.out.println("    -------------------------------------------------------");
-            System.out.println("    =======================================================");
+            System.out.println("    ------------------------------------------------------");
+            System.out.println("    ======================================================");
             System.out.println();
 
             //pengecekan kesesuaian PIN login
@@ -90,21 +90,21 @@ public class SistemMesinAtm {
 
     public static void menu() {
         do {
-            System.out.println("    =======================================================");
-            System.out.println("    -------------------------------------------------------");
+            System.out.println("    =====================================================");
+            System.out.println("    -----------------------------------------------------");
             System.out.println("""
-                    [       Silahkan pilih menu dibawah ini :
-                    [       1. Data Nasabah
-                    [       2. Cek Saldo
-                    [       3. Tarik Tunai
-                    [       4. Setor Tunai
-                    [       5. Transfer Saldo
-                    [       6. Riwayat Transaksi
-                    [       7. Pembayaran Lain
-                    [       8. Pengaturan Akun
-                    [       0. Keluar
+                        [       Silahkan pilih menu dibawah ini :
+                        [       1. Data Nasabah
+                        [       2. Cek Saldo
+                        [       3. Tarik Tunai
+                        [       4. Setor Tunai
+                        [       5. Transfer Saldo
+                        [       6. Riwayat Transaksi
+                        [       7. Pembayaran Lain
+                        [       8. Pengaturan Akun
+                        [       0. Keluar
                     """);
-            System.out.print("\tMenu yang dipilih : ");
+            System.out.print("    [       Menu yang dipilih : ");
             int menu = input.nextInt();
 
             switch (menu) {
@@ -284,17 +284,17 @@ public class SistemMesinAtm {
     }
 
     private static void riwayatTransaksi() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                       RIWAYAT TRANSAKSI                        |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   RIWAYAT TRANSAKSI                |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("===================================================================================");
-        System.out.println("-----------------------------------------------------------------------------------");
-        System.out.println("|                         \\RIWAYAT TRANSAKSI TERBARU ANDA/                       |");
-        System.out.println("-----------------------------------------------------------------------------------");
-        System.out.println("===================================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |            RIWAYAT TRANSAKSI TERBARU ANDA          |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
 
         System.out.println("Riwayat Transaksi : ");
         for (int i = 0; i < riw; i++) {
@@ -3491,11 +3491,11 @@ public class SistemMesinAtm {
     }
     public static void main(String[] args) {
         System.out.println("""
-                [       Pilih Bahasa ini / Choose language :
-                [       1. Bahasa
-                [       2. English
+                    [       Pilih Bahasa ini / Choose language :
+                    [       1. Bahasa
+                    [       2. English
                 """);
-        System.out.print("[       Bahasa yang dipilih : ");
+        System.out.print("    [       Bahasa yang dipilih : ");
         int menu = input.nextInt();
         if (menu == 1) {
             login();
