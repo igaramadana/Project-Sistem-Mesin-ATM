@@ -27,7 +27,6 @@ public class SistemMesinAtm {
     static int jumlahLogin = 0;
     static String pilih;
     static Random random = new Random();
-
     static void login() {
         System.out.println("==================================================================");
         System.out.println("------------------------------------------------------------------");
@@ -559,7 +558,7 @@ public class SistemMesinAtm {
         System.out.println("=====================================================================================");
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Masukkan saldo yang ingin ditarik : Rp. ");
+        System.out.print("      [   Masukkan saldo yang ingin disetor : Rp. ");
         double nominalSetor = input.nextDouble();
         double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    -------------------------------------------------------");
@@ -3546,12 +3545,12 @@ public class SistemMesinAtm {
                 [       1. Bahasa
                 [       2. English
                 """);
-        System.out.print("  [       Bahasa yang dipilih : ");
+        System.out.print("[       Bahasa yang dipilih : ");
         int menu = input.nextInt();
         if (menu == 1) {
             login();
         } if (menu == 2) {
-            Bilingual.biling();
+            Bilingual.main(args);
         } else {
             System.out.println("    ======================================================");
             System.out.println("    |----------------------------------------------------|");
