@@ -11,7 +11,8 @@ public class SistemMesinAtm {
             {"02", "334455", "Iga", "3344", "Dampit", "5000000", "Verified", "081123456"},
             {"03", "556677", "Firman", "4455", "Blitar", "3500000", "Verified", "087123456"},
             {"04", "889911", "Bayu", "6677", "Jombang", "3000000", "Verified", "08912345"},
-            {"05", "123456", "Novita", "8899", "Watugong", "10000000", "Verified", "088123456"}
+            {"05", "123456", "Novita", "8899", "Watugong", "10000000", "Verified", "088123456"},
+            {"06", "990088", "Naufal", "0099", "Sawojajar", "500000", "Disabled", "0812938219"}
     };
     static String[][] datapdam = {
             {"Kota Malang", "MLG1234", "100000"},
@@ -35,16 +36,6 @@ public class SistemMesinAtm {
         System.out.println("    ======================================================");
         System.out.println();
 
-        //pengecekan verified/diblokir
-        if (hasil != -1 && dataNasabah[hasil][6].equals("Disabled")) {
-            System.out.println("    ======================================================");
-            System.out.println("    ------------------------------------------------------");
-            System.out.print("      [   Status akun anda " + dataNasabah[hasil][6]);
-            String inputPin = input.next();
-            System.out.println("    ------------------------------------------------------");
-            System.out.println("    ======================================================");
-            System.exit(0);
-        }
         //pengecekan login
         while (jumlahLogin <= 3) {
             System.out.println("    ======================================================");
@@ -63,6 +54,16 @@ public class SistemMesinAtm {
                 }
             }
             if (login) {
+                //pengecekan verified/diblokir
+                if (dataNasabah[hasil][6].equals("Disabled")) {
+                    System.out.println("    ======================================================");
+                    System.out.println("    ------------------------------------------------------");
+                    System.out.print("      [   Status akun anda " + dataNasabah[hasil][6]);
+                    System.out.println("\n      [   Silahkan menuju Bank terdekat ");
+                    System.out.println("    ------------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.exit(0);
+                }
                 menu();
             } else {
                 System.out.println("    =======================================================");
