@@ -28,31 +28,21 @@ public class Bilingual {
     static String pilih;
     static Random random = new Random();
     static void login() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                     WELCOME TO ATM BANKNO                      |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                WELCOME DI ATM BANK-NO              |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
 
-        //pengecekan verified/diblokir
-        if (hasil != -1 && dataNasabah[hasil][6].equals("Disabled")) {
-            System.out.println("    =======================================================");
-            System.out.println("    -------------------------------------------------------");
-            System.out.print("      [   Status of your account is  " + dataNasabah[hasil][6]);
-            String inputPin = input.next();
-            System.out.println("    -------------------------------------------------------");
-            System.out.println("    =======================================================");
-            System.exit(0);
-        }
         //pengecekan login
         while (jumlahLogin <= 3) {
-            System.out.println("    =======================================================");
-            System.out.println("    -------------------------------------------------------");
+            System.out.println("    ======================================================");
+            System.out.println("    ------------------------------------------------------");
             System.out.print("      [   Enter your PIN : ");
             String inputPin = input.next();
-            System.out.println("    -------------------------------------------------------");
-            System.out.println("    =======================================================");
+            System.out.println("    ------------------------------------------------------");
+            System.out.println("    ======================================================");
             System.out.println();
 
             //pengecekan kesesuaian PIN login
@@ -63,12 +53,22 @@ public class Bilingual {
                 }
             }
             if (login) {
+                //pengecekan verified/diblokir
+                if (dataNasabah[hasil][6].equals("Disabled")) {
+                    System.out.println("    ======================================================");
+                    System.out.println("    ------------------------------------------------------");
+                    System.out.print("      [   Your account status " + dataNasabah[hasil][6]);
+                    System.out.println("\n      [   Please go to the nearest bank (!)");
+                    System.out.println("    ------------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.exit(0);
+                }
                 menu();
             } else {
                 System.out.println("    =======================================================");
                 System.out.println("    |-----------------------------------------------------|");
-                System.out.println("    |          (!) You entered the wrong PIN (!)          |");
-                System.out.println("    |                Please Re-enter Again.               |");
+                System.out.println("    |           (!) You entered the wrong PIN (!)         |");
+                System.out.println("    |                 Please Re-enter Again.              |");
                 System.out.println("    |-----------------------------------------------------|");
                 System.out.println("    =======================================================");
                 jumlahLogin++;
@@ -77,8 +77,8 @@ public class Bilingual {
                     System.out.println("-----------------------------------------------------------------");
                     System.out.println("    =======================================================");
                     System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |        (!) You failed more than 3 times (!)         |");
-                    System.out.println("    |           Your account has been disabled.           |");
+                    System.out.println("    |      (!) You have failed more than 3 times (!)      |");
+                    System.out.println("    |            Your account has been disabled.          |");
                     System.out.println("    |-----------------------------------------------------|");
                     System.out.println("    =======================================================");
                     dataNasabah[hasil][6] = "Disabled";
@@ -161,11 +161,11 @@ public class Bilingual {
     }
 
     private static void pengaturanAkun() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        ACCOUNT SETTING                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                  ACCOUNT SETTING                   |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
 
         System.out.println("""
@@ -284,17 +284,17 @@ public class Bilingual {
     }
 
     private static void riwayatTransaksi() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                      TRANSACTION HISTORY                       |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                TRANSACTION HISTORY                 |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                  \\YOUR RECENT TRANSACTION//                   |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |            //YOUR RECENT TRANSACTION\\             |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
 
         System.out.println("Transaction history : ");
@@ -316,15 +316,12 @@ public class Bilingual {
     }
 
     static void dataNasabah() {
-        System.out.println("=====================================================================================");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("  ___      _     _____     _       _  _     _     ___     _     ___     _     _  _ \r\n" + //
-                " |   \\    /_\\   |_   _|   /_\\     | \\| |   /_\\   / __|   /_\\   | _ )   /_\\   | || |\r\n" + //
-                " | |) |  / _ \\    | |    / _ \\    | .` |  / _ \\  \\__ \\  / _ \\  | _ \\  / _ \\  | __ |\r\n" + //
-                " |___/  /_/ \\_\\   |_|   /_/ \\_\\   |_|\\_| /_/ \\_\\ |___/ /_/ \\_\\ |___/ /_/ \\_\\ |_||_|\r\n" + //
-                "                                                                                   ");
-        System.out.println("-------------------------------------------------------------------------------------");
-        System.out.println("=====================================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   CUSTOMER DATA                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
+        System.out.println();
         System.out.print("      [   Enter your PIN : ");
         String inPin = input.next();
 
@@ -368,11 +365,11 @@ public class Bilingual {
     }
 
     static void cekSaldo() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        BALANCE CHECK                           |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   BALANCE CHECK                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Enter your PIN : ");
         String inPin = input.next();
@@ -420,11 +417,11 @@ public class Bilingual {
     }
 
     static void tarikTunai() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                         CASH WITHDRAW                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   CASH WITHDRAW                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
@@ -525,11 +522,11 @@ public class Bilingual {
     }
 
     static void setorTunai() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                          CASH DEPOSIT                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    CASH DEPOSIT                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
@@ -613,11 +610,11 @@ public class Bilingual {
     }
 
     static void transferSaldo() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                       BALANCE TRANSFER                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                  BALANCE TRANSFER                  |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("  [   Enter your account number : ");
         String inRek = input.next();
@@ -713,11 +710,11 @@ public class Bilingual {
     }
 
     static void pembayaranLain() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        OTHER PAYMENTS                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   OTHER PAYMENT                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("""
                 [       Choose the menu below :
@@ -740,11 +737,11 @@ public class Bilingual {
     }
 
     static void beliPulsa() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        CREDIT PURCHASE                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                  CREDIT PURCHASE                  |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("""
                 [       Choose a mobile operator below :
@@ -767,11 +764,11 @@ public class Bilingual {
     }
 
     static void indosat() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                            INDOSAT                             |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                      INDOSAT                       |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("Enter your phone number : 085-");
         String nomTelp = input.next();
@@ -1044,18 +1041,18 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[3]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[3]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1069,32 +1066,32 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[0], pulsa[3]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[0], pulsa[3]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                         break;
@@ -1102,7 +1099,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1114,7 +1111,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                         indosat();
@@ -1126,18 +1123,18 @@ public class Bilingual {
             case 5:
                 System.out.println("    ======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit purchase\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[4]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[4]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1151,32 +1148,32 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit purchase\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[0], pulsa[4]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[0], pulsa[4]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                         break;
@@ -1184,7 +1181,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1196,7 +1193,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                         indosat();
@@ -1208,18 +1205,18 @@ public class Bilingual {
             case 6:
                 System.out.println("    ======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[5]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[5]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1233,32 +1230,32 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[0], pulsa[5]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[0], pulsa[5]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |              THANKS FOR USING THIS ATM :).         |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                         break;
@@ -1266,7 +1263,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1278,7 +1275,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                         indosat();
@@ -1291,15 +1288,15 @@ public class Bilingual {
     }
 
     static void xl() {
-        System.out.println("=============================");
-        System.out.println("|---------------------------|");
-        System.out.println("|            XL             |");
-        System.out.println("|---------------------------|");
-        System.out.println("=============================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                         XL                         |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
-        System.out.print("Masukkan nomor telepon anda : 087-");
+        System.out.print("Enter your phone number : 087-");
         String nomTelp = input.next();
-        System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
+        System.out.print("\nIs the phone number you entered correct? y/n: ");
         pilih = input.next();
         if (pilih.equals("y")) {
             masuk = true;
@@ -1307,34 +1304,34 @@ public class Bilingual {
             xl();
         }
         System.out.println("""
-                [       Silahkan Pilih nominal dibawah ini :
+                [       Choose amount below :
                 [       1. 20.000
                 [       2. 25.000
                 [       3. 50.000
                 [       4. 100.000
                 [       5. 500.000
                 [       6. 1.000.000
-                [       0. Kembali ke Menu Utama
+                [       0. Back to Main Menu
                 """);
-        System.out.print("\tNominal yang dipilih : ");
+        System.out.print("\t Amount selected : ");
         int nomPul = input.nextInt();
 
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[0]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile perator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[0]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[0]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/t: ", nomTelp, pulsa[0]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1348,39 +1345,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[0]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[0]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[0]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[0]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1391,7 +1388,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1402,18 +1399,18 @@ public class Bilingual {
             case 2:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[1]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[1]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1427,39 +1424,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[1]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[1]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1470,7 +1467,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1481,18 +1478,18 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[2]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[2]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1506,39 +1503,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[2]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[2]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1549,7 +1546,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1560,18 +1557,18 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[3]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[3]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1585,39 +1582,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[3]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[3]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1628,7 +1625,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1639,18 +1636,18 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[4]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[4]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1664,39 +1661,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[4]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[4]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1707,7 +1704,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1718,18 +1715,18 @@ public class Bilingual {
             case 6:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[5]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 085-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[5]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1743,39 +1740,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[1], pulsa[5]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], pulsa[5]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1786,7 +1783,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1798,15 +1795,15 @@ public class Bilingual {
     }
 
     static void telkomsel() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                           TELKOMSEL                            |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                     TELKOMSEL                      |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
-        System.out.print("Masukkan nomor telepon anda : 081-");
+        System.out.print("Enter your phone number: 081-");
         String nomTelp = input.next();
-        System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
+        System.out.print("\nIs the phone number you entered correct? y/t: ");
         String pilih = input.next();
         boolean masuk = false;
         if (pilih.equals("y")) {
@@ -1815,34 +1812,34 @@ public class Bilingual {
             telkomsel();
         }
         System.out.println("""
-                [       Silahkan Pilih nominal dibawah ini :
+                [       Choose amount below :
                 [       1. 20.000
                 [       2. 25.000
                 [       3. 50.000
                 [       4. 100.000
                 [       5. 500.000
                 [       6. 1.000.000
-                [       0. Kembali ke Menu Utama
+                [       0. Back to Main Menu
                 """);
-        System.out.print("\tNominal yang dipilih : ");
+        System.out.print("\tSelected amount : ");
         int nomPul = input.nextInt();
 
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[0]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[0]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[0]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[0]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your pin to continue the transaction  : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1856,39 +1853,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[0]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[0]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[0]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[2], pulsa[0]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1899,7 +1896,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1910,18 +1907,18 @@ public class Bilingual {
             case 2:
                 System.out.println("    ======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    ======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[1]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[1]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -1935,39 +1932,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[1]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[1]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[1]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[2], pulsa[1]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -1978,7 +1975,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -1989,18 +1986,18 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[2]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with nominal Rp. %d? y/n: ", nomTelp, pulsa[2]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -2014,39 +2011,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[2]);
+                                    System.out.println("    [  _________________________________________________\t]");
+                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[2]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[2]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[2], pulsa[2]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -2057,7 +2054,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -2068,18 +2065,18 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile oerator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[3]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with nominal Rp. %d? y/n: ", nomTelp, pulsa[3]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -2093,39 +2090,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[3]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[3]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[3]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[2], pulsa[3]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -2136,7 +2133,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -2147,18 +2144,18 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[4]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[4]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -2172,39 +2169,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[4]);
+                                    System.out.println("    [  _________________________________________________\t]");
+                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[4]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[4]);
+                                    riwayat[riw] = String.format("Has made a credit payment %s with amount Rp. %s", operator[2], pulsa[4]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -2215,7 +2212,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -2226,18 +2223,18 @@ public class Bilingual {
             case 6:
                 System.out.println("    =======================================================");
                 System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
-                System.out.println("Total bayar diatas sudah termasuk biaya admin Rp. 2500");
-                System.out.printf(" Konfirmasi transaksi ke nomor telepon 081-%s dengan nominal Rp. %d? y/t: ", nomTelp, pulsa[5]);
+                System.out.println("Total payment above includes admin fee Rp. 2500");
+                System.out.printf(" Confirm transaction to phone number 081-%s with amount Rp. %d? y/n: ", nomTelp, pulsa[5]);
                 pilih = input.next();
                 if (pilih.equals("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
                     String inPin = input.next();
 
                     int index = 0;
@@ -2251,39 +2248,39 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println("    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: Rp. %d\t|\t]\n", pulsa[5]);
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", pulsa[5]);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", sisaSaldo);
+                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", sisaSaldo);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     // catatan riwayat transaksi
-                                    riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar Rp. %s", operator[2], pulsa[5]);
+                                    riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[2], pulsa[5]);
                                     riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
                                         login();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                    System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
@@ -2294,7 +2291,7 @@ public class Bilingual {
                         index = 0;
                         System.out.println("    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
+                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
                     }
@@ -2306,15 +2303,15 @@ public class Bilingual {
     }
 
     static void axis() {
-        System.out.println("==========================================");
-        System.out.println("|----------------------------------------|");
-        System.out.println("|                 AXIS                   |");
-        System.out.println("|----------------------------------------|");
-        System.out.println("==========================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                        AXIS                        |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
-        System.out.print("Masukkan nomor telepon anda : 083-");
+        System.out.print("Enter your phone number : 083-");
         String nomTelp = input.next();
-        System.out.print("\nApakah nomor telepon yang anda masukkan benar? y/t: ");
+        System.out.print("\nIs the phone number you entered correct ? y/n: ");
         String pilih = input.next();
         boolean masuk = false;
         if (pilih.equals("y")) {
@@ -2323,7 +2320,7 @@ public class Bilingual {
             axis();
         }
         System.out.println("""
-                [       Silahkan Pilih nominal dibawah ini :
+                [       Choose amount below :
                 [       1. 20.000
                 [       2. 25.000
                 [       3. 50.000
@@ -2818,11 +2815,11 @@ public class Bilingual {
                 {"zxcvbn1234", "125000"},
                 {"poiuyt5678", "150000"},
         };
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                      ELECTRICITY PAYMENT                       |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                ELECTRICITY PAYMENT                 |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan ID pelanggan PLN : ");
         String inputPln = input.next();
@@ -2920,11 +2917,11 @@ public class Bilingual {
     }
 
     static void bayarAir() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                          PDAM PAYMENT                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    PDAN PAYMENT                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("""
                 [       Silahkan pilih wilayah dibawah ini :
@@ -3363,11 +3360,11 @@ public class Bilingual {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
                 {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
         };
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                   SINGLE TUITON FEE PAYMENT                    |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |             SINGLE TUITON FEE PAYMENT              |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan kode Perguruan Tinggi : ");
         String inCode = input.next();

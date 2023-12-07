@@ -162,11 +162,11 @@ public class SistemMesinAtm {
     }
 
     private static void pengaturanAkun() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        PENGATURAN AKUN                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                  PENGATURAN AKUN                   |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
 
         System.out.println("""
@@ -287,16 +287,16 @@ public class SistemMesinAtm {
     private static void riwayatTransaksi() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
-        System.out.println("    |                   RIWAYAT TRANSAKSI                |");
+        System.out.println("    |                 RIWAYAT TRANSAKSI                  |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
-        System.out.println("    |            RIWAYAT TRANSAKSI TERBARU ANDA          |");
+        System.out.println("    |           RIWAYAT TRANSAKSI TERBARU ANDA           |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
-
+        System.out.println();
         System.out.println("Riwayat Transaksi : ");
         for (int i = 0; i < riw; i++) {
             System.out.println(riwayat[i]);
@@ -316,11 +316,11 @@ public class SistemMesinAtm {
     }
 
     static void dataNasabah() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                          DATA NASABAH                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    DATA NASABAH                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan PIN anda : ");
         String inPin = input.next();
@@ -365,11 +365,11 @@ public class SistemMesinAtm {
     }
 
     static void cekSaldo() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                           CEK SALDO                            |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                     CEK SALDO                      |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan PIN anda : ");
         String inPin = input.next();
@@ -417,11 +417,11 @@ public class SistemMesinAtm {
     }
 
     static void tarikTunai() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                          TARIK TUNAI                           |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    TARIK TUNAI                     |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
@@ -522,11 +522,11 @@ public class SistemMesinAtm {
     }
 
     static void setorTunai() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                          SETOR TUNAI                           |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    SETOR TUNAI                     |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
@@ -610,11 +610,11 @@ public class SistemMesinAtm {
     }
 
     static void transferSaldo() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                         TRANSFER SALDO                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   TRANSFER SALDO                   |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("  [   Masukkan nomor rekening anda : ");
         String inRek = input.next();
@@ -710,11 +710,11 @@ public class SistemMesinAtm {
     }
 
     static void pembayaranLain() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        PEMBAYARAN LAIN                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                  PEMBAYARAN LAIN                   |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("""
                 [       Silahkan pilih menu dibawah ini :
@@ -737,12 +737,12 @@ public class SistemMesinAtm {
     }
 
     static void beliPulsa() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                        PEMBELIAN PULSA                         |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
-        System.out.println();;
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   PEMBELIAN PULSA                  |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
+        System.out.println();
         System.out.println("""
                 [       Pilih operator seluler dibawah ini :
                 [       1. Indosat
@@ -764,11 +764,11 @@ public class SistemMesinAtm {
     }
 
     static void indosat() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                            INDOSAT                             |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                      INDOSAT                       |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("Masukkan nomor telepon anda : 085-");
         String nomTelp = input.next();
@@ -1288,11 +1288,11 @@ public class SistemMesinAtm {
     }
 
     static void xl() {
-        System.out.println("=============================");
-        System.out.println("|---------------------------|");
-        System.out.println("|            XL             |");
-        System.out.println("|---------------------------|");
-        System.out.println("=============================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                         XL                         |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("Masukkan nomor telepon anda : 087-");
         String nomTelp = input.next();
@@ -1795,11 +1795,11 @@ public class SistemMesinAtm {
     }
 
     static void telkomsel() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                           TELKOMSEL                            |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                     TELKOMSEL                      |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("Masukkan nomor telepon anda : 081-");
         String nomTelp = input.next();
@@ -2303,11 +2303,11 @@ public class SistemMesinAtm {
     }
 
     static void axis() {
-        System.out.println("==========================================");
-        System.out.println("|----------------------------------------|");
-        System.out.println("|                 AXIS                   |");
-        System.out.println("|----------------------------------------|");
-        System.out.println("==========================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                        AXIS                        |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("Masukkan nomor telepon anda : 083-");
         String nomTelp = input.next();
@@ -2815,11 +2815,11 @@ public class SistemMesinAtm {
                 {"zxcvbn1234", "125000"},
                 {"poiuyt5678", "150000"},
         };
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                         BAYAR LISTRIK                          |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                   BAYAR LISTRIK                    |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan ID pelanggan PLN : ");
         String inputPln = input.next();
@@ -2917,11 +2917,11 @@ public class SistemMesinAtm {
     }
 
     static void bayarAir() {
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                           BAYAR PDAM                           |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                    BAYAR PDAM                      |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.println("""
                 [       Silahkan pilih wilayah dibawah ini :
@@ -3360,11 +3360,11 @@ public class SistemMesinAtm {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
                 {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
         };
-        System.out.println("    ==================================================================");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    |                           BAYAR UKT                            |");
-        System.out.println("    |----------------------------------------------------------------|");
-        System.out.println("    ==================================================================");
+        System.out.println("    ======================================================");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    |                     BAYAR UKT                      |");
+        System.out.println("    |----------------------------------------------------|");
+        System.out.println("    ======================================================");
         System.out.println();
         System.out.print("      [   Masukkan kode Perguruan Tinggi : ");
         String inCode = input.next();
