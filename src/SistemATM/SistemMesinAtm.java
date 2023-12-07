@@ -4,6 +4,8 @@ import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Scanner;
 import SistemATM.Bilingual;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 public class SistemMesinAtm {
     static Scanner input = new Scanner(System.in);
     static String[][] dataNasabah = {
@@ -283,8 +285,7 @@ public class SistemMesinAtm {
                 break;
         }
     }
-
-    private static void riwayatTransaksi() {
+    static void riwayatTransaksi() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    |                 RIWAYAT TRANSAKSI                  |");
@@ -298,8 +299,12 @@ public class SistemMesinAtm {
         System.out.println("    ======================================================");
         System.out.println();
         System.out.println("    [       Riwayat Transaksi : ");
+
+        SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm;ss"));
+        String tanggal = formatTgl.format(new Date());
+
         for (int i = 0; i < riw; i++) {
-            System.out.println("    [       "+riwayat[i]);
+            System.out.println("    [       "+ tanggal + "- " + riwayat[i]);
         }
         System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
         pilih = input.next();
