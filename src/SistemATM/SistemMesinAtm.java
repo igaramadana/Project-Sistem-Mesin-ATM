@@ -297,9 +297,9 @@ public class SistemMesinAtm {
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("Riwayat Transaksi : ");
+        System.out.println("    [       Riwayat Transaksi : ");
         for (int i = 0; i < riw; i++) {
-            System.out.println(riwayat[i]);
+            System.out.println("    [       "+riwayat[i]);
         }
         System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
         pilih = input.next();
@@ -425,74 +425,87 @@ public class SistemMesinAtm {
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Masukkan saldo yang ingin ditarik : Rp. ");
+        System.out.print("      [   Masukkan saldo yang ingin ditarik : IDR  ");
         double nominalTarik = input.nextDouble();
         double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    -------------------------------------------------------");
         System.out.println("    =======================================================");
 
         if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
-            sisaSaldo -= nominalTarik;
-            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+            if (nominalTarik >= 50000) {
+                sisaSaldo -= nominalTarik;
+                NumberFormat format = NumberFormat.getCurrencyInstance();
+                String balance = format.format(sisaSaldo);
+                String nominal = format.format(nominalTarik);
+                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
-            System.out.println("    ======================================================");
-            System.out.println("    [  _________________________________________________\t]");
-            System.out.println("    [\t|             \tTARIK TUNAI       \t\t|\t]");
-            System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Jumlah Saldo yang ditarik\t: Rp. %.2f\t|\t]\n", nominalTarik);
-            System.out.println("    [  -------------------------------------------------\t]");
-            System.out.println("    =======================================================");
-            System.out.println();
-            System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar Rp. %.2f? y/t: ", nominalTarik);
-            pilih = input.next();
-            if (pilih.equalsIgnoreCase("y")) {
-                System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
-                String inPin = input.next();
+                System.out.println("    ======================================================");
+                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [\t|             \tTARIK TUNAI       \t\t|\t]");
+                System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
+                System.out.printf("    [\t|  Jumlah Saldo yang ditarik\t: %s\t|\t]\n", nominal);
+                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    =======================================================");
+                System.out.println();
+                System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal);
+                pilih = input.next();
+                if (pilih.equalsIgnoreCase("y")) {
+                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                    String inPin = input.next();
 
-                int index = 0;
-                if (inPin.equals(dataNasabah[hasil][3])) {
-                    for (int i = 0; i < dataNasabah.length; i++) {
-                        if (dataNasabah[i][3].equals(inPin)) {
-                            index = 1;
-                            System.out.println();
-                            System.out.println("    ======================================================");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ======================================================");
-                            System.out.println("    ======================================================");
-                            System.out.println("    [  _________________________________________________\t]");
-                            System.out.println("    [\t|             \tTARIK TUNAI       \t\t|\t]");
-                            System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[index][2]);
-                            System.out.printf("    [\t|  Sisa Saldo\t\t: Rp. %s\t|\t]\n", dataNasabah[index][5]);
-                            System.out.println("    [  -------------------------------------------------\t]");
-                            System.out.println("    =======================================================");
-                            System.out.println();
-                            riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar Rp. %.2f", nominalTarik);
-                            riw++;
-                            System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
-                            pilih = input.next();
-                            if (pilih.equalsIgnoreCase("y")) {
-                                menu();
-                            } else {
+                    int index = 0;
+                    if (inPin.equals(dataNasabah[hasil][3])) {
+                        for (int i = 0; i < dataNasabah.length; i++) {
+                            if (dataNasabah[i][3].equals(inPin)) {
+                                index = 1;
+                                System.out.println();
                                 System.out.println("    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
-                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    ------------------------------------------------------");
+                                System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                System.out.println("    ------------------------------------------------------");
                                 System.out.println("    ======================================================");
-                                break;
+                                System.out.println("    ======================================================");
+                                System.out.println("    [  _________________________________________________\t]");
+                                System.out.println("    [\t|             \tTARIK TUNAI       \t\t|\t]");
+                                System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
+                                System.out.printf("    [\t|  Sisa Saldo\t\t: %s\t|\t]\n", balance);
+                                System.out.println("    [  -------------------------------------------------\t]");
+                                System.out.println("    =======================================================");
+                                System.out.println();
+                                riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal);
+                                riw++;
+                                System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                pilih = input.next();
+                                if (pilih.equalsIgnoreCase("y")) {
+                                    menu();
+                                } else {
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    ======================================================");
+                                    System.exit(0);
+                                }
                             }
                         }
+                    } else {
+                        System.out.println("    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                        System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    =======================================================");
+                        tarikTunai();
                     }
-                } else {
-                    System.out.println("    =======================================================");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                    System.out.println("    |              Silahkan Masukkan Kembali.             |");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    =======================================================");
-                    tarikTunai();
                 }
+            } else {
+                System.out.println("    =======================================================");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    |      (!) MINIMAL PENARIKAN TUNAI RP. 50.000(!)      |");
+                System.out.println("    |              Silahkan Ulangi Kembali.               |");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    =======================================================");
+                tarikTunai();
             }
         } else {
             System.out.println("    ======================================================");
@@ -530,7 +543,7 @@ public class SistemMesinAtm {
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Masukkan saldo yang ingin disetor : Rp. ");
+        System.out.print("      [   Masukkan saldo yang ingin disetor : IDR ");
         double nominalSetor = input.nextDouble();
         double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    -------------------------------------------------------");
@@ -538,17 +551,20 @@ public class SistemMesinAtm {
 
         if (nominalSetor <= 5000000) {
             sisaSaldo += nominalSetor;
+            NumberFormat format = NumberFormat.getCurrencyInstance();
+            String balance = format.format(sisaSaldo);
+            String nominal = format.format(nominalSetor);
             dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
             System.out.println("    =======================================================");
             System.out.println("    [  _________________________________________________\t]");
             System.out.println("    [\t|             \tSETOR TUNAI       \t\t|\t]");
             System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Nominal Setor\t\t: Rp. %s\t|\t]\n", nominalSetor);
+            System.out.printf("    [\t|  Nominal Setor\t\t: Rp. %s\t|\t]\n", nominal);
             System.out.println("    [  -------------------------------------------------\t]");
             System.out.println("    =======================================================");
             System.out.println();
-            System.out.printf("\n    [   Konfirmasi setor tunai sebesar Rp. %.2f? y/t: ", nominalSetor);
+            System.out.printf("\n    [   Konfirmasi setor tunai sebesar %s? y/t: ", nominal);
             pilih = input.next();
             if (pilih.equalsIgnoreCase("y")) {
                 System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
@@ -568,11 +584,11 @@ public class SistemMesinAtm {
                             System.out.println("    [  _________________________________________________\t]");
                             System.out.println("    [\t|             \tSETOR TUNAI       \t\t|\t]");
                             System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[i][2]);
-                            System.out.printf("    [\t|  Sisa Saldo\t\t: Rp. %.2f\t|\t]\n", sisaSaldo);
+                            System.out.printf("    [\t|  Sisa Saldo\t\t: %s\t|\t]\n", sisaSaldo);
                             System.out.println("    [  -------------------------------------------------\t]");
                             System.out.println("    =======================================================");
                             System.out.println();
-                            riwayat[riw] = String.format("Telah melakukan setor tunai sebesar Rp. %.2f", nominalSetor);
+                            riwayat[riw] = String.format("Telah melakukan setor tunai sebesar %s", nominal);
                             riw++;
                             System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                             pilih = input.next();
@@ -584,7 +600,7 @@ public class SistemMesinAtm {
                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    ======================================================");
-                                break;
+                                System.exit(0);
                             }
                         }
                     }
@@ -629,22 +645,25 @@ public class SistemMesinAtm {
                     for (int j = 0; j < dataNasabah.length; j++) {
                         if (rekTujuan.equals(dataNasabah[j][1])) {
                             index = 1;
-                            System.out.print("  [   Masukkan nominal transfer : Rp. ");
+                            System.out.print("  [   Masukkan nominal transfer : IDR ");
                             double nomTF = input.nextDouble();
                             double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
 
                             if (nomTF > 0 && nomTF <= saldoUser) {
                                 saldoUser -= nomTF;
+                                NumberFormat format = NumberFormat.getCurrencyInstance();
+                                String balance = format.format(saldoUser);
+                                String nominal = format.format(nomTF);
                                 dataNasabah[index][5] = String.valueOf(saldoUser);
                                 System.out.println("    =======================================================");
                                 System.out.println("    [  _________________________________________________\t]");
                                 System.out.println("    [\t|        \tTRANSFER SALDO    \t\t|\t]");
                                 System.out.printf("    [\t|  Rekening Tujuan\t\t: %s\t|\t]\n", rekTujuan);
-                                System.out.printf("    [\t|  Nominal Transfer\t\t: Rp. %.2f\t|\t]\n", nomTF);
+                                System.out.printf("    [\t|  Nominal Transfer\t\t: %s\t|\t]\n", nominal);
                                 System.out.println("    [  -------------------------------------------------\t]");
                                 System.out.println("    =======================================================");
                                 System.out.println();
-                                System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal Rp." + nomTF + "(y/t) : ");
+                                System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
                                 pilih = input.next();
                                 if (pilih.equals("y")) {
                                     System.out.println("    ======================================================");
@@ -656,18 +675,18 @@ public class SistemMesinAtm {
                                     System.out.println("    [  ________________________________________________\t\t]");
                                     System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
                                     System.out.printf("    [\t|  Rekening tujuan\t\t: %s\t|\t]\n", rekTujuan);
-                                    System.out.printf("    [\t|  Nama\t\t\t\t: %s\t|\t]\n", dataNasabah[j][2]);
-                                    System.out.printf("    [\t|  Nominal transfer\t\t: Rp. %.2f\t|\t]\n", nomTF);
+                                    System.out.printf("    [\t|  Nama user\t\t\t\t: %s\t|\t]\n", dataNasabah[j][2]);
+                                    System.out.printf("    [\t|  Nominal transfer\t\t: %s\t|\t]\n", nominal);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %.2f\t|\t]\n", saldoUser);
+                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
-                                    riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar Rp. %.2f", rekTujuan, nomTF);
+                                    riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
                                     riw++;
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
-                                    if (pilih.equals("y")) {
+                                    if (pilih.equalsIgnoreCase("y")) {
                                         menu();
                                     } else {
                                         System.out.println("    ======================================================");
@@ -675,7 +694,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -692,7 +711,7 @@ public class SistemMesinAtm {
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    ======================================================");
                                 System.out.println();
-                                menu();
+                                transferSaldo();
                             }
                         }
                     }
@@ -705,7 +724,7 @@ public class SistemMesinAtm {
             System.out.println("    |----------------------------------------------------|");
             System.out.println("    ======================================================");
             System.out.println();
-            menu();
+            transferSaldo();
         }
     }
 
@@ -849,7 +868,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -932,7 +951,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1012,7 +1031,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1094,7 +1113,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1176,7 +1195,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1258,7 +1277,7 @@ public class SistemMesinAtm {
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1366,13 +1385,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1381,6 +1401,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1391,6 +1412,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1445,13 +1467,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1460,6 +1483,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1470,6 +1494,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1524,13 +1549,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1539,6 +1565,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1549,6 +1576,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1603,13 +1631,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1618,6 +1647,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1628,6 +1658,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1682,13 +1713,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1697,6 +1729,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1707,6 +1740,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1761,13 +1795,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1776,6 +1811,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    xl();
                                 }
                             }
                         }
@@ -1786,6 +1822,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        xl();
                     }
                 } else {
                     xl();
@@ -1874,13 +1911,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1889,6 +1927,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -1899,6 +1938,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -1953,13 +1993,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -1968,6 +2009,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -1978,6 +2020,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -2032,13 +2075,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2047,6 +2091,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -2057,6 +2102,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -2111,13 +2157,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2126,6 +2173,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -2136,6 +2184,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -2190,13 +2239,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2205,6 +2255,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -2215,6 +2266,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -2269,13 +2321,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2284,6 +2337,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    telkomsel();
                                 }
                             }
                         }
@@ -2294,6 +2348,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        telkomsel();
                     }
                 } else {
                     telkomsel();
@@ -2382,13 +2437,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2397,6 +2453,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2407,6 +2464,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -2459,13 +2517,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2474,6 +2533,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2484,6 +2544,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -2538,13 +2599,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2553,6 +2615,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2563,6 +2626,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -2617,13 +2681,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2632,6 +2697,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2642,6 +2708,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -2712,6 +2779,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2722,6 +2790,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -2776,13 +2845,14 @@ public class SistemMesinAtm {
                                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
                                     pilih = input.next();
                                     if (pilih.equals("y")) {
-                                        login();
+                                        menu();
                                     } else {
                                         System.out.println("    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================");
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println("    ======================================================");
@@ -2791,6 +2861,7 @@ public class SistemMesinAtm {
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================");
                                     System.out.println();
+                                    axis();
                                 }
                             }
                         }
@@ -2801,6 +2872,7 @@ public class SistemMesinAtm {
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================");
+                        axis();
                     }
                 } else {
                     axis();
@@ -3359,6 +3431,9 @@ public class SistemMesinAtm {
         String[][] dataUniv = {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
                 {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
+                {"10074", "Universitas Negeri Malang", "2309876", "Annisa", "Teknik Sipil", "4500000"},
+                {"071027", "Universitas Islam Malang", "2212345", "Naufal", "Pendidikan Agama Islam", "3000000"},
+                {"071024", "Universitas Muhammadiyah Malang", "23123456", "Bayu", "Teknik Mesin", "5000000"}
         };
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -3396,7 +3471,7 @@ public class SistemMesinAtm {
                                     System.out.printf("    [\t|  Nama Perguruan TInggi\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
                                     System.out.printf("    [\t|  Nama Mahasiswa\t\t\t: %s\t\t|\t]\n", dataUniv[i][3]);
                                     System.out.printf("    [\t|  Jurusan\t\t\t\t: %s\t\t|\t]\n", dataUniv[i][4]);
-                                    System.out.printf("    [\t|  Nominal dibayarkan\t\t: %s\t\t|\t]\n", dataUniv[i][5]);
+                                    System.out.printf("    [\t|  Nominal dibayarkan\t\t: Rp. %s\t\t|\t]\n", dataUniv[i][5]);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
