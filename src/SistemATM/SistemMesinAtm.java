@@ -90,7 +90,6 @@ public class SistemMesinAtm {
             }
         }
     }
-
     public static void menu() {
         do {
             System.out.println("    =====================================================");
@@ -109,7 +108,7 @@ public class SistemMesinAtm {
                     """);
             System.out.print("    [       Menu yang dipilih : ");
             int menu = input.nextInt();
-
+            
             switch (menu) {
                 case 1:
                     dataNasabah();
@@ -145,15 +144,6 @@ public class SistemMesinAtm {
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    ======================================================");
             }
-            if (random.nextInt(10) == 0) {
-                System.out.println("    ======================================================");
-                System.out.println("    |----------------------------------------------------|");
-                System.out.println("    |          Anda telah log out secara otomatis        |");
-                System.out.println("    |                karena alasan keamanan.             |");
-                System.out.println("    |----------------------------------------------------|");
-                System.out.println("    ======================================================");
-                login = false;
-            }
         } while (login);
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -162,7 +152,6 @@ public class SistemMesinAtm {
         System.out.println("    ======================================================");
         System.exit(0);
     }
-
     private static void pengaturanAkun() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -3669,7 +3658,7 @@ public class SistemMesinAtm {
     }
     public static void main(String[] args) {
         System.out.println("""
-                    [       Pilih Bahasa ini / Choose language :
+                    [       Pilih Bahasa / Choose language :
                     [       1. Bahasa
                     [       2. English
                 """);
