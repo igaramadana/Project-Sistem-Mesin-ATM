@@ -3658,6 +3658,7 @@ public class SistemMesinAtm {
     }
     public static void main(String[] args) {
         System.out.println("""
+                    [--------------------------
                     [       Pilih Bahasa
                     [--------------------------
                     [       Choose language :
