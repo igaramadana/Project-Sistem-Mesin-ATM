@@ -3658,7 +3658,10 @@ public class SistemMesinAtm {
     }
     public static void main(String[] args) {
         System.out.println("""
-                    [       Pilih Bahasa / Choose language :
+                    [       Pilih Bahasa
+                    [--------------------------
+                    [       Choose language :
+                    [
                     [       1. Bahasa
                     [       2. English
                 """);
