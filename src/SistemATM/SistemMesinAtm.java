@@ -482,15 +482,15 @@ public class SistemMesinAtm {
                                 }
                             }
                         }
-                    } else {
-                        System.out.println("    =======================================================");
-                        System.out.println("    |-----------------------------------------------------|");
-                        System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                        System.out.println("    |              Silahkan Masukkan Kembali.             |");
-                        System.out.println("    |-----------------------------------------------------|");
-                        System.out.println("    =======================================================");
-                        tarikTunai();
                     }
+                    } else {
+                    System.out.println("    =======================================================");
+                    System.out.println("    |-----------------------------------------------------|");
+                    System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                    System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                    System.out.println("    |-----------------------------------------------------|");
+                    System.out.println("    =======================================================");
+                    tarikTunai();
                 }
             } else {
                 System.out.println("    =======================================================");
