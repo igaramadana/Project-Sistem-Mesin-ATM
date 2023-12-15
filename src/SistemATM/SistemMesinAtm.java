@@ -29,7 +29,9 @@ public class SistemMesinAtm {
     static String[] riwayat = new String[10];
     static int jumlahLogin = 0;
     static String pilih;
-    static Random random = new Random();
+    static String red = "\u001b[31m";
+    static String green = "\u001b[32m";
+    static String reset = "\u001b[0m";
     static void login() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -58,32 +60,32 @@ public class SistemMesinAtm {
             if (login) {
                 //pengecekan verified/diblokir
                 if (dataNasabah[hasil][6].equals("Disabled")) {
-                    System.out.println("    ======================================================");
+                    System.out.println(red+"    ======================================================");
                     System.out.println("    ------------------------------------------------------");
                     System.out.print("      [   Status akun anda " + dataNasabah[hasil][6]);
                     System.out.println("\n      [   Silahkan menuju Bank terdekat (!)");
                     System.out.println("    ------------------------------------------------------");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+reset);
                     System.exit(0);
                 }
                 menu();
             } else {
-                System.out.println("    =======================================================");
+                System.out.println(red+"    =======================================================");
                 System.out.println("    |-----------------------------------------------------|");
                 System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
                 System.out.println("    |              Silahkan Masukkan Kembali.             |");
                 System.out.println("    |-----------------------------------------------------|");
-                System.out.println("    =======================================================");
+                System.out.println("    ======================================================="+reset);
                 jumlahLogin++;
 
                 if (jumlahLogin >= 3) {
                     System.out.println("-----------------------------------------------------------------");
-                    System.out.println("    =======================================================");
+                    System.out.println(red+"    =======================================================");
                     System.out.println("    |-----------------------------------------------------|");
                     System.out.println("    |     (!) Anda telah gagal lebih dari 3 kali (!)      |");
                     System.out.println("    |              Akun anda telah diblokir.              |");
                     System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    =======================================================");
+                    System.out.println("    ======================================================="+reset);
                     dataNasabah[hasil][6] = "Disabled";
                     break;
                 }
@@ -138,18 +140,18 @@ public class SistemMesinAtm {
                     keluarMenu();
                     break;
                 default:
-                    System.out.println("    ======================================================");
+                    System.out.println(red+"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+reset);
             }
         } while (login);
-        System.out.println("    ======================================================");
+        System.out.println(green+"    ======================================================");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
         System.out.println("    |----------------------------------------------------|");
-        System.out.println("    ======================================================");
+        System.out.println("    ======================================================"+reset);
         System.exit(0);
     }
     private static void pengaturanAkun() {
@@ -186,29 +188,29 @@ public class SistemMesinAtm {
                                     System.out.print("      [   Masukkan PIN baru anda : ");
                                     String newpin = input.next();
                                     dataNasabah[i][3] = newpin;
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ UBAH PIN BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     menu();
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red+"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ NOMOR TELEPON TIDAK VALID ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+reset);
                                 pengaturanAkun();
                             }
                         }
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red+"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+reset);
                 }
                 break;
             case 2:
@@ -230,47 +232,47 @@ public class SistemMesinAtm {
                                     String konfirmTelp = input.next();
                                     if (konfirmTelp.equals(newTelp)) {
                                         dataNasabah[i][7] = newTelp;
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |~ ~ ~ ~ ~ ~ UBAH NOMOR TELEPON BERHASIL ~ ~ ~ ~ ~ ~ |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(red+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |~ ~ ~ ~ ~ ~ KONFIRMASI TELEPON TIDAK VALID  ~ ~ ~ ~ |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         pengaturanAkun();
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red+"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ NOMOR TELEPON TIDAK VALID ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+reset);
                                 pengaturanAkun();
                             }
                         }
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red+"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+reset);
                 }
                 break;
             case 0:
                 menu();
                 break;
             default:
-                System.out.println("    ======================================================");
+                System.out.println(red+"    ======================================================");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
                 System.out.println("    |----------------------------------------------------|");
-                System.out.println("    ======================================================");
+                System.out.println("    ======================================================"+reset);
                 break;
         }
     }
@@ -278,12 +280,6 @@ public class SistemMesinAtm {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    |                 RIWAYAT TRANSAKSI                  |");
-        System.out.println("    |----------------------------------------------------|");
-        System.out.println("    ======================================================");
-        System.out.println();
-        System.out.println("    ======================================================");
-        System.out.println("    |----------------------------------------------------|");
-        System.out.println("    |           RIWAYAT TRANSAKSI TERBARU ANDA           |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
@@ -300,11 +296,11 @@ public class SistemMesinAtm {
         if (pilih.equalsIgnoreCase("y")) {
             menu();
         } else {
-            System.out.println("    ======================================================");
+            System.out.println(green+"    ======================================================");
             System.out.println("    |----------------------------------------------------|");
             System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
             System.out.println("    |----------------------------------------------------|");
-            System.out.println("    ======================================================");
+            System.out.println("    ======================================================"+reset);
             System.exit(0);
         }
     }
@@ -325,16 +321,16 @@ public class SistemMesinAtm {
                 if (dataNasabah[i][3].equals(inPin)) {
                     index = 1;
                     System.out.println("    =======================================================");
-                    System.out.println("    [  _________________________________________________\t]");
-                    System.out.println("    [\t|        \tDATA NASABAH    \t\t|\t]");
-                    System.out.printf("    [\t|  ID\t\t\t: %s\t\t\t|\t]\n", dataNasabah[i][0]);
-                    System.out.printf("    [\t|  Nama\t\t\t: %s\t\t\t|\t]\n", dataNasabah[i][2]);
-                    System.out.printf("    [\t|  Nomor Rekening\t: %s\t\t|\t]\n", dataNasabah[i][1]);
-                    System.out.printf("    [\t|  Alamat\t\t: %s\t\t|\t]\n", dataNasabah[i][4]);
-                    System.out.printf("    [\t|  Nomor Telepon\t: %s\t\t|\t]\n", dataNasabah[i][7]);
-                    System.out.println("    [  -------------------------------------------------\t]");
-                    System.out.printf("    [\t|  Status Akun\t\t: %s\t\t|\t]\n", dataNasabah[i][6]);
-                    System.out.println("    [  -------------------------------------------------\t]");
+                    System.out.println("    [  ____________________________________________________");
+                    System.out.println("    [\t|                \tDATA NASABAH    \t\t\t");
+                    System.out.printf("    [\t|  ID\t\t\t\t: %s\n", dataNasabah[i][0]);
+                    System.out.printf("    [\t|  Nama\t\t\t\t: %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Nomor Rekening\t: %s\n", dataNasabah[i][1]);
+                    System.out.printf("    [\t|  Alamat\t\t\t: %s\n", dataNasabah[i][4]);
+                    System.out.printf("    [\t|  Nomor Telepon\t: %s\n", dataNasabah[i][7]);
+                    System.out.println("    [  ----------------------------------------------------");
+                    System.out.printf(green+"    [\t|  Status Akun\t\t: %s\n"+reset, dataNasabah[i][6]);
+                    System.out.println("    [  ----------------------------------------------------");
                     System.out.println("    =======================================================");
 
                     System.out.println();
@@ -348,12 +344,12 @@ public class SistemMesinAtm {
                 }
             }
         } else {
-            System.out.println("    =======================================================");
+            System.out.println(red+"    =======================================================");
             System.out.println("    |-----------------------------------------------------|");
             System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
             System.out.println("    |              Silahkan Masukkan Kembali.             |");
             System.out.println("    |-----------------------------------------------------|");
-            System.out.println("    =======================================================");
+            System.out.println("    ======================================================="+reset);
             dataNasabah();
         }
     }

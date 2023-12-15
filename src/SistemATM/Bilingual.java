@@ -32,7 +32,9 @@ public class Bilingual {
     static String[] riwayat = new String[10];
     static int jumlahLogin = 0;
     static String pilih;
-    static Random random = new Random();
+    static String red = "\u001b[31m";
+    static String green = "\u001b[32m";
+    static String reset = "\u001b[0m";
     static void login() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -147,15 +149,6 @@ public class Bilingual {
                     System.out.println("    |           THE MENU YOU SELECTED IS INVALID         |");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    ======================================================");
-            }
-            if (random.nextInt(10) == 0) {
-                System.out.println("    ======================================================");
-                System.out.println("    |----------------------------------------------------|");
-                System.out.println("    |        you have been logged out automatically      |");
-                System.out.println("    |                 for security reasons.              |");
-                System.out.println("    |----------------------------------------------------|");
-                System.out.println("    ======================================================");
-                login = false;
             }
         } while (login);
         System.out.println("    ======================================================");
