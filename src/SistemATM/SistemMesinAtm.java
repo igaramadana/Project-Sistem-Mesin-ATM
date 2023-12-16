@@ -916,7 +916,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green + "    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -931,7 +931,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    =======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -941,19 +941,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green + "    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================" + reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     indosat();
                                 }
@@ -961,11 +961,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red + "    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================" + reset);
                         indosat();
                     }
                 } else {
@@ -1001,7 +1001,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green + "    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1014,7 +1014,7 @@ public class SistemMesinAtm {
                                     System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  -------------------------------------------------\t]" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -1024,19 +1024,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green +"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     indosat();
                                 }
@@ -1044,11 +1044,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         indosat();
                     }
                 } else {
@@ -1084,7 +1084,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green + "    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1099,7 +1099,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -1109,19 +1109,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println( green + "    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================" + reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red +"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     indosat();
                                 }
@@ -1129,11 +1129,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red + "    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================" + reset);
                         indosat();
                     }
                 } else {
@@ -1169,7 +1169,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green +"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1184,7 +1184,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -1194,19 +1194,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green + "    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================" + reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     indosat();
                                 }
@@ -1214,11 +1214,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red + "    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================" + reset);
                         indosat();
                     }
                 } else {
@@ -1254,7 +1254,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green + "    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1269,7 +1269,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -1279,19 +1279,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green + "    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================" + reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     indosat();
                                 }
@@ -1299,11 +1299,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red + "    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         indosat();
                     }
                 } else {
@@ -1373,7 +1373,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1388,7 +1388,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1398,19 +1398,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1418,11 +1418,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1458,7 +1458,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1473,7 +1473,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1483,19 +1483,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1503,11 +1503,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1543,7 +1543,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1558,7 +1558,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1568,19 +1568,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1588,11 +1588,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1628,7 +1628,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1643,7 +1643,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1653,19 +1653,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1673,11 +1673,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1713,7 +1713,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1728,7 +1728,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1738,19 +1738,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1758,11 +1758,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1798,7 +1798,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1813,7 +1813,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[1], nominal);
@@ -1823,19 +1823,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1843,11 +1843,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         xl();
                     }
                 } else {
@@ -1919,7 +1919,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1934,7 +1934,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -1944,19 +1944,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red +"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -1964,11 +1964,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2004,7 +2004,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2019,7 +2019,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -2029,19 +2029,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red +"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2049,11 +2049,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2089,7 +2089,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2104,7 +2104,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -2114,19 +2114,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2134,11 +2134,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2174,7 +2174,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2189,7 +2189,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -2199,19 +2199,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2219,11 +2219,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2259,7 +2259,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2274,7 +2274,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -2284,19 +2284,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green +"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2304,11 +2304,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2344,7 +2344,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2359,7 +2359,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[2], nominal);
@@ -2369,19 +2369,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red +"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2389,11 +2389,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         telkomsel();
                     }
                 } else {
@@ -2465,7 +2465,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green +"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2480,7 +2480,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2490,19 +2490,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green +"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red +"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2510,11 +2510,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         axis();
                     }
                 } else {
@@ -2550,7 +2550,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green +"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2563,7 +2563,7 @@ public class SistemMesinAtm {
                                     System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  -------------------------------------------------\t]"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2573,19 +2573,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green +"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2593,11 +2593,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         axis();
                     }
                 } else {
@@ -2633,7 +2633,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green +"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2648,7 +2648,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2658,19 +2658,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green +"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2678,11 +2678,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         axis();
                     }
                 } else {
@@ -2718,7 +2718,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2733,7 +2733,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2743,19 +2743,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2763,11 +2763,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2803,7 +2803,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green="    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2818,7 +2818,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2828,19 +2828,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2848,11 +2848,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2888,7 +2888,7 @@ public class SistemMesinAtm {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2903,7 +2903,7 @@ public class SistemMesinAtm {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2913,19 +2913,19 @@ public class SistemMesinAtm {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+ reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2933,11 +2933,11 @@ public class SistemMesinAtm {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2996,7 +2996,7 @@ public class SistemMesinAtm {
                                             String nominal = format.format(nomListrik);
                                             dataNasabah[j][5] = String.valueOf(sisaSaldo);
 
-                                            System.out.println("    ======================================================");
+                                            System.out.println(green+"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
@@ -3010,7 +3010,7 @@ public class SistemMesinAtm {
                                             System.out.println("    [  -------------------------------------------------\t]");
                                             System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                             System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    =======================================================");
+                                            System.out.println("    ======================================================="+reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan listrik dengan ID pelanggan %s sebesar %s", dataListrik[i][0], nominal);
                                             riw++;
@@ -3019,40 +3019,40 @@ public class SistemMesinAtm {
                                             if (pilih.equalsIgnoreCase("y")) {
                                                 menu();
                                             } else {
-                                                System.out.println("    ======================================================");
+                                                System.out.println(green+"    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================"+reset);
                                                 System.exit(0);
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red +"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+ reset);
                                             bayarListrik();
                                         }
 
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red +"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+ reset);
                                 bayarListrik();
                             }
                         }
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red +"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+ reset);
                     bayarListrik();
                 }
             }
@@ -3124,7 +3124,7 @@ public class SistemMesinAtm {
                                             String nominal = format.format(nomPdam);
                                             dataNasabah[j][5] = String.valueOf(sisaSaldo);
 
-                                            System.out.println("    ======================================================");
+                                            System.out.println(green +"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
@@ -3138,7 +3138,7 @@ public class SistemMesinAtm {
                                             System.out.println("    [  -------------------------------------------------\t]");
                                             System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
                                             System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    =======================================================");
+                                            System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar %s", datapdam[i][1], nominal);
                                             riw++;
@@ -3147,46 +3147,46 @@ public class SistemMesinAtm {
                                             if (pilih.equalsIgnoreCase("y")) {
                                                 menu();
                                             } else {
-                                                System.out.println("    ======================================================");
+                                                System.out.println(green +"    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================"+ reset);
                                                 System.exit(0);
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red+"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+reset);
                                             bayarAir();
                                         }
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red +"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+ reset);
                                 bayarAir();
                             }
                         }
                     } else {
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+ reset);
                         bayarAir();
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red +"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+ reset);
                     bayarAir();
                 }
             }
@@ -3230,7 +3230,7 @@ public class SistemMesinAtm {
                                             String nominal = format.format(nomPdam);
                                             dataNasabah[j][5] = String.valueOf(sisaSaldo);
 
-                                            System.out.println("    ======================================================");
+                                            System.out.println(green+"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
@@ -3244,7 +3244,7 @@ public class SistemMesinAtm {
                                             System.out.println("    [  -------------------------------------------------\t]");
                                             System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
                                             System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    =======================================================");
+                                            System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
                                             riw++;
@@ -3253,46 +3253,46 @@ public class SistemMesinAtm {
                                             if (pilih.equalsIgnoreCase("y")) {
                                                 menu();
                                             } else {
-                                                System.out.println("    ======================================================");
+                                                System.out.println(green +"    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================"+ reset);
                                                 System.exit(0);
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red+"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+reset);
                                             bayarAir();
                                         }
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red+"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+reset);
                                 bayarAir();
                             }
                         }
                     } else {
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         bayarAir();
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red +"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+reset);
                     bayarAir();
                 }
             }
@@ -3336,7 +3336,7 @@ public class SistemMesinAtm {
                                             String nominal = format.format(nomPdam);
                                             dataNasabah[j][5] = String.valueOf(sisaSaldo);
 
-                                            System.out.println("    ======================================================");
+                                            System.out.println(green +"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
@@ -3350,7 +3350,7 @@ public class SistemMesinAtm {
                                             System.out.println("    [  -------------------------------------------------\t]");
                                             System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
                                             System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    =======================================================");
+                                            System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
                                             riw++;
@@ -3359,46 +3359,46 @@ public class SistemMesinAtm {
                                             if (pilih.equalsIgnoreCase("y")) {
                                                 menu();
                                             } else {
-                                                System.out.println("    ======================================================");
+                                                System.out.println(green +"    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================" +reset);
                                                 System.exit(0);
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red +"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+ reset);
                                             bayarAir();
                                         }
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red +"    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+ reset);
                                 bayarAir();
                             }
                         }
                     } else {
-                        System.out.println("    ======================================================");
+                        System.out.println(red +"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         bayarAir();
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red+"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+ reset);
                     bayarAir();
                 }
             }
@@ -3442,7 +3442,7 @@ public class SistemMesinAtm {
                                             String nominal = format.format(nomPdam);
                                             dataNasabah[j][5] = String.valueOf(sisaSaldo);
 
-                                            System.out.println("    ======================================================");
+                                            System.out.println(green +"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
@@ -3456,7 +3456,7 @@ public class SistemMesinAtm {
                                             System.out.println("    [  -------------------------------------------------\t]");
                                             System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
                                             System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    =======================================================");
+                                            System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
                                             riw++;
@@ -3465,46 +3465,46 @@ public class SistemMesinAtm {
                                             if (pilih.equalsIgnoreCase("y")) {
                                                 menu();
                                             } else {
-                                                System.out.println("    ======================================================");
+                                                System.out.println(green +"    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================" +reset);
                                                 System.exit(0);
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red+"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+ reset);
                                             bayarAir();
                                         }
                                     }
                                 }
                             } else {
-                                System.out.println("    ======================================================");
+                                System.out.println(red + "    ======================================================");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                 System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================"+ reset);
                                 bayarAir();
                             }
                         }
                     } else {
-                        System.out.println("    ======================================================");
+                        System.out.println(red + "    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================" + reset);
                         bayarAir();
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red + "    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |     (!) KODE YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================"+ reset);
                     bayarAir();
                 }
             }
@@ -3577,7 +3577,7 @@ public class SistemMesinAtm {
                                                         String nominal = format.format(nomUkt);
                                                         dataNasabah[k][5] = String.valueOf(sisaSaldo);
 
-                                                        System.out.println("    ======================================================");
+                                                        System.out.println(green +"    ======================================================");
                                                         System.out.println("    ------------------------------------------------------");
                                                         System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
                                                         System.out.println("    ------------------------------------------------------");
@@ -3594,7 +3594,7 @@ public class SistemMesinAtm {
                                                         System.out.println("    [  -------------------------------------------------\t]");
                                                         System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
                                                         System.out.println("    [  -------------------------------------------------\t]");
-                                                        System.out.println("    =======================================================");
+                                                        System.out.println("    ======================================================="+ reset);
                                                         System.out.println();
                                                         riwayat[riw] = String.format("Telah melakukan transaksi Pembayaran UKT dengan Nama Universitas %s sebesar Rp. %s", dataUniv[i][1], nominal);
                                                         riw++;
@@ -3603,49 +3603,49 @@ public class SistemMesinAtm {
                                                         if (pilih.equalsIgnoreCase("y")) {
                                                             menu();
                                                         } else {
-                                                            System.out.println("    ======================================================");
+                                                            System.out.println(green +"    ======================================================");
                                                             System.out.println("    |----------------------------------------------------|");
                                                             System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                                                             System.out.println("    |----------------------------------------------------|");
-                                                            System.out.println("    ======================================================");
+                                                            System.out.println("    ======================================================" + reset);
                                                             System.exit(0);
                                                         }
                                                     } else {
-                                                        System.out.println("    ======================================================");
+                                                        System.out.println(red +"    ======================================================");
                                                         System.out.println("    |----------------------------------------------------|");
                                                         System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                                         System.out.println("    |----------------------------------------------------|");
-                                                        System.out.println("    ======================================================");
+                                                        System.out.println("    ======================================================"+ reset);
                                                         bayarUkt();
                                                     }
                                                 }
                                             }
                                         } else {
-                                            System.out.println("    ======================================================");
+                                            System.out.println(red + "    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PIN SALAH (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================");
+                                            System.out.println("    ======================================================"+ reset);
                                             bayarUkt();
                                         }
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |   (!) NIM YANG ANDA MASUKKAN TIDAK TERDAFTAR (!)   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+ reset);
                                     bayarUkt();
                                 }
                             }
                         }
                     }
                 } else {
-                    System.out.println("    ======================================================");
+                    System.out.println(red + "    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |   (!) KODE YANG ANDA MASUKKAN TIDAK TERDAFTAR (!)  |");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================");
+                    System.out.println("    ======================================================" + reset);
                     bayarUkt();
                 }
             }
@@ -3669,11 +3669,11 @@ public class SistemMesinAtm {
             Bilingual.main(args);
         } else {
             if (menu != 1 && menu != 2) {
-                System.out.println("    ======================================================");
+                System.out.println(red + "    ======================================================");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    |     (!) MENU YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                 System.out.println("    |----------------------------------------------------|");
-                System.out.println("    ======================================================");
+                System.out.println("    ======================================================"+ reset);
                 System.exit(0);
             }
     
