@@ -3641,7 +3641,7 @@ public class SistemMesinAtm {
                         }
                     }
                 } else {
-                    System.out.println(red + "    ======================================================");
+                    System.out.println(red + "      ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |   (!) KODE YANG ANDA MASUKKAN TIDAK TERDAFTAR (!)  |");
                     System.out.println("    |----------------------------------------------------|");
@@ -3653,10 +3653,8 @@ public class SistemMesinAtm {
     }
     public static void main(String[] args) {
         System.out.println("""
-                    [--------------------------
-                    [       Pilih Bahasa
-                    [--------------------------
-                    [       Choose language :
+                    [       -----------------------------------
+                    [       Pilih Bahasa / Choose Language :
                     [
                     [       1. Bahasa
                     [       2. English
@@ -3669,7 +3667,7 @@ public class SistemMesinAtm {
             Bilingual.main(args);
         } else {
             if (menu != 1 && menu != 2) {
-                System.out.println(red + "    ======================================================");
+                System.out.println(red + "      ======================================================");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    |     (!) MENU YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                 System.out.println("    |----------------------------------------------------|");
