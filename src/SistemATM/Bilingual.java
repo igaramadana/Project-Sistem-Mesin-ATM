@@ -1371,7 +1371,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green +"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1386,7 +1386,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1396,19 +1396,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1416,11 +1416,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1456,7 +1456,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1471,7 +1471,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1481,19 +1481,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1501,11 +1501,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1541,7 +1541,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1556,7 +1556,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1566,19 +1566,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1586,11 +1586,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1626,7 +1626,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1641,7 +1641,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1651,19 +1651,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1671,11 +1671,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1711,7 +1711,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1726,7 +1726,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount Rp. %s", operator[1], nominal);
@@ -1736,19 +1736,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1756,11 +1756,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1796,7 +1796,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1811,7 +1811,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1821,19 +1821,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     xl();
                                 }
@@ -1841,11 +1841,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         xl();
                     }
                 } else {
@@ -1916,7 +1916,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -1930,7 +1930,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -1940,19 +1940,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -1960,11 +1960,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2000,7 +2000,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2015,7 +2015,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -2025,19 +2025,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2045,11 +2045,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2085,7 +2085,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2100,7 +2100,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -2110,19 +2110,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2130,11 +2130,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2170,7 +2170,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2185,7 +2185,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -2195,19 +2195,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2215,11 +2215,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2255,7 +2255,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2270,7 +2270,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit payment %s with amount %s", operator[2], nominal);
@@ -2280,19 +2280,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2300,11 +2300,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2340,7 +2340,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2355,7 +2355,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -2365,19 +2365,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |          THANKS FOR USING THE TRANSACTION :).      |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION .   |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     telkomsel();
                                 }
@@ -2385,11 +2385,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         telkomsel();
                     }
                 } else {
@@ -2460,7 +2460,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[0]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2475,7 +2475,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2485,19 +2485,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |     NOT ENOUGH BALANC TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2505,11 +2505,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2545,7 +2545,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[1]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2558,7 +2558,7 @@ public class Bilingual {
                                     System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  -------------------------------------------------\t]"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2568,19 +2568,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2588,11 +2588,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2628,7 +2628,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[2]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2643,7 +2643,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2653,19 +2653,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2673,11 +2673,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2713,7 +2713,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[3]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2728,7 +2728,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2738,19 +2738,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2758,11 +2758,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2798,7 +2798,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[4]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2813,7 +2813,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2823,19 +2823,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2843,11 +2843,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
@@ -2883,7 +2883,7 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
@@ -2898,7 +2898,7 @@ public class Bilingual {
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
                                     System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================");
+                                    System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2908,19 +2908,19 @@ public class Bilingual {
                                     if (pilih.equals("y")) {
                                         menu();
                                     } else {
-                                        System.out.println("    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================"+reset);
                                         System.exit(0);
                                     }
                                 } else {
-                                    System.out.println("    ======================================================");
+                                    System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    |    NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.    |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     axis();
                                 }
@@ -2928,11 +2928,11 @@ public class Bilingual {
                         }
                     } else {
                         index = 0;
-                        System.out.println("    ======================================================");
+                        System.out.println(red+"    ======================================================");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    |~ ~ ~ ~ ~ ~ ~ ~ ~ ~ WRONG PIN (!) ~ ~ ~ ~ ~ ~ ~ ~ ~ |");
                         System.out.println("    |----------------------------------------------------|");
-                        System.out.println("    ======================================================");
+                        System.out.println("    ======================================================"+reset);
                         axis();
                     }
                 } else {
