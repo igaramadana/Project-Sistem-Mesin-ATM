@@ -327,16 +327,16 @@ public class Bilingual {
                 if (dataNasabah[i][3].equals(inPin)) {
                     index = 1;
                     System.out.println("    =======================================================");
-                    System.out.println("    [  _________________________________________________\t]");
+                    System.out.println("    [  ____________________________________________________");
                     System.out.println("    [\t|        \tCUSTOMER DATA    \t\t|\t]");
-                    System.out.printf("    [\t|  ID\t\t\t: %s\t\t\t|\t]\n", dataNasabah[i][0]);
-                    System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t]\n", dataNasabah[i][2]);
-                    System.out.printf("    [\t|  Account number\t: %s\t\t|\t]\n", dataNasabah[i][1]);
-                    System.out.printf("    [\t|  Address\t\t: %s\t\t|\t]\n", dataNasabah[i][4]);
-                    System.out.printf("    [\t|  Phone number\t\t: %s\t\t|\t]\n", dataNasabah[i][7]);
-                    System.out.println("    [  -------------------------------------------------\t]");
-                    System.out.printf(green+"    [\t|  Account status\t: %s\t\t|\t]\n"+reset, dataNasabah[i][6]);
-                    System.out.println("    [  -------------------------------------------------\t]");
+                    System.out.printf("    [\t|  ID              : %s\n", dataNasabah[i][0]);
+                    System.out.printf("    [\t|  Name            : %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Account number  : %s\n", dataNasabah[i][1]);
+                    System.out.printf("    [\t|  Address         : %s\n", dataNasabah[i][4]);
+                    System.out.printf("    [\t|  Phone number\t\t: %s\n", dataNasabah[i][7]);
+                    System.out.println("    [  ----------------------------------------------------");
+                    System.out.printf(green+"    [\t|  Account status   : %s\n"+reset, dataNasabah[i][6]);
+                    System.out.println("    [  ----------------------------------------------------");
                     System.out.println("    =======================================================");
 
                     System.out.println();
@@ -380,11 +380,11 @@ public class Bilingual {
                     String balance = format.format(Double.parseDouble(dataNasabah[i][5]));
                     System.out.println();
                     System.out.println("    =======================================================");
-                    System.out.println("    [  _________________________________________________\t]");
+                    System.out.println("    [  ____________________________________________________");
                     System.out.println("    [\t|        \tBALANCE CHECK    \t\t|\t]");
-                    System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t\t]\n", dataNasabah[i][2]);
-                    System.out.printf("    [\t|  Remaining balance\t\t: %s \t|\t]\n", balance);
-                    System.out.println("    [  -------------------------------------------------\t]");
+                    System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Remaining balance  : %s\n", balance);
+                    System.out.println("    [  ----------------------------------------------------");
                     System.out.println("    =======================================================");
                     System.out.println();
                     System.out.print("\n    [   Want to continue the transaction y/n: ");
@@ -397,7 +397,7 @@ public class Bilingual {
                         System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================"+reset);
-                        break;
+                        System.exit(0);
                     }
                 }
             }
@@ -436,11 +436,11 @@ public class Bilingual {
                 dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
             System.out.println("    ======================================================");
-            System.out.println("    [  _________________________________________________\t]");
+            System.out.println("    [  ___________________________________________________");
             System.out.println("    [\t|             \tCASH WITHDRAW       \t\t|\t]");
-            System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Amount of balance you want to withdraw : %s\t|\t]\n", nominal);
-            System.out.println("    [  -------------------------------------------------\t]");
+            System.out.printf("    [\t|  Name                                : %s\n", dataNasabah[hasil][2]);
+            System.out.printf("    [\t|  Amount balance you want to withdraw : %s\n", nominal);
+            System.out.println("    [  ----------------------------------------------------");
             System.out.println("    =======================================================");
             System.out.println();
             System.out.printf("\n    [   Confirm cash withdrawal amounting to %s? y/n: ", nominal);
@@ -461,11 +461,11 @@ public class Bilingual {
                             System.out.println("    ------------------------------------------------------");
                             System.out.println("    ======================================================");
                             System.out.println("    ======================================================");
-                            System.out.println("    [  _________________________________________________\t]");
+                            System.out.println("    [  ___________________________________________________");
                             System.out.println("    [\t|             \tCASH WITHDRAW       \t\t|\t]");
-                            System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-                            System.out.printf("    [\t|  Remaining balance\t\t: IDR %s\t|\t]\n", dataNasabah[hasil][5]);
-                            System.out.println("    [  -------------------------------------------------\t]");
+                            System.out.printf("    [\t|  Name               : %s\n", dataNasabah[hasil][2]);
+                            System.out.printf("    [\t|  Remaining balance  : IDR %s\n", dataNasabah[hasil][5]);
+                            System.out.println("    [  ---------------------------------------------------");
                             System.out.println("    ======================================================="+reset);
                             System.out.println();
                             riwayat[riw] = String.format("Has made a cash withdrawal amounting to %s", nominal);
@@ -480,7 +480,7 @@ public class Bilingual {
                                 System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    ======================================================"+reset);
-                                break;
+                                System.exit(0);
                             }
                         }
                     }
@@ -493,7 +493,14 @@ public class Bilingual {
                     System.out.println("    ======================================================="+reset);
                     tarikTunai();
                 }
-            }
+            } else {
+                    System.out.println(red+"    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================"+reset);
+                    menu();
+                }
         } else {
             System.out.println(red+"    ======================================================");
             System.out.println("    |----------------------------------------------------|");
@@ -544,11 +551,11 @@ public class Bilingual {
             dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
             System.out.println("    =======================================================");
-            System.out.println("    [  _________________________________________________\t]");
+            System.out.println("    [  ____________________________________________________");
             System.out.println("    [\t|             \tCASH DEPOSIT       \t\t|\t]");
-            System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Deposit amount\t\t: %s\t|\t]\n", nominal);
-            System.out.println("    [  -------------------------------------------------\t]");
+            System.out.printf("    [\t|  Name           : %s\n", dataNasabah[hasil][2]);
+            System.out.printf("    [\t|  Deposit amount : %s\n", nominal);
+            System.out.println("    [  ----------------------------------------------------");
             System.out.println("    =======================================================");
             System.out.println();
             System.out.printf("\n    [   Confirm cash deposit amounting to %s? y/n: ", nominal);
@@ -567,12 +574,12 @@ public class Bilingual {
                             System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                             System.out.println("    ------------------------------------------------------");
                             System.out.println("    ======================================================");
-                            System.out.println("    =======================================================");
-                            System.out.println("    [  _________________________________________________\t]");
+                            System.out.println("    ======================================================");
+                            System.out.println("    [  ___________________________________________________");
                             System.out.println("    [\t|             \tCASH DEPOSIT       \t\t|\t]");
-                            System.out.printf("    [\t|  Name\t\t\t: %s\t\t|\t\t]\n", dataNasabah[i][2]);
-                            System.out.printf("    [\t|  Remaining balance\t\t: %s\t|\t]\n", balance);
-                            System.out.println("    [  -------------------------------------------------\t]");
+                            System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
+                            System.out.printf("    [\t|  Remaining balance  : %sn", balance);
+                            System.out.println("    [  ---------------------------------------------------");
                             System.out.println("    ======================================================="+reset);
                             System.out.println();
                             riwayat[riw] = String.format("Has made cash deposit amounting to %s", nominal);
@@ -587,7 +594,7 @@ public class Bilingual {
                                 System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                 System.out.println("    |----------------------------------------------------|");
                                 System.out.println("    ======================================================"+reset);
-                                break;
+                                System.exit(0);
                             }
                         }
                     }
@@ -600,7 +607,14 @@ public class Bilingual {
                     System.out.println("    ======================================================="+reset);
                     setorTunai();
                 }
-            }
+            } else {
+                    System.out.println(red+"    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================"+reset);
+                    menu();
+                } 
         } else {
             System.out.println(red+"    =======================================================");
             System.out.println("    |-----------------------------------------------------|");
@@ -643,11 +657,11 @@ public class Bilingual {
                                 String nominal = format.format(nomTF);
                                 dataNasabah[index][5] = String.valueOf(saldoUser);
                                 System.out.println("    =======================================================");
-                                System.out.println("    [  _________________________________________________\t]");
+                                System.out.println("    [  ____________________________________________________");
                                 System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t|\t]");
-                                System.out.printf("    [\t|  Account destination\t\t: %s\t|\t]\n", rekTujuan);
-                                System.out.printf("    [\t|  Amount transfer\t\t: %s\t|\t]\n", nominal);
-                                System.out.println("    [  -------------------------------------------------\t]");
+                                System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                System.out.println("    [  ----------------------------------------------------");
                                 System.out.println("    =======================================================");
                                 System.out.println();
                                 System.out.print("Confirm balance transfer to account " + rekTujuan + " with amount " + nominal + "(y/n) : ");
@@ -658,15 +672,15 @@ public class Bilingual {
                                     System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
-                                    System.out.println("    ========================================================");
-                                    System.out.println("    [  ________________________________________________\t\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Account destination\t\t: %s\t|\t]\n", rekTujuan);
-                                    System.out.printf("    [\t|  Name\t\t\t\t: %s\t|\t]\n", dataNasabah[j][2]);
-                                    System.out.printf("    [\t|  Amount transfer\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                    System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
+                                    System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     riwayat[riw] = String.format("Has made balance transfer to account number %s with amount %s", rekTujuan, nominal);
@@ -681,7 +695,7 @@ public class Bilingual {
                                         System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================"+reset);
-                                        break;
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println(red+"    ======================================================");
@@ -801,13 +815,13 @@ public class Bilingual {
         switch (nomPul) {
             case 1:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
-                System.out.println("    ========================================================");
+                System.out.printf("    [\t|  Mobile operator       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment  : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ----------------------------------------------------");
+                System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
                 System.out.printf(" Confirm transaction to phone number 085-%s with amount IDR %s? y/n: ", nomTelp, pulsa[0]);
@@ -835,14 +849,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENTS DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator         : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number            : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment    : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance: %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -887,12 +901,12 @@ public class Bilingual {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -921,14 +935,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -972,12 +986,12 @@ public class Bilingual {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment  : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1001,18 +1015,18 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]"+reset);
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[0], nominal);
@@ -1055,12 +1069,12 @@ public class Bilingual {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator      : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number         : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1089,14 +1103,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : Rp. %d\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : Rp. %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1140,12 +1154,12 @@ public class Bilingual {
                 break;
             case 5:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit purchase\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit purchase  : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1174,14 +1188,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit purchase\t\t: %d\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit purchase  : %d\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1225,12 +1239,12 @@ public class Bilingual {
                 break;
             case 6:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1259,14 +1273,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1344,12 +1358,12 @@ public class Bilingual {
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile perator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile perator         : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1378,14 +1392,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1429,12 +1443,12 @@ public class Bilingual {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1462,15 +1476,15 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1514,12 +1528,12 @@ public class Bilingual {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1547,15 +1561,15 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance: %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1599,12 +1613,12 @@ public class Bilingual {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator      : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number         : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1628,20 +1642,20 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[1], nominal);
@@ -1684,12 +1698,12 @@ public class Bilingual {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator         : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number            : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment    : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1718,14 +1732,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: Rp. %d\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1769,12 +1783,12 @@ public class Bilingual {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1802,15 +1816,15 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1889,12 +1903,12 @@ public class Bilingual {
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -1923,13 +1937,13 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1973,12 +1987,12 @@ public class Bilingual {
                 break;
             case 2:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2007,14 +2021,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %d\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %d\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2058,12 +2072,12 @@ public class Bilingual {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator            : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number               : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment\t\t   : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2091,15 +2105,15 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  _________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2143,12 +2157,12 @@ public class Bilingual {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile oerator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile oerator         : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2172,19 +2186,19 @@ public class Bilingual {
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
                                     System.out.println(green+"    ======================================================");
                                     System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2228,12 +2242,12 @@ public class Bilingual {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2261,15 +2275,15 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  _________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2313,12 +2327,12 @@ public class Bilingual {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2346,16 +2360,16 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[2], nominal);
@@ -2433,12 +2447,12 @@ public class Bilingual {
         switch (nomPul) {
             case 1:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2466,16 +2480,16 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2518,12 +2532,12 @@ public class Bilingual {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2551,14 +2565,14 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile oerator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone numebr\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]"+reset);
+                                    System.out.printf("    [\t|  Mobile oerator         : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone numebr           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2601,12 +2615,12 @@ public class Bilingual {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2635,14 +2649,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ____________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2686,12 +2700,12 @@ public class Bilingual {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2720,14 +2734,14 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %d\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %d\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2771,12 +2785,12 @@ public class Bilingual {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2804,16 +2818,16 @@ public class Bilingual {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                                    System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Has made a credit purchase %s with amount %s", operator[3], nominal);
@@ -2856,12 +2870,12 @@ public class Bilingual {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ____________________________________________________");
                 System.out.println("    [\t|        \tDETAILS PAYMENT    \t\t|\t]");
-                System.out.printf("    [\t|  Mobile operator\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total credit payment\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
+                System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total payment above includes admin fee IDR 2500");
@@ -2883,21 +2897,21 @@ public class Bilingual {
                                     String balance = format.format(sisaSaldo);
                                     String nominal = format.format(pulsa[5]);
                                     dataNasabah[index][5] = String.valueOf(sisaSaldo);
-                                    System.out.println(green+"    ======================================================");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("    ======================================================");
+                                    System.out.println(green+"    =======================================================");
+                                    System.out.println("    -------------------------------------------------------");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    -------------------------------------------------------");
+                                    System.out.println("    =======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
+                                    System.out.println("    [  ____________________________________________________");
                                     System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                    System.out.printf("    [\t|  Mobile oerator\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Phone number\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total credit payment\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Mobile oerator         : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2965,11 +2979,11 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tELECTRICITY PAYMENT    \t\t|\t]");
-                        System.out.printf("    [\t|  ID Customer\t\t\t: %s\t\t|\t]\n", dataListrik[i][0]);
-                        System.out.printf("    [\t|  Total bill\t\t: IDR %s\t|\t]\n", dataListrik[i][1]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  ID Customer    : %s\n", dataListrik[i][0]);
+                        System.out.printf("    [\t|  Total bill     : IDR %s\n", dataListrik[i][1]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Confirm PLN billing transaction with customer ID %s with amount IDR %s? y/n: ", dataListrik[i][0], dataListrik[i][1]);
@@ -2996,14 +3010,14 @@ public class Bilingual {
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("    ======================================================");
                                             System.out.println();
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
+                                            System.out.println("    ======================================================");
+                                            System.out.println("    [  ___________________________________________________");
                                             System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                            System.out.printf("    [\t|  ID customer\t\t: %s\t\t|\t]\n", dataListrik[i][0]);
-                                            System.out.printf("    [\t|  Total bill\t\t: %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.printf("    [\t|  ID customer            : %s\n", dataListrik[i][0]);
+                                            System.out.printf("    [\t|  Total bill             : %s\n", nominal);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                            System.out.println("    [  ---------------------------------------------------");
                                             System.out.println("    ======================================================="+reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Has made a electricity payment with ID customer  %s with amount %s", dataListrik[i][0], nominal);
@@ -3039,6 +3053,13 @@ public class Bilingual {
                         System.out.println("    ======================================================"+reset);
                         bayarListrik();
                             }
+                        } else {
+                            System.out.println(red+"    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |               TRANSACTION CANCELLED                |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================"+reset);
+                            menu();
                         }
                     }
                 } else {
@@ -3092,12 +3113,12 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Customert\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Region\t\t\t: %s\t\t|\t]\n", datapdam[0][0]);
-                        System.out.printf("    [\t|  Total bill\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  ID Customert   : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Region         : %s\n", datapdam[0][0]);
+                        System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Confirm transaction PDAM bill with ID Customer %s with amount IDR %s? y/n: ", datapdam[i][1], datapdam[i][2]);
@@ -3124,17 +3145,17 @@ public class Bilingual {
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("    ======================================================");
                                             System.out.println();
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
+                                            System.out.println("    ======================================================");
+                                            System.out.println("    [  ___________________________________________________");
                                             System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Customer\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total bill\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total bill             : Rp. %s\n", nominal);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                            System.out.println("    [  ---------------------------------------------------");
                                             System.out.println("    ======================================================="+reset);
                                             System.out.println();
-                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount Rp. %s", datapdam[i][1], nominal);
+                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount %s", datapdam[i][1], nominal);
                                             riw++;
                                             System.out.print("\n    [   Want to continue the transaction y/n: ");
                                             pilih = input.next();
@@ -3166,6 +3187,13 @@ public class Bilingual {
                                 System.out.println("    ======================================================"+reset);
                                 bayarAir();
                             }
+                        } else {
+                            System.out.println(red+"    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |               TRANSACTION CANCELLED                |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================"+reset);
+                            menu();
                         }
                     } else {
                         System.out.println(red+"    ======================================================");
@@ -3198,12 +3226,12 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Customer\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Region\t\t\t: %s\t\t|\t]\n", datapdam[1][0]);
-                        System.out.printf("    [\t|  Total bill\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Region         : %s\n", datapdam[1][0]);
+                        System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Confirm transaction PDAM bill with ID Customer %s with amount IDR %s? y/n: ", datapdam[i][1], datapdam[i][2]);
@@ -3230,17 +3258,17 @@ public class Bilingual {
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("    ======================================================");
                                             System.out.println();
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
+                                            System.out.println("    ======================================================");
+                                            System.out.println("    [  ___________________________________________________");
                                             System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Customer\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total bill\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.println("    ======================================================="+reset);
+                                            System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total bill             : %s\n", nominal);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.println("    ======================================================"+reset);
                                             System.out.println();
-                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount Rp. %s", datapdam[i][1], nominal);
+                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount %s", datapdam[i][1], nominal);
                                             riw++;
                                             System.out.print("\n    [   Want to continue the transaction y/n: ");
                                             pilih = input.next();
@@ -3272,6 +3300,13 @@ public class Bilingual {
                                 System.out.println("    ======================================================"+reset);
                                 bayarAir();
                             }
+                        } else {
+                            System.out.println(red+"    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |               TRANSACTION CANCELLED                |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================"+reset);
+                            menu();
                         }
                     } else {
                         System.out.println(red+"    ======================================================");
@@ -3304,12 +3339,12 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Customer\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Region\t\t\t: %s\t\t|\t]\n", datapdam[2][0]);
-                        System.out.printf("    [\t|  Total bill\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Region         : %s\n", datapdam[2][0]);
+                        System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Confirm transaction PDAM bill with ID Customer %s with amount IDR %s? y/n: ", datapdam[i][1], datapdam[i][2]);
@@ -3332,21 +3367,21 @@ public class Bilingual {
 
                                             System.out.println(green+"    ======================================================");
                                             System.out.println("    ------------------------------------------------------");
-                                            System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                            System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("    ======================================================");
                                             System.out.println();
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
+                                            System.out.println("    ======================================================");
+                                            System.out.println("    [  ___________________________________________________");
                                             System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Customer\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total bill\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Your remaining balance\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total bill             : %s\n", nominal);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                            System.out.println("    [  ---------------------------------------------------");
                                             System.out.println("    ======================================================="+reset);
                                             System.out.println();
-                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount Rp. %s", datapdam[i][1], nominal);
+                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount %s", datapdam[i][1], nominal);
                                             riw++;
                                             System.out.print("\n    [   Want to continue the transaction y/n: ");
                                             pilih = input.next();
@@ -3378,6 +3413,13 @@ public class Bilingual {
                                 System.out.println("    ======================================================"+reset);
                                 bayarAir();
                             }
+                        } else {
+                            System.out.println(red+"    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |               TRANSACTION CANCELLED                |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================"+reset);
+                            menu();
                         }
                     } else {
                         System.out.println(red+"    ======================================================");
@@ -3410,12 +3452,12 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Customer\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Region\t\t\t: %s\t\t|\t]\n", datapdam[3][0]);
-                        System.out.printf("    [\t|  Total bill\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Region         : %s\n", datapdam[3][0]);
+                        System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Confirm transaction PDAM bill with ID Customer %s with amount IDR %s? y/n: ", datapdam[i][1], datapdam[i][2]);
@@ -3442,17 +3484,17 @@ public class Bilingual {
                                             System.out.println("    ------------------------------------------------------");
                                             System.out.println("    ======================================================");
                                             System.out.println();
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
+                                            System.out.println("    ======================================================");
+                                            System.out.println("    [  ___________________________________________________");
                                             System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Customer\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total bill\t\t: %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Your remaining balance\t\t: %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total bill             : %s\n", nominal);
+                                            System.out.println("    [  ---------------------------------------------------");
+                                            System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                            System.out.println("    [  ---------------------------------------------------");
                                             System.out.println("    ======================================================="+reset);
                                             System.out.println();
-                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount Rp. %s", datapdam[i][1], nominal);
+                                            riwayat[riw] = String.format("Has made a PDAM payment with ID customer %s with amount %s", datapdam[i][1], nominal);
                                             riw++;
                                             System.out.print("\n    [   Want to continue the transaction y/n: ");
                                             pilih = input.next();
@@ -3484,6 +3526,13 @@ public class Bilingual {
                                 System.out.println("    ======================================================"+reset);
                                 bayarAir();
                             }
+                        } else {
+                            System.out.println(red+"    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |               TRANSACTION CANCELLED                |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================"+reset);
+                            menu();
                         }
                     } else {
                         System.out.println(red+"    ======================================================");
@@ -3528,11 +3577,11 @@ public class Bilingual {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
+                        System.out.println("    [  ____________________________________________________");
                         System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t|\t]");
-                        System.out.printf("    [\t|  College ID\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                        System.out.printf("    [\t|  College Name\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.printf("    [\t|  College ID     : %s\n", dataUniv[i][0]);
+                        System.out.printf("    [\t|  College Name   : %s\n", dataUniv[i][1]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
 
@@ -3542,14 +3591,14 @@ public class Bilingual {
                             if (dataUniv[i][2].equals(inNim)) {
                                 if (inNim.equals(dataUniv[i][2])) {
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  _________________________________________________\t]");
+                                    System.out.println("    [  ____________________________________________________");
                                     System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t|\t]");
-                                    System.out.printf("    [\t|  Collage ID\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                                    System.out.printf("    [\t|  College name\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                                    System.out.printf("    [\t|  Student name\t\t\t: %s\t\t|\t]\n", dataUniv[i][3]);
-                                    System.out.printf("    [\t|  Major\t\t\t\t: %s\t\t|\t]\n", dataUniv[i][4]);
-                                    System.out.printf("    [\t|  Balance paid\t\t: IDR %s\t\t|\t]\n", dataUniv[i][5]);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.printf("    [\t|  Collage ID     : %s\n", dataUniv[i][0]);
+                                    System.out.printf("    [\t|  College name   : %s\n", dataUniv[i][1]);
+                                    System.out.printf("    [\t|  Student name   : %s\n", dataUniv[i][3]);
+                                    System.out.printf("    [\t|  Major          : %s\n", dataUniv[i][4]);
+                                    System.out.printf("    [\t|  Balance paid   : IDR %s\n", dataUniv[i][5]);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    =======================================================");
                                     System.out.println();
                                     System.out.printf(" Confirm transaction Single tuiton payment with college name %s with amount IDR %s? y/n: ", dataUniv[i][1], dataUniv[i][5]);
@@ -3573,21 +3622,21 @@ public class Bilingual {
 
                                                         System.out.println(green+"    ======================================================");
                                                         System.out.println("    ------------------------------------------------------");
-                                                        System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                                        System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                                         System.out.println("    ------------------------------------------------------");
                                                         System.out.println("    ======================================================");
                                                         System.out.println();
-                                                        System.out.println("    =======================================================");
-                                                        System.out.println("    [  _________________________________________________\t]");
+                                                        System.out.println("    ======================================================");
+                                                        System.out.println("    [  ___________________________________________________");
                                                         System.out.println("    [\t|        \tPembayaran UKT           \t\t|\t]");
-                                                        System.out.printf("    [\t|  ID Perguruan Tinggi\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                                                        System.out.printf("    [\t|  Nama Perguruan TInggi\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                                                        System.out.printf("    [\t|  Nama Mahasiswa\t\t\t: %s\t\t|\t]\n", dataUniv[i][3]);
-                                                        System.out.printf("    [\t|  Jurusan\t\t\t\t: %s\t\t|\t]\n", dataUniv[i][4]);
-                                                        System.out.printf("    [\t|  Nominal dibayarkan\t\t: %s\t\t|\t]\n", nominal);
-                                                        System.out.println("    [  -------------------------------------------------\t]");
-                                                        System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                                        System.out.println("    [  -------------------------------------------------\t]");
+                                                        System.out.printf("    [\t|  ID Perguruan Tinggi    : %s\n", dataUniv[i][0]);
+                                                        System.out.printf("    [\t|  Nama Perguruan TInggi  : %s\n", dataUniv[i][1]);
+                                                        System.out.printf("    [\t|  Nama Mahasiswa         : %s\n", dataUniv[i][3]);
+                                                        System.out.printf("    [\t|  Jurusan                : %s\n", dataUniv[i][4]);
+                                                        System.out.printf("    [\t|  Nominal dibayarkan     : %s\n", nominal);
+                                                        System.out.println("    [  ---------------------------------------------------");
+                                                        System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                                        System.out.println("    [  ---------------------------------------------------");
                                                         System.out.println("    ======================================================="+reset);
                                                         System.out.println();
                                                         riwayat[riw] = String.format("Has made a Single Tuiton payment with college name %s with amount %s", dataUniv[i][1], nominal);
@@ -3622,7 +3671,14 @@ public class Bilingual {
                                             System.out.println("    ======================================================"+reset);
                                             bayarUkt();
                                         }
-                                    }
+                                    } else {
+                                        System.out.println(red+"    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================"+reset);
+                                        menu();
+                                        }
                                 } else {
                                     System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
