@@ -328,7 +328,7 @@ public class Bilingual {
                     index = 1;
                     System.out.println("    =======================================================");
                     System.out.println("    [  ____________________________________________________");
-                    System.out.println("    [\t|        \tCUSTOMER DATA    \t\t|\t]");
+                    System.out.println("    [\t|        \tCUSTOMER DATA    \t\t\t");
                     System.out.printf("    [\t|  ID              : %s\n", dataNasabah[i][0]);
                     System.out.printf("    [\t|  Name            : %s\n", dataNasabah[i][2]);
                     System.out.printf("    [\t|  Account number  : %s\n", dataNasabah[i][1]);
@@ -381,7 +381,7 @@ public class Bilingual {
                     System.out.println();
                     System.out.println("    =======================================================");
                     System.out.println("    [  ____________________________________________________");
-                    System.out.println("    [\t|        \tBALANCE CHECK    \t\t|\t]");
+                    System.out.println("    [\t|        \tBALANCE CHECK    \t\t\t");
                     System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
                     System.out.printf("    [\t|  Remaining balance  : %s\n", balance);
                     System.out.println("    [  ----------------------------------------------------");
@@ -437,7 +437,7 @@ public class Bilingual {
 
             System.out.println("    ======================================================");
             System.out.println("    [  ___________________________________________________");
-            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t|\t]");
+            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
             System.out.printf("    [\t|  Name                                : %s\n", dataNasabah[hasil][2]);
             System.out.printf("    [\t|  Amount balance you want to withdraw : %s\n", nominal);
             System.out.println("    [  ----------------------------------------------------");
@@ -462,7 +462,7 @@ public class Bilingual {
                             System.out.println("    ======================================================");
                             System.out.println("    ======================================================");
                             System.out.println("    [  ___________________________________________________");
-                            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t|\t]");
+                            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
                             System.out.printf("    [\t|  Name               : %s\n", dataNasabah[hasil][2]);
                             System.out.printf("    [\t|  Remaining balance  : IDR %s\n", dataNasabah[hasil][5]);
                             System.out.println("    [  ---------------------------------------------------");
@@ -552,7 +552,7 @@ public class Bilingual {
 
             System.out.println("    =======================================================");
             System.out.println("    [  ____________________________________________________");
-            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t|\t]");
+            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
             System.out.printf("    [\t|  Name           : %s\n", dataNasabah[hasil][2]);
             System.out.printf("    [\t|  Deposit amount : %s\n", nominal);
             System.out.println("    [  ----------------------------------------------------");
@@ -576,7 +576,7 @@ public class Bilingual {
                             System.out.println("    ======================================================");
                             System.out.println("    ======================================================");
                             System.out.println("    [  ___________________________________________________");
-                            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t|\t]");
+                            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
                             System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
                             System.out.printf("    [\t|  Remaining balance  : %sn", balance);
                             System.out.println("    [  ---------------------------------------------------");
@@ -658,7 +658,7 @@ public class Bilingual {
                                 dataNasabah[index][5] = String.valueOf(saldoUser);
                                 System.out.println("    =======================================================");
                                 System.out.println("    [  ____________________________________________________");
-                                System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t|\t]");
+                                System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
                                 System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
                                 System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
                                 System.out.println("    [  ----------------------------------------------------");
@@ -850,7 +850,7 @@ public class Bilingual {
             case 1:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t\t");
                 System.out.printf("    [\t|  Mobile operator       : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number          : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment  : IDR %s\n", pulsa[0]);
@@ -884,7 +884,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENTS DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENTS DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator         : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number            : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment    : %s\n", nominal);
@@ -936,7 +936,7 @@ public class Bilingual {
             case 2:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
@@ -970,7 +970,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1021,7 +1021,7 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator       : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number          : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment  : IDR %s\n", pulsa[2]);
@@ -1054,7 +1054,7 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1104,7 +1104,7 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator      : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number         : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment : IDR %s\n", pulsa[3]);
@@ -1138,7 +1138,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : Rp. %d\n", nominal);
@@ -1189,7 +1189,7 @@ public class Bilingual {
             case 5:
                 System.out.println("    ======================================================");
                 System.out.println("    [  ___________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit purchase  : IDR %s\n", pulsa[4]);
@@ -1223,7 +1223,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit purchase  : %d\n", nominal);
@@ -1274,7 +1274,7 @@ public class Bilingual {
             case 6:
                 System.out.println("    ======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
@@ -1308,7 +1308,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[0]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1393,7 +1393,7 @@ public class Bilingual {
             case 1:
                 System.out.println("    ======================================================");
                 System.out.println("    [  ___________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile perator         : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
@@ -1427,7 +1427,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1478,7 +1478,7 @@ public class Bilingual {
             case 2:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
@@ -1512,7 +1512,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1563,7 +1563,7 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[2]);
@@ -1597,7 +1597,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1648,7 +1648,7 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator      : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number         : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment : IDR %s\n", pulsa[3]);
@@ -1682,7 +1682,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1733,7 +1733,7 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator         : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number            : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment    : IDR %s\n", pulsa[4]);
@@ -1767,7 +1767,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1818,7 +1818,7 @@ public class Bilingual {
             case 6:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
@@ -1852,7 +1852,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[1]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "085-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -1938,7 +1938,7 @@ public class Bilingual {
             case 1:
                 System.out.println("    ======================================================");
                 System.out.println("    [  ___________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
@@ -1972,7 +1972,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nominal);
                                     System.out.println("    [  ---------------------------------------------------");
@@ -2022,7 +2022,7 @@ public class Bilingual {
             case 2:
                 System.out.println("    ======================================================");
                 System.out.println("    [  ___________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
@@ -2056,7 +2056,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %d\n", nominal);
@@ -2107,7 +2107,7 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator            : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number               : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment\t\t   : IDR %s\n", pulsa[2]);
@@ -2141,7 +2141,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2192,7 +2192,7 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile oerator         : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[3]);
@@ -2226,7 +2226,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2277,7 +2277,7 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[4]);
@@ -2311,7 +2311,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                                    System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2362,7 +2362,7 @@ public class Bilingual {
             case 6:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
@@ -2396,7 +2396,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[2]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "081-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2482,7 +2482,7 @@ public class Bilingual {
             case 1:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[0]);
@@ -2516,7 +2516,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2567,7 +2567,7 @@ public class Bilingual {
             case 2:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS   \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[1]);
@@ -2600,7 +2600,7 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile oerator         : %s\n", operator[3]);
                                     System.out.printf("    [\t|  Phone numebr           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2650,7 +2650,7 @@ public class Bilingual {
             case 3:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[2]);
@@ -2684,7 +2684,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ____________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2735,7 +2735,7 @@ public class Bilingual {
             case 4:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[3]);
@@ -2769,7 +2769,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %d\n", nominal);
@@ -2820,7 +2820,7 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t|\t]");
+                System.out.println("    [\t|        \tPAYMENT DETAILS    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[4]);
@@ -3165,7 +3165,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
+                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t\t");
                         System.out.printf("    [\t|  ID Customert   : %s\n", datapdam[i][1]);
                         System.out.printf("    [\t|  Region         : %s\n", datapdam[0][0]);
                         System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
@@ -3198,7 +3198,7 @@ public class Bilingual {
                                             System.out.println();
                                             System.out.println("    ======================================================");
                                             System.out.println("    [  ___________________________________________________");
-                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                             System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
                                             System.out.printf("    [\t|  Total bill             : Rp. %s\n", nominal);
                                             System.out.println("    [  ---------------------------------------------------");
@@ -3278,7 +3278,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
+                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t\t");
                         System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
                         System.out.printf("    [\t|  Region         : %s\n", datapdam[1][0]);
                         System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
@@ -3311,7 +3311,7 @@ public class Bilingual {
                                             System.out.println();
                                             System.out.println("    ======================================================");
                                             System.out.println("    [  ___________________________________________________");
-                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                             System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
                                             System.out.printf("    [\t|  Total bill             : %s\n", nominal);
                                             System.out.println("    [  ---------------------------------------------------");
@@ -3391,7 +3391,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
+                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t\t");
                         System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
                         System.out.printf("    [\t|  Region         : %s\n", datapdam[2][0]);
                         System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
@@ -3424,7 +3424,7 @@ public class Bilingual {
                                             System.out.println();
                                             System.out.println("    ======================================================");
                                             System.out.println("    [  ___________________________________________________");
-                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                             System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
                                             System.out.printf("    [\t|  Total bill             : %s\n", nominal);
                                             System.out.println("    [  ---------------------------------------------------");
@@ -3504,7 +3504,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t|\t]");
+                        System.out.println("    [\t|        \tPDAM PAYMENT           \t\t\t");
                         System.out.printf("    [\t|  ID Customer    : %s\n", datapdam[i][1]);
                         System.out.printf("    [\t|  Region         : %s\n", datapdam[3][0]);
                         System.out.printf("    [\t|  Total bill     : IDR %s\n", datapdam[i][2]);
@@ -3537,7 +3537,7 @@ public class Bilingual {
                                             System.out.println();
                                             System.out.println("    ======================================================");
                                             System.out.println("    [  ___________________________________________________");
-                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                             System.out.printf("    [\t|  ID Customer            : %s\n", datapdam[i][1]);
                                             System.out.printf("    [\t|  Total bill             : %s\n", nominal);
                                             System.out.println("    [  ---------------------------------------------------");
@@ -3629,7 +3629,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t|\t]");
+                        System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t\t");
                         System.out.printf("    [\t|  College ID     : %s\n", dataUniv[i][0]);
                         System.out.printf("    [\t|  College Name   : %s\n", dataUniv[i][1]);
                         System.out.println("    [  ----------------------------------------------------");
@@ -3643,7 +3643,7 @@ public class Bilingual {
                                 if (inNim.equals(dataUniv[i][2])) {
                                     System.out.println("    =======================================================");
                                     System.out.println("    [  ____________________________________________________");
-                                    System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t|\t]");
+                                    System.out.println("    [\t|        \tSINGLE TUITON PAYMENT           \t\t\t");
                                     System.out.printf("    [\t|  Collage ID     : %s\n", dataUniv[i][0]);
                                     System.out.printf("    [\t|  College name   : %s\n", dataUniv[i][1]);
                                     System.out.printf("    [\t|  Student name   : %s\n", dataUniv[i][3]);
@@ -3679,7 +3679,7 @@ public class Bilingual {
                                                         System.out.println();
                                                         System.out.println("    ======================================================");
                                                         System.out.println("    [  ___________________________________________________");
-                                                        System.out.println("    [\t|        \tPembayaran UKT           \t\t|\t]");
+                                                        System.out.println("    [\t|        \tPembayaran UKT           \t\t\t");
                                                         System.out.printf("    [\t|  ID Perguruan Tinggi    : %s\n", dataUniv[i][0]);
                                                         System.out.printf("    [\t|  Nama Perguruan TInggi  : %s\n", dataUniv[i][1]);
                                                         System.out.printf("    [\t|  Nama Mahasiswa         : %s\n", dataUniv[i][3]);
