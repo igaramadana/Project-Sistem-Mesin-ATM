@@ -13,7 +13,6 @@ public class SistemMesinAtm {
             {"02", "334455", "Iga", "3344", "Dampit", "5000000", "Verified", "081123456"},
             {"03", "556677", "Firman", "4455", "Blitar", "3500000", "Verified", "087123456"},
             {"04", "889911", "Bayu", "6677", "Jombang", "3000000", "Verified", "08912345"},
-            {"05", "123456", "Novita", "8899", "Watugong", "10000000", "Verified", "088123456"},
             {"06", "990088", "Naufal", "0099", "Sawojajar", "500000", "Disabled", "0812938219"}
     };
     static String[][] datapdam = {
@@ -282,13 +281,13 @@ public class SistemMesinAtm {
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("    [       Riwayat Transaksi : ");
+        System.out.println("    [   Riwayat Transaksi : ");
 
         SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm;ss"));
         String tanggal = formatTgl.format(new Date());
 
         for (int i = 0; i < riw; i++) {
-            System.out.println("    [       "+ tanggal + "- " + riwayat[i]);
+            System.out.println("    [   "+ tanggal + "- " + riwayat[i]);
         }
         System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
         pilih = input.next();
@@ -321,14 +320,14 @@ public class SistemMesinAtm {
                     index = 1;
                     System.out.println("    =======================================================");
                     System.out.println("    [  ____________________________________________________");
-                    System.out.println("    [\t|                \tDATA NASABAH    \t\t\t");
-                    System.out.printf("    [\t|  ID\t\t\t\t: %s\n", dataNasabah[i][0]);
-                    System.out.printf("    [\t|  Nama\t\t\t\t: %s\n", dataNasabah[i][2]);
-                    System.out.printf("    [\t|  Nomor Rekening\t: %s\n", dataNasabah[i][1]);
-                    System.out.printf("    [\t|  Alamat\t\t\t: %s\n", dataNasabah[i][4]);
-                    System.out.printf("    [\t|  Nomor Telepon\t: %s\n", dataNasabah[i][7]);
+                    System.out.println("    [\t|           \tDATA NASABAH    \t\t\t");
+                    System.out.printf("    [\t|  ID                 : %s\n", dataNasabah[i][0]);
+                    System.out.printf("    [\t|  Nama               : %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Nomor Rekening     : %s\n", dataNasabah[i][1]);
+                    System.out.printf("    [\t|  Alamat             : %s\n", dataNasabah[i][4]);
+                    System.out.printf("    [\t|  Nomor Telepon      : %s\n", dataNasabah[i][7]);
                     System.out.println("    [  ----------------------------------------------------");
-                    System.out.printf(green+"    [\t|  Status Akun\t\t: %s\n"+reset, dataNasabah[i][6]);
+                    System.out.printf(green+"    [\t|  Status Akun        : %s\n"+reset, dataNasabah[i][6]);
                     System.out.println("    [  ----------------------------------------------------");
                     System.out.println("    =======================================================");
 
@@ -373,11 +372,11 @@ public class SistemMesinAtm {
                     String balance = format.format(Double.parseDouble(dataNasabah[i][5]));
                     System.out.println();
                     System.out.println("    =======================================================");
-                    System.out.println("    [  _________________________________________________\t]");
+                    System.out.println("    [  ____________________________________________________");
                     System.out.println("    [\t|        \tCEK SALDO    \t\t\t");
-                    System.out.printf("    [\t|  Nama\t\t\t\t: %s\n", dataNasabah[i][2]);
-                    System.out.printf("    [\t|  Sisa Saldo\t\t: %s\n", balance);
-                    System.out.println("    [  -------------------------------------------------\t]");
+                    System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance);
+                    System.out.println("    [  ----------------------------------------------------");
                     System.out.println("    =======================================================");
                     System.out.println();
                     System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
@@ -431,10 +430,10 @@ public class SistemMesinAtm {
                 System.out.println("    ======================================================");
                 System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
-                System.out.printf("    [\t|  Nama\t\t\t\t\t: %s\n", dataNasabah[hasil][2]);
-                System.out.printf("    [\t|  Jumlah Saldo yang ditarik\t: %s\n", nominal);
-                System.out.println("    [  ----------------------------------------------------");
-                System.out.println("    =======================================================");
+                System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal);
+                System.out.println("    [  ---------------------------------------------------");
+                System.out.println("    ======================================================");
                 System.out.println();
                 System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal);
                 pilih = input.next();
@@ -456,8 +455,8 @@ public class SistemMesinAtm {
                                 System.out.println("    ======================================================");
                                 System.out.println("    [  ___________________________________________________");
                                 System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
-                                System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
-                                System.out.printf("    [\t|  Sisa Saldo\t\t: %s\t|\t]\n", balance);
+                                System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance);
                                 System.out.println("    [  ----------------------------------------------------");
                                 System.out.println("    ======================================================="+reset);
                                 System.out.println();
@@ -477,15 +476,22 @@ public class SistemMesinAtm {
                                 }
                             }
                         }
+                    }else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                        System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
                     }
                     } else {
                     System.out.println(red+"    =======================================================");
                     System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                    System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                    System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
                     System.out.println("    |-----------------------------------------------------|");
                     System.out.println("    ======================================================="+reset);
-                    tarikTunai();
+                    menu();
                 }
             } else {
                 System.out.println(red+"    =======================================================");
@@ -539,69 +545,86 @@ public class SistemMesinAtm {
         System.out.println("    =======================================================");
 
         if (nominalSetor <= 5000000) {
-            sisaSaldo += nominalSetor;
-            NumberFormat format = NumberFormat.getCurrencyInstance();
-            String balance = format.format(sisaSaldo);
-            String nominal = format.format(nominalSetor);
-            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+            if (nominalSetor >= 50000) {
+                sisaSaldo += nominalSetor;
+                NumberFormat format = NumberFormat.getCurrencyInstance();
+                String balance = format.format(sisaSaldo);
+                String nominal = format.format(nominalSetor);
+                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
-            System.out.println("    =======================================================");
-            System.out.println("    [  _________________________________________________\t]");
-            System.out.println("    [\t|             \tSETOR TUNAI       \t\t\t");
-            System.out.printf("    [\t|  Nama\t\t\t: %s\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Nominal Setor\t\t: IDR %s\n", nominal);
-            System.out.println("    [  -------------------------------------------------\t]");
-            System.out.println("    =======================================================");
-            System.out.println();
-            System.out.printf("\n    [   Konfirmasi setor tunai sebesar %s? y/t: ", nominal);
-            pilih = input.next();
-            if (pilih.equalsIgnoreCase("y")) {
-                System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
-                String inPin = input.next();
+                System.out.println("    =======================================================");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|             \tSETOR TUNAI       \t\t\t");
+                System.out.printf("    [\t|  Nama               : %s\n", dataNasabah[hasil][2]);
+                System.out.printf("    [\t|  Nominal Setor      : %s\n", nominal);
+                System.out.println("    [  ----------------------------------------------------");
+                System.out.println("    =======================================================");
+                System.out.println();
+                System.out.printf("\n    [   Konfirmasi setor tunai sebesar %s? y/t: ", nominal);
+                pilih = input.next();
+                if (pilih.equalsIgnoreCase("y")) {
+                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                    String inPin = input.next();
 
-                int index = 0;
-                if (inPin.equals(dataNasabah[hasil][3])) {
-                    for (int i = 0; i < dataNasabah.length; i++) {
-                        if (dataNasabah[i][3].equals(inPin)) {
-                            index = 1;
-                            System.out.println(green+"    ======================================================");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ======================================================");
-                            System.out.println("    =======================================================");
-                            System.out.println("    [  _________________________________________________\t]");
-                            System.out.println("    [\t|             \tSETOR TUNAI       \t\t|\t]");
-                            System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[i][2]);
-                            System.out.printf("    [\t|  Sisa Saldo\t\t: %s\t|\t]\n", balance);
-                            System.out.println("    [  -------------------------------------------------\t]");
-                            System.out.println("    ======================================================="+reset);
-                            System.out.println();
-                            riwayat[riw] = String.format("Telah melakukan setor tunai sebesar %s", nominal);
-                            riw++;
-                            System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
-                            pilih = input.next();
-                            if (pilih.equalsIgnoreCase("y")) {
-                                menu();
-                            } else {
-                                System.out.println(green+"    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================"+reset);
-                                System.exit(0);
+                    int index = 0;
+                    if (inPin.equals(dataNasabah[hasil][3])) {
+                        for (int i = 0; i < dataNasabah.length; i++) {
+                            if (dataNasabah[i][3].equals(inPin)) {
+                                index = 1;
+                                System.out.println(green + "    ======================================================");
+                                System.out.println("    ------------------------------------------------------");
+                                System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                System.out.println("    ------------------------------------------------------");
+                                System.out.println("    ======================================================");
+                                System.out.println("    =======================================================");
+                                System.out.println("    [  ____________________________________________________");
+                                System.out.println("    [\t|             \tSETOR TUNAI       \t\t\t");
+                                System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[i][2]);
+                                System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance);
+                                System.out.println("    [  ----------------------------------------------------");
+                                System.out.println("    =======================================================" + reset);
+                                System.out.println();
+                                riwayat[riw] = String.format("Telah melakukan setor tunai sebesar %s", nominal);
+                                riw++;
+                                System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                pilih = input.next();
+                                if (pilih.equalsIgnoreCase("y")) {
+                                    menu();
+                                } else {
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    ======================================================" + reset);
+                                    System.exit(0);
+                                }
                             }
                         }
+                    } else {
+                        System.out.println(red + "    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                        System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    =======================================================" + reset);
+                        setorTunai();
                     }
                 } else {
-                    System.out.println(red+"    =======================================================");
+                    System.out.println(red + "    =======================================================");
                     System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                    System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                    System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
                     System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    ======================================================="+reset);
-                    setorTunai();
+                    System.out.println("    =======================================================" + reset);
+                    menu();
                 }
+            } else {
+                System.out.println(red+"    =======================================================");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    | (!) Minimal jumlah setor tunai adalah IDR 50.000 (!)|");
+                System.out.println("    |                Silahkan Coba Kembali.               |");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    ======================================================="+reset);
+                setorTunai();
             }
         } else {
             System.out.println(red+"    =======================================================");
@@ -638,60 +661,70 @@ public class SistemMesinAtm {
                             double nomTF = input.nextDouble();
                             double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
 
-                            if (nomTF > 0 && nomTF <= saldoUser) {
-                                saldoUser -= nomTF;
-                                NumberFormat format = NumberFormat.getCurrencyInstance();
-                                String balance = format.format(saldoUser);
-                                String nominal = format.format(nomTF);
-                                dataNasabah[index][5] = String.valueOf(saldoUser);
-                                System.out.println("    =======================================================");
-                                System.out.println("    [  _________________________________________________\t]");
-                                System.out.println("    [\t|        \tTRANSFER SALDO    \t\t\t");
-                                System.out.printf("    [\t|  Rekening Tujuan\t\t: %s\n", rekTujuan);
-                                System.out.printf("    [\t|  Nominal Transfer\t\t: %s\n", nominal);
-                                System.out.println("    [  -------------------------------------------------\t]");
-                                System.out.println("    =======================================================");
-                                System.out.println();
-                                System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
-                                pilih = input.next();
-                                if (pilih.equals("y")) {
-                                    System.out.println(green+"    ======================================================");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("    ======================================================");
-                                    System.out.println("    ========================================================");
-                                    System.out.println("    [  ________________________________________________\t\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Rekening tujuan\t\t: %s\t|\t]\n", rekTujuan);
-                                    System.out.printf("    [\t|  Nama user\t\t\t\t: %s\t|\t]\n", dataNasabah[j][2]);
-                                    System.out.printf("    [\t|  Nominal transfer\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                            if (nomTF <= saldoUser) {
+                                if (nomTF >= 10000) {
+                                    saldoUser -= nomTF;
+                                    NumberFormat format = NumberFormat.getCurrencyInstance();
+                                    String balance = format.format(saldoUser);
+                                    String nominal = format.format(nomTF);
+                                    dataNasabah[index][5] = String.valueOf(saldoUser);
+                                    System.out.println("    =======================================================");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|        \tTRANSFER SALDO    \t\t\t");
+                                    System.out.printf("    [\t|  Rekening Tujuan        : %s\n", rekTujuan);
+                                    System.out.printf("    [\t|  Nominal Transfer       : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    =======================================================");
                                     System.out.println();
-                                    riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
-                                    riw++;
-                                    System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                    System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
                                     pilih = input.next();
-                                    if (pilih.equalsIgnoreCase("y")) {
-                                        menu();
+                                    if (pilih.equals("y")) {
+                                        System.out.println(green + "    ======================================================");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("    ======================================================");
+                                        System.out.println("    ========================================================");
+                                        System.out.println("    [  _____________________________________________________");
+                                        System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                        System.out.printf("    [\t|  Rekening tujuan        : %s\n", rekTujuan);
+                                        System.out.printf("    [\t|  Nama user              : %s\n", dataNasabah[j][2]);
+                                        System.out.printf("    [\t|  Nominal transfer       : %s\n", nominal);
+                                        System.out.println("    [  ----------------------------------------------------");
+                                        System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                        System.out.println("    [  ----------------------------------------------------");
+                                        System.out.println("    =======================================================" + reset);
+                                        System.out.println();
+                                        riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
+                                        riw++;
+                                        System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                        pilih = input.next();
+                                        if (pilih.equalsIgnoreCase("y")) {
+                                            menu();
+                                        } else {
+                                            System.out.println(green + "    ======================================================");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    ======================================================" + reset);
+                                            System.exit(0);
+                                        }
                                     } else {
-                                        System.out.println(green+"    ======================================================");
+                                        System.out.println(red + "    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |                TRANSAKSI DIBATALKAN                |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================"+reset);
-                                        System.exit(0);
+                                        System.out.println("    ======================================================" + reset);
+                                        menu();
                                     }
                                 } else {
                                     System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |                TRANSAKSI DIBATALKAN                |");
+                                    System.out.println("    |      MINIMAL TRANSFER SALDO ADALAH IDR. 10.000     |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================"+reset);
-                                    menu();
+                                    System.out.println();
+                                    transferSaldo();
                                 }
                             } else {
                                 System.out.println(red+"    ======================================================");
@@ -702,6 +735,14 @@ public class SistemMesinAtm {
                                 System.out.println();
                                 transferSaldo();
                             }
+                        } else {
+                            System.out.println(red + "    ======================================================");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    |            REKENING TUJUAN TIDAK VALID             |");
+                            System.out.println("    |----------------------------------------------------|");
+                            System.out.println("    ======================================================" + reset);
+                            System.out.println();
+                            transferSaldo();
                         }
                     }
                 }
@@ -803,13 +844,13 @@ public class SistemMesinAtm {
         switch (nomPul) {
             case 1:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s  \t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
-                System.out.println("    ========================================================");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ----------------------------------------------------");
+                System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
                 System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal IDR %s  ? y/t: ", nomTelp, pulsa[0]);
@@ -837,15 +878,15 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal );
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal );
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================"+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -889,18 +930,18 @@ public class SistemMesinAtm {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
                 System.out.printf(" Konfirmasi transaksi ke nomor telepon 085-%s dengan nominal IDR %s? y/t: ", nomTelp, pulsa[1]);
                 pilih = input.next();
-                if (pilih.equals("y")) {
+                if (pilih.equalsIgnoreCase("y")) {
                     System.out.print("      [   Masukkan PIN anda untuk melanjutkan : ");
                     String inPin = input.next();
 
@@ -923,15 +964,15 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.println("    =======================================================" + reset);
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -974,12 +1015,12 @@ public class SistemMesinAtm {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1007,14 +1048,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]" + reset);
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[0], nominal);
@@ -1057,12 +1098,12 @@ public class SistemMesinAtm {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1091,14 +1132,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1142,12 +1183,12 @@ public class SistemMesinAtm {
                 break;
             case 5:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ___________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1176,14 +1217,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1227,12 +1268,12 @@ public class SistemMesinAtm {
                 break;
             case 6:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ___________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1261,14 +1302,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[0]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[0]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1346,12 +1387,12 @@ public class SistemMesinAtm {
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ___________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1380,14 +1421,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1431,12 +1472,12 @@ public class SistemMesinAtm {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1465,14 +1506,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1516,12 +1557,12 @@ public class SistemMesinAtm {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1550,14 +1591,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1601,11 +1642,11 @@ public class SistemMesinAtm {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[3]);
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[3]);
                 System.out.println("    [  -------------------------------------------------\t]");
                 System.out.println("    =======================================================");
                 System.out.println();
@@ -1635,14 +1676,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1686,12 +1727,12 @@ public class SistemMesinAtm {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1720,14 +1761,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1771,12 +1812,12 @@ public class SistemMesinAtm {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1805,14 +1846,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[1]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "085-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[1]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "085-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1892,12 +1933,12 @@ public class SistemMesinAtm {
         switch (nomPul) {
             case 1:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ___________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -1926,14 +1967,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -1977,12 +2018,12 @@ public class SistemMesinAtm {
                 break;
             case 2:
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ___________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ---------------------------------------------------");
                 System.out.println("    ======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2011,14 +2052,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    ======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
                                     System.out.println("    ======================================================"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2062,12 +2103,12 @@ public class SistemMesinAtm {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2096,14 +2137,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2147,12 +2188,12 @@ public class SistemMesinAtm {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2181,14 +2222,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2232,12 +2273,12 @@ public class SistemMesinAtm {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2266,14 +2307,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2317,12 +2358,12 @@ public class SistemMesinAtm {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBELIAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2351,14 +2392,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t|\t]\n", operator[2]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "081-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[2]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "081-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2438,12 +2479,12 @@ public class SistemMesinAtm {
         switch (nomPul) {
             case 1:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[0]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[0]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2472,14 +2513,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2523,12 +2564,12 @@ public class SistemMesinAtm {
                 break;
             case 2:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[1]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[1]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2556,14 +2597,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ------------------------------------------------------");
                                     System.out.println("    ======================================================");
                                     System.out.println();
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]"+ reset);
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------"+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
                                     riwayat[riw] = String.format("Telah melakukan pembelian pulsa %s sebesar %s", operator[3], nominal);
@@ -2606,12 +2647,12 @@ public class SistemMesinAtm {
                 break;
             case 3:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[2]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[2]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2640,14 +2681,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+ reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2691,12 +2732,12 @@ public class SistemMesinAtm {
                 break;
             case 4:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[3]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[3]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2725,14 +2766,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2776,12 +2817,12 @@ public class SistemMesinAtm {
                 break;
             case 5:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[4]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[4]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2810,14 +2851,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2861,12 +2902,12 @@ public class SistemMesinAtm {
                 break;
             case 6:
                 System.out.println("    =======================================================");
-                System.out.println("    [  _________________________________________________\t]");
-                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t|\t]");
-                System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                System.out.printf("    [\t|  Total bayar pulsa\t\t: IDR %s\t|\t]\n", pulsa[5]);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|        \tRINCIAN PEMBAYARAN    \t\t\t");
+                System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                System.out.printf("    [\t|  Total bayar pulsa      : IDR %s\n", pulsa[5]);
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.println("Total bayar diatas sudah termasuk biaya admin IDR 2500");
@@ -2895,14 +2936,14 @@ public class SistemMesinAtm {
                                     System.out.println("    ======================================================");
                                     System.out.println();
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  ________________________________________________\t]");
-                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                    System.out.printf("    [\t|  Operator seluler\t\t: %s\t\t|\t]\n", operator[3]);
-                                    System.out.printf("    [\t|  Nomor telepon\t\t: %s\t|\t]\n", "083-" + nomTelp);
-                                    System.out.printf("    [\t|  Total bayar pulsa\t\t: %s\t|\t]\n", nominal);
-                                    System.out.println("    [  -------------------------------------------------\t]");
-                                    System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                    System.out.println("    [  -------------------------------------------------\t]");
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                    System.out.printf("    [\t|  Operator seluler       : %s\n", operator[3]);
+                                    System.out.printf("    [\t|  Nomor telepon          : %s\n", "083-" + nomTelp);
+                                    System.out.printf("    [\t|  Total bayar pulsa      : %s\n", nominal);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                    System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================="+reset);
                                     System.out.println();
                                     // catatan riwayat transaksi
@@ -2971,11 +3012,11 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran Listrik    \t\t|\t]");
-                        System.out.printf("    [\t|  ID Pelanggan\t\t\t: %s\t\t|\t]\n", dataListrik[i][0]);
-                        System.out.printf("    [\t|  Total tagihan\t\t: IDR %s\t|\t]\n", dataListrik[i][1]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran Listrik    \t\t\t");
+                        System.out.printf("    [\t|  ID Pelanggan       : %s\n", dataListrik[i][0]);
+                        System.out.printf("    [\t|  Total tagihan      : IDR %s\n", dataListrik[i][1]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Konfirmasi transaksi tagihan PLN dengan ID pelanggan %s sebesar IDR %s? y/t: ", dataListrik[i][0], dataListrik[i][1]);
@@ -3003,13 +3044,13 @@ public class SistemMesinAtm {
                                             System.out.println("    ======================================================");
                                             System.out.println();
                                             System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
-                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Pelanggan\t\t: %s\t\t|\t]\n", dataListrik[i][0]);
-                                            System.out.printf("    [\t|  Total tagihan\t\t: %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                            System.out.printf("    [\t|  ID Pelanggan       : %s\n", dataListrik[i][0]);
+                                            System.out.printf("    [\t|  Total tagihan      : %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.printf("    [\t|  Sisa saldo anda    : %s\n", balance);
+                                            System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    ======================================================="+reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan listrik dengan ID pelanggan %s sebesar %s", dataListrik[i][0], nominal);
@@ -3098,12 +3139,12 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Pelanggan\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Wilayah\t\t\t: %s\t\t|\t]\n", datapdam[0][0]);
-                        System.out.printf("    [\t|  Total tagihan\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t\t");
+                        System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Wilayah            : %s\n", datapdam[0][0]);
+                        System.out.printf("    [\t|  Total tagihan      : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Konfirmasi transaksi tagihan PDAM dengan ID pelanggan %s sebesar IDR %s? y/t: ", datapdam[i][1], datapdam[i][2]);
@@ -3131,13 +3172,13 @@ public class SistemMesinAtm {
                                             System.out.println("    ======================================================");
                                             System.out.println();
                                             System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
-                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Pelanggan\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total tagihan\t\t: %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Sisa saldo anda\t\t: %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                            System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total tagihan      : %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.printf("    [\t|  Sisa saldo anda    : %s\n", balance);
+                                            System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar %s", datapdam[i][1], nominal);
@@ -3204,12 +3245,12 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Pelanggan\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Wilayah\t\t\t: %s\t\t|\t]\n", datapdam[1][0]);
-                        System.out.printf("    [\t|  Total tagihan\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t\t");
+                        System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Wilayah            : %s\n", datapdam[1][0]);
+                        System.out.printf("    [\t|  Total tagihan      : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Konfirmasi transaksi tagihan PDAM dengan ID pelanggan %s sebesar IDR %s? y/t: ", datapdam[i][1], datapdam[i][2]);
@@ -3237,13 +3278,13 @@ public class SistemMesinAtm {
                                             System.out.println("    ======================================================");
                                             System.out.println();
                                             System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
-                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Pelanggan\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total tagihan\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                            System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total tagihan      : Rp. %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.printf("    [\t|  Sisa saldo anda    : Rp. %s\n", balance);
+                                            System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
@@ -3310,12 +3351,12 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Pelanggan\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Wilayah\t\t\t: %s\t\t|\t]\n", datapdam[2][0]);
-                        System.out.printf("    [\t|  Total tagihan\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t\t");
+                        System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Wilayah            : %s\n", datapdam[2][0]);
+                        System.out.printf("    [\t|  Total tagihan      : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Konfirmasi transaksi tagihan PDAM dengan ID pelanggan %s sebesar IDR %s? y/t: ", datapdam[i][1], datapdam[i][2]);
@@ -3343,13 +3384,13 @@ public class SistemMesinAtm {
                                             System.out.println("    ======================================================");
                                             System.out.println();
                                             System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
-                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Pelanggan\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total tagihan\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                            System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total tagihan      : IDR. %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.printf("    [\t|  Sisa saldo anda    : IDR. %s\n", balance);
+                                            System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
@@ -3416,12 +3457,12 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Pelanggan\t\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                        System.out.printf("    [\t|  Wilayah\t\t\t: %s\t\t|\t]\n", datapdam[3][0]);
-                        System.out.printf("    [\t|  Total tagihan\t\t: IDR %s\t|\t]\n", datapdam[i][2]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran PDAM           \t\t\t");
+                        System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                        System.out.printf("    [\t|  Wilayah            : %s\n", datapdam[3][0]);
+                        System.out.printf("    [\t|  Total tagihan      : IDR %s\n", datapdam[i][2]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
                         System.out.printf(" Konfirmasi transaksi tagihan PDAM dengan ID pelanggan %s sebesar IDR %s? y/t: ", datapdam[i][1], datapdam[i][2]);
@@ -3449,13 +3490,13 @@ public class SistemMesinAtm {
                                             System.out.println("    ======================================================");
                                             System.out.println();
                                             System.out.println("    =======================================================");
-                                            System.out.println("    [  ________________________________________________\t]");
-                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t|\t]");
-                                            System.out.printf("    [\t|  ID Pelanggan\t\t: %s\t\t|\t]\n", datapdam[i][1]);
-                                            System.out.printf("    [\t|  Total tagihan\t\t: Rp. %s\t|\t]\n", nominal);
-                                            System.out.println("    [  -------------------------------------------------\t]");
-                                            System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
-                                            System.out.println("    [  -------------------------------------------------\t]");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                            System.out.printf("    [\t|  ID Pelanggan       : %s\n", datapdam[i][1]);
+                                            System.out.printf("    [\t|  Total tagihan      : Rp. %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.printf("    [\t|  Sisa saldo anda    : Rp. %s\n", balance);
+                                            System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    ======================================================="+ reset);
                                             System.out.println();
                                             riwayat[riw] = String.format("Telah melakukan transaksi tagihan PDAM dengan ID pelanggan %s sebesar Rp. %s", datapdam[i][1], nominal);
@@ -3534,11 +3575,11 @@ public class SistemMesinAtm {
                     valid = true;
                     if (valid) {
                         System.out.println("    =======================================================");
-                        System.out.println("    [  _________________________________________________\t]");
-                        System.out.println("    [\t|        \tPembayaran UKT           \t\t|\t]");
-                        System.out.printf("    [\t|  ID Perguruan Tinggi\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                        System.out.printf("    [\t|  Nama Perguruan TInggi\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                        System.out.println("    [  -------------------------------------------------\t]");
+                        System.out.println("    [  ____________________________________________________");
+                        System.out.println("    [\t|        \tPembayaran UKT           \t\t\t");
+                        System.out.printf("    [\t|  ID Perguruan Tinggi        : %s\n", dataUniv[i][0]);
+                        System.out.printf("    [\t|  Nama Perguruan TInggi      : %s\n", dataUniv[i][1]);
+                        System.out.println("    [  ----------------------------------------------------");
                         System.out.println("    =======================================================");
                         System.out.println();
 
@@ -3548,13 +3589,13 @@ public class SistemMesinAtm {
                             if (dataUniv[i][2].equals(inNim)) {
                                 if (inNim.equals(dataUniv[i][2])) {
                                     System.out.println("    =======================================================");
-                                    System.out.println("    [  _________________________________________________\t]");
-                                    System.out.println("    [\t|        \tPembayaran UKT           \t\t|\t]");
-                                    System.out.printf("    [\t|  ID Perguruan Tinggi\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                                    System.out.printf("    [\t|  Nama Perguruan TInggi\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                                    System.out.printf("    [\t|  Nama Mahasiswa\t\t\t: %s\t\t|\t]\n", dataUniv[i][3]);
-                                    System.out.printf("    [\t|  Jurusan\t\t\t\t: %s\t\t|\t]\n", dataUniv[i][4]);
-                                    System.out.printf("    [\t|  Nominal dibayarkan\t\t\t: IDR %s\t\t|\t]\n", dataUniv[i][5]);
+                                    System.out.println("    [  ____________________________________________________");
+                                    System.out.println("    [\t|        \tPembayaran UKT           \t\t\t");
+                                    System.out.printf("    [\t|  ID Perguruan Tinggi        : %s\n", dataUniv[i][0]);
+                                    System.out.printf("    [\t|  Nama Perguruan TInggi      : %s\n", dataUniv[i][1]);
+                                    System.out.printf("    [\t|  Nama Mahasiswa             : %s\n", dataUniv[i][3]);
+                                    System.out.printf("    [\t|  Jurusan                    : %s\n", dataUniv[i][4]);
+                                    System.out.printf("    [\t|  Nominal dibayarkan         : IDR %s\n", dataUniv[i][5]);
                                     System.out.println("    [  -------------------------------------------------\t]");
                                     System.out.println("    =======================================================");
                                     System.out.println();
@@ -3584,16 +3625,16 @@ public class SistemMesinAtm {
                                                         System.out.println("    ======================================================");
                                                         System.out.println();
                                                         System.out.println("    =======================================================");
-                                                        System.out.println("    [  _________________________________________________\t]");
-                                                        System.out.println("    [\t|        \tPembayaran UKT           \t\t|\t]");
-                                                        System.out.printf("    [\t|  ID Perguruan Tinggi\t\t\t: %s\t\t|\t]\n", dataUniv[i][0]);
-                                                        System.out.printf("    [\t|  Nama Perguruan TInggi\t\t: %s\t\t|\t]\n", dataUniv[i][1]);
-                                                        System.out.printf("    [\t|  Nama Mahasiswa\t\t\t: %s\t\t|\t]\n", dataUniv[i][3]);
-                                                        System.out.printf("    [\t|  Jurusan\t\t\t\t: %s\t\t|\t]\n", dataUniv[i][4]);
-                                                        System.out.printf("    [\t|  Nominal dibayarkan\t\t\t: %s\t\t|\t]\n", nominal);
-                                                        System.out.println("    [  -------------------------------------------------\t]");
-                                                        System.out.printf("    [\t|  Sisa saldo anda\t\t: Rp. %s\t|\t]\n", balance);
-                                                        System.out.println("    [  -------------------------------------------------\t]");
+                                                        System.out.println("    [  ____________________________________________________");
+                                                        System.out.println("    [\t|        \tPembayaran UKT           \t\t\t");
+                                                        System.out.printf("    [\t|  ID Perguruan Tinggi        : %s\n", dataUniv[i][0]);
+                                                        System.out.printf("    [\t|  Nama Perguruan TInggi      : %s\n", dataUniv[i][1]);
+                                                        System.out.printf("    [\t|  Nama Mahasiswa             : %s\n", dataUniv[i][3]);
+                                                        System.out.printf("    [\t|  Jurusan                    : %s\n", dataUniv[i][4]);
+                                                        System.out.printf("    [\t|  Nominal dibayarkan         : %s\n", nominal);
+                                                        System.out.println("    [  ----------------------------------------------------");
+                                                        System.out.printf("    [\t|  Sisa saldo anda            : IDR. %s\n", balance);
+                                                        System.out.println("    [  ----------------------------------------------------");
                                                         System.out.println("    ======================================================="+ reset);
                                                         System.out.println();
                                                         riwayat[riw] = String.format("Telah melakukan transaksi Pembayaran UKT dengan Nama Universitas %s sebesar Rp. %s", dataUniv[i][1], nominal);
