@@ -674,7 +674,7 @@ public class Bilingual {
                                     System.out.println("    ======================================================");
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
                                     System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
                                     System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
@@ -748,18 +748,35 @@ public class Bilingual {
         int menu = input.nextInt();
 
         switch (menu) {
-            case 1 -> beliPulsa();
-            case 2 -> bayarListrik();
-            case 3 -> bayarAir();
-            case 4 -> bayarUkt();
-            case 0 -> menu();
+            case 1:
+                beliPulsa();
+                break;
+            case 2:
+                bayarListrik();
+                break;
+            case 3:
+                bayarAir();
+                break;
+            case 4:
+                bayarUkt();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           THE MENU YOU SELECTED IS INVALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                pembayaranLain();
         }
     }
 
     static void beliPulsa() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
-        System.out.println("    |                  CREDIT PURCHASE                  |");
+        System.out.println("    |                  CREDIT PURCHASE                   |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
@@ -775,11 +792,28 @@ public class Bilingual {
         int operator = input.nextInt();
 
         switch (operator) {
-            case 1 -> indosat();
-            case 2 -> xl();
-            case 3 -> telkomsel();
-            case 4 -> axis();
-            case 0 -> menu();
+            case 1:
+                indosat();
+                break;
+            case 2:
+                xl();
+                break;
+            case 3:
+                telkomsel();
+                break;
+            case 4:
+                axis();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           THE MENU YOU SELECTED IS INVALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                beliPulsa();
         }
     }
 
@@ -2820,7 +2854,7 @@ public class Bilingual {
                                     System.out.println();
                                     System.out.println("    ======================================================");
                                     System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                     System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                                     System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
@@ -2871,7 +2905,7 @@ public class Bilingual {
             case 6:
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
-                System.out.println("    [\t|        \tDETAILS PAYMENT    \t\t|\t]");
+                System.out.println("    [\t|        \tDETAILS PAYMENT    \t\t\t");
                 System.out.printf("    [\t|  Mobile operator        : %s\n", operator[3]);
                 System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                 System.out.printf("    [\t|  Total credit payment   : IDR %s\n", pulsa[5]);
@@ -2980,7 +3014,7 @@ public class Bilingual {
                     if (valid) {
                         System.out.println("    =======================================================");
                         System.out.println("    [  ____________________________________________________");
-                        System.out.println("    [\t|        \tELECTRICITY PAYMENT    \t\t|\t]");
+                        System.out.println("    [\t|        \tELECTRICITY PAYMENT    \t\t\t");
                         System.out.printf("    [\t|  ID Customer    : %s\n", dataListrik[i][0]);
                         System.out.printf("    [\t|  Total bill     : IDR %s\n", dataListrik[i][1]);
                         System.out.println("    [  ----------------------------------------------------");
@@ -3012,7 +3046,7 @@ public class Bilingual {
                                             System.out.println();
                                             System.out.println("    ======================================================");
                                             System.out.println("    [  ___________________________________________________");
-                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t|\t]");
+                                            System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
                                             System.out.printf("    [\t|  ID customer            : %s\n", dataListrik[i][0]);
                                             System.out.printf("    [\t|  Total bill             : %s\n", nominal);
                                             System.out.println("    [  ---------------------------------------------------");
@@ -3093,11 +3127,28 @@ public class Bilingual {
         int menu = input.nextInt();
 
         switch (menu) {
-            case 1 -> malkot();
-            case 2 -> kabmalang();
-            case 3 -> surabaya();
-            case 4 -> sidoarjo();
-            case 0 -> menu();
+            case 1:
+                malkot();
+                break;
+            case 2:
+                kabmalang();
+                break;
+            case 3:
+                surabaya();
+                break;
+            case 4:
+                sidoarjo();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           THE MENU YOU SELECTED IS INVALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                bayarAir();
         }
     }
 
