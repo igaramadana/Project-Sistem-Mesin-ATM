@@ -777,11 +777,28 @@ public class SistemMesinAtm {
         int menu = input.nextInt();
 
         switch (menu) {
-            case 1 -> beliPulsa();
-            case 2 -> bayarListrik();
-            case 3 -> bayarAir();
-            case 4 -> bayarUkt();
-            case 0 -> menu();
+            case 1:
+                beliPulsa();
+                break;
+            case 2:
+                bayarListrik();
+                break;
+            case 3:
+                bayarAir();
+                break;
+            case 4:
+                bayarUkt();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                pembayaranLain();
         }
     }
 
@@ -804,11 +821,28 @@ public class SistemMesinAtm {
         int operator = input.nextInt();
 
         switch (operator) {
-            case 1 -> indosat();
-            case 2 -> xl();
-            case 3 -> telkomsel();
-            case 4 -> axis();
-            case 0 -> menu();
+            case 1:
+                indosat();
+                break;
+            case 2:
+                xl();
+                break;
+            case 3:
+                telkomsel();
+                break;
+            case 4:
+                axis();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                beliPulsa();
         }
     }
 
@@ -1352,6 +1386,13 @@ public class SistemMesinAtm {
                 }
                 break;
                 case 0 : menu();
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                indosat();
         }
     }
 
@@ -1897,6 +1938,13 @@ public class SistemMesinAtm {
                 break;
 
                 case 0 : menu();
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                xl();
         }
     }
 
@@ -2443,6 +2491,13 @@ public class SistemMesinAtm {
                 break;
 
                 case 0 : menu();
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                telkomsel();
         }
     }
 
@@ -2987,6 +3042,13 @@ public class SistemMesinAtm {
                 break;
                 
                 case 0 : menu();
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                axis();
         }
     }
 
@@ -3119,11 +3181,28 @@ public class SistemMesinAtm {
         int menu = input.nextInt();
 
         switch (menu) {
-            case 1 -> malkot();
-            case 2 -> kabmalang();
-            case 3 -> surabaya();
-            case 4 -> sidoarjo();
-            case 0 -> menu();
+            case 1:
+                malkot();
+                break;
+            case 2:
+                kabmalang();
+                break;
+            case 3:
+                surabaya();
+                break;
+            case 4:
+                sidoarjo();
+                break;
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                bayarAir();
         }
     }
 
