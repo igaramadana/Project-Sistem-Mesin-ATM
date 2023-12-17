@@ -636,84 +636,109 @@ public class Bilingual {
         System.out.print("  [   Enter your account number : ");
         String inRek = input.next();
 
-        int index = 0;
+        int index = -1;
         if (inRek.equals(dataNasabah[hasil][1])) {
             for (int i = 0; i < dataNasabah.length; i++) {
                 if (dataNasabah[i][1].equals(inRek)) {
                     index = i;
-                    System.out.print("  [   Enter account number destination : ");
-                    String rekTujuan = input.next();
-                    for (int j = 0; j < dataNasabah.length; j++) {
-                        if (rekTujuan.equals(dataNasabah[j][1])) {
-                            index = 1;
-                            System.out.print("  [   Enter transfer amount : IDR ");
-                            double nomTF = input.nextDouble();
-                            double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
+                    if (index != -1) {
+                        System.out.print("  [   Enter the destination account number : ");
+                        String rekTujuan = input.next();
 
-                            if (nomTF > 0 && nomTF <= saldoUser) {
-                                saldoUser -= nomTF;
-                                NumberFormat format = NumberFormat.getCurrencyInstance();
-                                String balance = format.format(saldoUser);
-                                String nominal = format.format(nomTF);
-                                dataNasabah[index][5] = String.valueOf(saldoUser);
-                                System.out.println("    =======================================================");
-                                System.out.println("    [  ____________________________________________________");
-                                System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
-                                System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
-                                System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
-                                System.out.println("    [  ----------------------------------------------------");
-                                System.out.println("    =======================================================");
-                                System.out.println();
-                                System.out.print("Confirm balance transfer to account " + rekTujuan + " with amount " + nominal + "(y/n) : ");
-                                pilih = input.next();
-                                if (pilih.equals("y")) {
-                                    System.out.println(green+"    ======================================================");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                    System.out.println("    ------------------------------------------------------");
-                                    System.out.println("    ======================================================");
-                                    System.out.println("    ======================================================");
-                                    System.out.println("    [  ___________________________________________________");
-                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
-                                    System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
-                                    System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
-                                    System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
-                                    System.out.println("    [  ---------------------------------------------------");
-                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
-                                    System.out.println("    [  ---------------------------------------------------");
-                                    System.out.println("    ======================================================="+reset);
-                                    System.out.println();
-                                    riwayat[riw] = String.format("Has made balance transfer to account number %s with amount %s", rekTujuan, nominal);
-                                    riw++;
-                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
-                                    pilih = input.next();
-                                    if (pilih.equals("y")) {
-                                        menu();
+                        int indexTujuan = -1;
+                        for (int j = 0; j < dataNasabah.length; j++) {
+                            if (rekTujuan.equals(dataNasabah[j][1])) {
+                                indexTujuan = j;
+                                if (indexTujuan != -1) {
+                                    System.out.print("  [   Enter the transfer amount : IDR ");
+                                    double nomTF = input.nextDouble();
+                                    double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
+
+                                    if (nomTF >= 0 && nomTF <= saldoUser) {
+                                        if (nomTF >= 10000) {
+                                            saldoUser -= nomTF;
+                                            NumberFormat format = NumberFormat.getCurrencyInstance();
+                                            String balance = format.format(saldoUser);
+                                            String nominal = format.format(nomTF);
+                                            dataNasabah[index][5] = String.valueOf(saldoUser);
+                                            System.out.println("    =======================================================");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
+                                            System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                            System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.println("    =======================================================");
+                                            System.out.println();
+                                            System.out.print("Confirm balance transfer to account " + rekTujuan + " with amount " + nominal + "(y/n) : ");
+                                            pilih = input.next();
+                                            if (pilih.equals("y")) {
+                                                System.out.println(green+"    ======================================================");
+                                                System.out.println("    ------------------------------------------------------");
+                                                System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                                System.out.println("    ------------------------------------------------------");
+                                                System.out.println("    ======================================================");
+                                                System.out.println("    ======================================================");
+                                                System.out.println("    [  ___________________________________________________");
+                                                System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
+                                                System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                                System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
+                                                System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                                System.out.println("    [  ---------------------------------------------------");
+                                                System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                                System.out.println("    [  ---------------------------------------------------");
+                                                System.out.println("    ======================================================="+reset);
+                                                System.out.println();
+                                                riwayat[riw] = String.format("Has made balance transfer to account number %s with amount %s", rekTujuan, nominal);
+                                                riw++;
+                                                System.out.print("\n    [   Want to continue the transaction y/n: ");
+                                                pilih = input.next();
+                                                if (pilih.equalsIgnoreCase("y")) {
+                                                    menu();
+                                                } else {
+                                                    System.out.println(green+"    ======================================================");
+                                                    System.out.println("    |----------------------------------------------------|");
+                                                    System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
+                                                    System.out.println("    |----------------------------------------------------|");
+                                                    System.out.println("    ======================================================"+reset);
+                                                    System.exit(0);
+                                                }
+                                            } else {
+                                                System.out.println(red+"    ======================================================");
+                                                System.out.println("    |----------------------------------------------------|");
+                                                System.out.println("    |               TRANSACTION CANCELLED                |");
+                                                System.out.println("    |----------------------------------------------------|");
+                                                System.out.println("    ======================================================"+reset);
+                                                menu();
+                                            }
+                                        } else {
+                                            System.out.println(red+"    ======================================================");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    |       MINIMUM BALANCE TRANSFER IS IDR. 10,000      |");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    ======================================================"+reset);
+                                            System.out.println();
+                                            transferSaldo();
+                                        }
                                     } else {
-                                        System.out.println(green+"    ======================================================");
+                                        System.out.println(red+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
+                                        System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================"+reset);
-                                        System.exit(0);
+                                        System.out.println();
+                                        transferSaldo();
                                     }
                                 } else {
                                     System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |               TRANSACTION CANCELLED                |");
+                                    System.out.println("    |               INVALID ACCOUNT NUMBER               |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================"+reset);
-                                    menu();
+                                    System.out.println();
+                                    transferSaldo();
                                 }
-                            } else {
-                                System.out.println(red+"    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================"+reset);
-                                System.out.println();
-                                menu();
                             }
+
                         }
                     }
                 }
@@ -721,11 +746,11 @@ public class Bilingual {
         } else {
             System.out.println(red+"    ======================================================");
             System.out.println("    |----------------------------------------------------|");
-            System.out.println("    |               INVALID ACCOUNT NUMBER               |");
+            System.out.println("    |                  REKENING INVALID                  |");
             System.out.println("    |----------------------------------------------------|");
             System.out.println("    ======================================================"+reset);
             System.out.println();
-            menu();
+            transferSaldo();
         }
     }
 

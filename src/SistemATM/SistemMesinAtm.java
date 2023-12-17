@@ -647,102 +647,109 @@ public class SistemMesinAtm {
         System.out.print("  [   Masukkan nomor rekening anda : ");
         String inRek = input.next();
 
-        int index = 0;
+        int index = -1;
         if (inRek.equals(dataNasabah[hasil][1])) {
             for (int i = 0; i < dataNasabah.length; i++) {
                 if (dataNasabah[i][1].equals(inRek)) {
                     index = i;
-                    System.out.print("  [   Masukkan nomor rekening tujuan : ");
-                    String rekTujuan = input.next();
-                    for (int j = 0; j < dataNasabah.length; j++) {
-                        if (rekTujuan.equals(dataNasabah[j][1])) {
-                            index = 1;
-                            System.out.print("  [   Masukkan nominal transfer : IDR ");
-                            double nomTF = input.nextDouble();
-                            double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
+                    if (index != -1) {
+                        System.out.print("  [   Masukkan nomor rekening tujuan : ");
+                        String rekTujuan = input.next();
 
-                            if (nomTF <= saldoUser) {
-                                if (nomTF >= 10000) {
-                                    saldoUser -= nomTF;
-                                    NumberFormat format = NumberFormat.getCurrencyInstance();
-                                    String balance = format.format(saldoUser);
-                                    String nominal = format.format(nomTF);
-                                    dataNasabah[index][5] = String.valueOf(saldoUser);
-                                    System.out.println("    =======================================================");
-                                    System.out.println("    [  ____________________________________________________");
-                                    System.out.println("    [\t|        \tTRANSFER SALDO    \t\t\t");
-                                    System.out.printf("    [\t|  Rekening Tujuan        : %s\n", rekTujuan);
-                                    System.out.printf("    [\t|  Nominal Transfer       : %s\n", nominal);
-                                    System.out.println("    [  ----------------------------------------------------");
-                                    System.out.println("    =======================================================");
-                                    System.out.println();
-                                    System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
-                                    pilih = input.next();
-                                    if (pilih.equals("y")) {
-                                        System.out.println(green + "    ======================================================");
-                                        System.out.println("    ------------------------------------------------------");
-                                        System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                        System.out.println("    ------------------------------------------------------");
-                                        System.out.println("    ======================================================");
-                                        System.out.println("    ========================================================");
-                                        System.out.println("    [  _____________________________________________________");
-                                        System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
-                                        System.out.printf("    [\t|  Rekening tujuan        : %s\n", rekTujuan);
-                                        System.out.printf("    [\t|  Nama user              : %s\n", dataNasabah[j][2]);
-                                        System.out.printf("    [\t|  Nominal transfer       : %s\n", nominal);
-                                        System.out.println("    [  ----------------------------------------------------");
-                                        System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
-                                        System.out.println("    [  ----------------------------------------------------");
-                                        System.out.println("    =======================================================" + reset);
-                                        System.out.println();
-                                        riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
-                                        riw++;
-                                        System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
-                                        pilih = input.next();
-                                        if (pilih.equalsIgnoreCase("y")) {
-                                            menu();
+                        int indexTujuan = -1;
+                        for (int j = 0; j < dataNasabah.length; j++) {
+                            if (rekTujuan.equals(dataNasabah[j][1])) {
+                                indexTujuan = j;
+                                if (indexTujuan != -1) {
+                                    System.out.print("  [   Masukkan nominal transfer : IDR ");
+                                    double nomTF = input.nextDouble();
+                                    double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
+
+                                    if (nomTF >= 0 && nomTF <= saldoUser) {
+                                        if (nomTF >= 10000) {
+                                            saldoUser -= nomTF;
+                                            NumberFormat format = NumberFormat.getCurrencyInstance();
+                                            String balance = format.format(saldoUser);
+                                            String nominal = format.format(nomTF);
+                                            dataNasabah[index][5] = String.valueOf(saldoUser);
+                                            System.out.println("    =======================================================");
+                                            System.out.println("    [  ____________________________________________________");
+                                            System.out.println("    [\t|        \tTRANSFER SALDO    \t\t\t");
+                                            System.out.printf("    [\t|  Rekening Tujuan        : %s\n", rekTujuan);
+                                            System.out.printf("    [\t|  Nominal Transfer       : %s\n", nominal);
+                                            System.out.println("    [  ----------------------------------------------------");
+                                            System.out.println("    =======================================================");
+                                            System.out.println();
+                                            System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
+                                            pilih = input.next();
+                                            if (pilih.equals("y")) {
+                                                System.out.println(green + "    ======================================================");
+                                                System.out.println("    ------------------------------------------------------");
+                                                System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                                System.out.println("    ------------------------------------------------------");
+                                                System.out.println("    ======================================================");
+                                                System.out.println("    ========================================================");
+                                                System.out.println("    [  _____________________________________________________");
+                                                System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
+                                                System.out.printf("    [\t|  Rekening tujuan        : %s\n", rekTujuan);
+                                                System.out.printf("    [\t|  Nama user              : %s\n", dataNasabah[j][2]);
+                                                System.out.printf("    [\t|  Nominal transfer       : %s\n", nominal);
+                                                System.out.println("    [  ----------------------------------------------------");
+                                                System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                                System.out.println("    [  ----------------------------------------------------");
+                                                System.out.println("    =======================================================" + reset);
+                                                System.out.println();
+                                                riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
+                                                riw++;
+                                                System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                                pilih = input.next();
+                                                if (pilih.equalsIgnoreCase("y")) {
+                                                    menu();
+                                                } else {
+                                                    System.out.println(green + "    ======================================================");
+                                                    System.out.println("    |----------------------------------------------------|");
+                                                    System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                                    System.out.println("    |----------------------------------------------------|");
+                                                    System.out.println("    ======================================================" + reset);
+                                                    System.exit(0);
+                                                }
+                                            } else {
+                                                System.out.println(red + "    ======================================================");
+                                                System.out.println("    |----------------------------------------------------|");
+                                                System.out.println("    |                TRANSAKSI DIBATALKAN                |");
+                                                System.out.println("    |----------------------------------------------------|");
+                                                System.out.println("    ======================================================" + reset);
+                                                menu();
+                                            }
                                         } else {
-                                            System.out.println(green + "    ======================================================");
+                                            System.out.println(red+"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                            System.out.println("    |      MINIMAL TRANSFER SALDO ADALAH IDR. 10.000     |");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================" + reset);
-                                            System.exit(0);
+                                            System.out.println("    ======================================================"+reset);
+                                            System.out.println();
+                                            transferSaldo();
                                         }
                                     } else {
-                                        System.out.println(red + "    ======================================================");
+                                        System.out.println(red+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |                TRANSAKSI DIBATALKAN                |");
+                                        System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    ======================================================" + reset);
-                                        menu();
+                                        System.out.println("    ======================================================"+reset);
+                                        System.out.println();
+                                        transferSaldo();
                                     }
                                 } else {
-                                    System.out.println(red+"    ======================================================");
+                                    System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |      MINIMAL TRANSFER SALDO ADALAH IDR. 10.000     |");
+                                    System.out.println("    |            REKENING TUJUAN TIDAK VALID             |");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================"+reset);
+                                    System.out.println("    ======================================================" + reset);
                                     System.out.println();
                                     transferSaldo();
                                 }
-                            } else {
-                                System.out.println(red+"    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================"+reset);
-                                System.out.println();
-                                transferSaldo();
                             }
-                        } else {
-                            System.out.println(red + "    ======================================================");
-                            System.out.println("    |----------------------------------------------------|");
-                            System.out.println("    |            REKENING TUJUAN TIDAK VALID             |");
-                            System.out.println("    |----------------------------------------------------|");
-                            System.out.println("    ======================================================" + reset);
-                            System.out.println();
-                            transferSaldo();
+
                         }
                     }
                 }
