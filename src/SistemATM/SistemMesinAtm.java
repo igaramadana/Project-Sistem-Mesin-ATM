@@ -375,7 +375,7 @@ public class SistemMesinAtm {
                     System.out.println("    =======================================================");
                     System.out.println("    [  _________________________________________________\t]");
                     System.out.println("    [\t|        \tCEK SALDO    \t\t\t");
-                    System.out.printf("    [\t|  Nama\t\t\t: %s\n", dataNasabah[i][2]);
+                    System.out.printf("    [\t|  Nama\t\t\t\t: %s\n", dataNasabah[i][2]);
                     System.out.printf("    [\t|  Sisa Saldo\t\t: %s\n", balance);
                     System.out.println("    [  -------------------------------------------------\t]");
                     System.out.println("    =======================================================");
@@ -429,11 +429,11 @@ public class SistemMesinAtm {
                 dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                 System.out.println("    ======================================================");
-                System.out.println("    [  _________________________________________________\t]");
+                System.out.println("    [  ___________________________________________________");
                 System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
-                System.out.printf("    [\t|  Nama\t\t\t: %s\n", dataNasabah[hasil][2]);
+                System.out.printf("    [\t|  Nama\t\t\t\t\t: %s\n", dataNasabah[hasil][2]);
                 System.out.printf("    [\t|  Jumlah Saldo yang ditarik\t: %s\n", nominal);
-                System.out.println("    [  -------------------------------------------------\t]");
+                System.out.println("    [  ----------------------------------------------------");
                 System.out.println("    =======================================================");
                 System.out.println();
                 System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal);
@@ -454,11 +454,11 @@ public class SistemMesinAtm {
                                 System.out.println("    ------------------------------------------------------");
                                 System.out.println("    ======================================================");
                                 System.out.println("    ======================================================");
-                                System.out.println("    [  _________________________________________________\t]");
-                                System.out.println("    [\t|             \tTARIK TUNAI       \t\t|\t]");
+                                System.out.println("    [  ___________________________________________________");
+                                System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
                                 System.out.printf("    [\t|  Nama\t\t\t: %s\t\t|\t\t]\n", dataNasabah[hasil][2]);
                                 System.out.printf("    [\t|  Sisa Saldo\t\t: %s\t|\t]\n", balance);
-                                System.out.println("    [  -------------------------------------------------\t]");
+                                System.out.println("    [  ----------------------------------------------------");
                                 System.out.println("    ======================================================="+reset);
                                 System.out.println();
                                 riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal);
