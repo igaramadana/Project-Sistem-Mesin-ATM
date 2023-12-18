@@ -413,105 +413,468 @@ public class Bilingual {
     }
 
     static void tarikTunai() {
+        double[] tarik = {50000, 100000, 200000, 400000};
+        double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    |                   CASH WITHDRAW                    |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("    =======================================================");
-        System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Enter the balance you want to withdraw : IDR  ");
-        double nominalTarik = input.nextDouble();
-        double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
-        System.out.println("    -------------------------------------------------------");
-        System.out.println("    =======================================================");
+        System.out.println("""
+                [       Choose the menu below :
+                [       1. IDR 50.000
+                [       2. IDR 100.000
+                [       3. IDR 200.000
+                [       4. IDR 400.000
+                [       5. Enter another amount.
+                [       0. BAck to Main Menu
+                """);
+        System.out.print("\t[   Menu selected : ");
+        int menu = input.nextInt();
 
-        if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
-            if (nominalTarik >= 50000) {
-                sisaSaldo -= nominalTarik;
-                NumberFormat format = NumberFormat.getCurrencyInstance();
-                String balance = format.format(sisaSaldo);
-                String nominal = format.format(nominalTarik);
-                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+        switch (menu) {
+            case 1:
+                if (tarik[0] <= sisaSaldo) {
+                    sisaSaldo -= tarik[0];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance1 = format1.format(sisaSaldo);
+                    String nominal1 = format1.format(tarik[0]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
-            System.out.println("    ======================================================");
-            System.out.println("    [  ___________________________________________________");
-            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
-            System.out.printf("    [\t|  Name                                : %s\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Amount balance you want to withdraw : %s\n", nominal);
-            System.out.println("    [  ----------------------------------------------------");
-            System.out.println("    =======================================================");
-            System.out.println();
-            System.out.printf("\n    [   Confirm cash withdrawal amounting to %s? y/n: ", nominal);
-            pilih = input.next();
-            if (pilih.equalsIgnoreCase("y")) {
-                System.out.print("      [   Enter your PIN to continue the transaction : ");
-                String inPin = input.next();
-
-                int index = 0;
-                if (inPin.equals(dataNasabah[hasil][3])) {
-                    for (int i = 0; i < dataNasabah.length; i++) {
-                        if (dataNasabah[i][3].equals(inPin)) {
-                            index = 1;
-                            System.out.println();
-                            System.out.println(green+"    ======================================================");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ======================================================");
-                            System.out.println("    ======================================================");
-                            System.out.println("    [  ___________________________________________________");
-                            System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
-                            System.out.printf("    [\t|  Name               : %s\n", dataNasabah[hasil][2]);
-                            System.out.printf("    [\t|  Remaining balance  : IDR %s\n", dataNasabah[hasil][5]);
-                            System.out.println("    [  ---------------------------------------------------");
-                            System.out.println("    ======================================================="+reset);
-                            System.out.println();
-                            riwayat[riw] = String.format("Has made a cash withdrawal amounting to %s", nominal);
-                            riw++;
-                            System.out.print("      [   Want to continue the transaction y/n: ");
-                            pilih = input.next();
-                            if (pilih.equalsIgnoreCase("y")) {
-                                menu();
-                            } else {
-                                System.out.println(green+"    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================"+reset);
-                                System.exit(0);
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|            \tCASH WITHDRAW      \t\t\t");
+                    System.out.printf("    [\t|  Name            : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Withdraw amount : %s\n", nominal1);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Balance withdraw confirmation of %s? y/n: ", nominal1);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Enter your pin to continue the transaction : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|            \tCASH WITHDRAW      \t\t\t");
+                                    System.out.printf("    [\t|  Name                  : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Remaining balance     : %s\n", balance1);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    =======================================================" + reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Has made a balance withdrawl amounting to %s", nominal1);
+                                    riw++;
+                                    System.out.print("      [   Want to continue the transaction y/n: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green + "    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================" + reset);
+                                        System.exit(0);
+                                    }
+                                }
                             }
+                        } else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                            System.out.println("    |                Please Re-enter Again.               |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
                         }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSACTION CANCELED                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
                     }
                 } else {
-                    System.out.println(red+"    =======================================================");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |          (!) You entered the wrong PIN (!)          |");
-                    System.out.println("    |                Please Re-enter Again.               |");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    ======================================================="+reset);
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
                     tarikTunai();
                 }
-            } else {
+            case 2:
+                if (tarik[1] <= sisaSaldo) {
+                    sisaSaldo -= tarik[1];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance2 = format1.format(sisaSaldo);
+                    String nominal2 = format1.format(tarik[1]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                    System.out.printf("    [\t|  Name             : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Amount withdraw  : %s\n", nominal2);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Balance withdraw confirmation of %s? y/n: ", nominal2);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Enter your pin to continue the transaction : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|            \tCASH WITHDRAW      \t\t\t");
+                                    System.out.printf("    [\t|  Name                  : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Remaining balance     : %s\n", balance2);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    =======================================================" + reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Has made a balance withdrawl amounting to %s", nominal2);
+                                    riw++;
+                                    System.out.print("      [   Want to continue the transaction y/n: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green + "    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |              THANKS FOR USING THIS ATM :).         |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================" + reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        } else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                            System.out.println("    |                Please Re-enter Again.               |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSACTION CANCELED                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 3:
+                if (tarik[2] <= sisaSaldo) {
+                    sisaSaldo -= tarik[2];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance3 = format1.format(sisaSaldo);
+                    String nominal3 = format1.format(tarik[2]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|            \tCASH WITHDRAW       \t\t\t");
+                    System.out.printf("    [\t|  Name            : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Amount withdraw : %s\n", nominal3);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Balance withdraw confirmation of %s? y/n: ", nominal3);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Enter your pin to continue the transaction : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green+"    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                                    System.out.printf("    [\t|  Name                  : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Remaining balance     : %s\n", balance3);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Has made a balance withdrawl amounting to %s", nominal3);
+                                    riw++;
+                                    System.out.print("      [   Want to continue the transaction y/n: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |              THANKS FOR USING THIS ATM :).         |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================"+reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        }else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                            System.out.println("    |                Please Re-enter Again.               |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSACTION CANCELED                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 4:
+                if (tarik[3] <= sisaSaldo) {
+                    sisaSaldo -= tarik[3];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance4 = format1.format(sisaSaldo);
+                    String nominal4 = format1.format(tarik[3]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                    System.out.printf("    [\t|  Name             : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Amount withdraw  : %s\n", nominal4);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Balance withdraw confirmation of %s? y/n: ", nominal4);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Enter your pin to continue the transaction : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green+"    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                                    System.out.printf("    [\t|  Name                  : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Remaining balance     : %s\n", balance4);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Has made a balance withdrawl amounting to %s", nominal4);
+                                    riw++;
+                                    System.out.print("      [   Want to continue the transaction y/n: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================"+reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        }else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                            System.out.println("    |                Please Re-enter Again.               |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSACTION CANCELED                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 5:
+                System.out.println("    =======================================================");
+                System.out.println("    -------------------------------------------------------");
+                System.out.print("      [   Enter balance you want to withdraw : IDR  ");
+                double nominalTarik = input.nextDouble();
+                System.out.println("    -------------------------------------------------------");
+                System.out.println("    =======================================================");
+
+                if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
+                    if (nominalTarik >= 50000) {
+                        sisaSaldo -= nominalTarik;
+                        NumberFormat format = NumberFormat.getCurrencyInstance();
+                        String balance = format.format(sisaSaldo);
+                        String nominal = format.format(nominalTarik);
+                        dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                        System.out.println("    ======================================================");
+                        System.out.println("    [  ___________________________________________________");
+                        System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                        System.out.printf("    [\t|  Name             : %s\n", dataNasabah[hasil][2]);
+                        System.out.printf("    [\t|  Amount withdraw  : %s\n", nominal);
+                        System.out.println("    [  ---------------------------------------------------");
+                        System.out.println("    ======================================================");
+                        System.out.println();
+                        System.out.printf("\n    [   Balance withdraw confirmation of %s? y/n: ", nominal);
+                        pilih = input.next();
+                        if (pilih.equalsIgnoreCase("y")) {
+                            System.out.print("      [   Enter your pin to continue the transaction : ");
+                            String inPin = input.next();
+
+                            int index = 0;
+                            if (inPin.equals(dataNasabah[hasil][3])) {
+                                for (int i = 0; i < dataNasabah.length; i++) {
+                                    if (dataNasabah[i][3].equals(inPin)) {
+                                        index = 1;
+                                        System.out.println();
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================");
+                                        System.out.println("    [  ___________________________________________________");
+                                        System.out.println("    [\t|             \tCASH WITHDRAW       \t\t\t");
+                                        System.out.printf("    [\t|  Name                  : %s\n", dataNasabah[hasil][2]);
+                                        System.out.printf("    [\t|  Remaining balance     : %s\n", balance);
+                                        System.out.println("    [  ----------------------------------------------------");
+                                        System.out.println("    ======================================================="+reset);
+                                        System.out.println();
+                                        riwayat[riw] = String.format("Has made a balance withdrawl amounting to %s", nominal);
+                                        riw++;
+                                        System.out.print("      [   Want to continue the transaction y/n: ");
+                                        pilih = input.next();
+                                        if (pilih.equalsIgnoreCase("y")) {
+                                            menu();
+                                        } else {
+                                            System.out.println(green+"    ======================================================");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    ======================================================"+reset);
+                                            System.exit(0);
+                                        }
+                                    }
+                                }
+                            }else {
+                                System.out.println(red+"    =======================================================");
+                                System.out.println("    |-----------------------------------------------------|");
+                                System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                                System.out.println("    |                Please Re-enter Again.               |");
+                                System.out.println("    |-----------------------------------------------------|");
+                                System.out.println("    ======================================================="+reset);
+                                tarikTunai();
+                            }
+                        } else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |                 TRANSACTION CANCELED                |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |      (!) MINIMUM CASH WITHDRAWAL RP. 50.000(!)      |");
+                        System.out.println("    |                   PLEASE RE-ENTER                   |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
                     System.out.println(red+"    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
+                    System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    ======================================================"+reset);
-                    menu();
+                    System.out.println();
+                    tarikTunai();
                 }
-        } else {
-            System.out.println(red+"    ======================================================");
-            System.out.println("    |----------------------------------------------------|");
-            System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
-            System.out.println("    |----------------------------------------------------|");
-            System.out.println("    ======================================================"+reset);
-            System.out.println();
-            tarikTunai();
-            }
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           THE MENU YOU SELECTED IS INVALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                tarikTunai();
+                break;
         }
-    }
+        }
 
     static void keluarMenu() {
         System.out.print("      [   Are you sure to exit y/n: ");
@@ -636,109 +999,84 @@ public class Bilingual {
         System.out.print("  [   Enter your account number : ");
         String inRek = input.next();
 
-        int index = -1;
+        int index = 0;
         if (inRek.equals(dataNasabah[hasil][1])) {
             for (int i = 0; i < dataNasabah.length; i++) {
                 if (dataNasabah[i][1].equals(inRek)) {
                     index = i;
-                    if (index != -1) {
-                        System.out.print("  [   Enter the destination account number : ");
-                        String rekTujuan = input.next();
+                    System.out.print("  [   Enter account number destination : ");
+                    String rekTujuan = input.next();
+                    for (int j = 0; j < dataNasabah.length; j++) {
+                        if (rekTujuan.equals(dataNasabah[j][1])) {
+                            index = 1;
+                            System.out.print("  [   Enter transfer amount : IDR ");
+                            double nomTF = input.nextDouble();
+                            double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
 
-                        int indexTujuan = -1;
-                        for (int j = 0; j < dataNasabah.length; j++) {
-                            if (rekTujuan.equals(dataNasabah[j][1])) {
-                                indexTujuan = j;
-                                if (indexTujuan != -1) {
-                                    System.out.print("  [   Enter the transfer amount : IDR ");
-                                    double nomTF = input.nextDouble();
-                                    double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
-
-                                    if (nomTF >= 0 && nomTF <= saldoUser) {
-                                        if (nomTF >= 10000) {
-                                            saldoUser -= nomTF;
-                                            NumberFormat format = NumberFormat.getCurrencyInstance();
-                                            String balance = format.format(saldoUser);
-                                            String nominal = format.format(nomTF);
-                                            dataNasabah[index][5] = String.valueOf(saldoUser);
-                                            System.out.println("    =======================================================");
-                                            System.out.println("    [  ____________________________________________________");
-                                            System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
-                                            System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
-                                            System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
-                                            System.out.println("    [  ----------------------------------------------------");
-                                            System.out.println("    =======================================================");
-                                            System.out.println();
-                                            System.out.print("Confirm balance transfer to account " + rekTujuan + " with amount " + nominal + "(y/n) : ");
-                                            pilih = input.next();
-                                            if (pilih.equals("y")) {
-                                                System.out.println(green+"    ======================================================");
-                                                System.out.println("    ------------------------------------------------------");
-                                                System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                                System.out.println("    ------------------------------------------------------");
-                                                System.out.println("    ======================================================");
-                                                System.out.println("    ======================================================");
-                                                System.out.println("    [  ___________________________________________________");
-                                                System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
-                                                System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
-                                                System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
-                                                System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
-                                                System.out.println("    [  ---------------------------------------------------");
-                                                System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
-                                                System.out.println("    [  ---------------------------------------------------");
-                                                System.out.println("    ======================================================="+reset);
-                                                System.out.println();
-                                                riwayat[riw] = String.format("Has made balance transfer to account number %s with amount %s", rekTujuan, nominal);
-                                                riw++;
-                                                System.out.print("\n    [   Want to continue the transaction y/n: ");
-                                                pilih = input.next();
-                                                if (pilih.equalsIgnoreCase("y")) {
-                                                    menu();
-                                                } else {
-                                                    System.out.println(green+"    ======================================================");
-                                                    System.out.println("    |----------------------------------------------------|");
-                                                    System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
-                                                    System.out.println("    |----------------------------------------------------|");
-                                                    System.out.println("    ======================================================"+reset);
-                                                    System.exit(0);
-                                                }
-                                            } else {
-                                                System.out.println(red+"    ======================================================");
-                                                System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    |               TRANSACTION CANCELLED                |");
-                                                System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    ======================================================"+reset);
-                                                menu();
-                                            }
-                                        } else {
-                                            System.out.println(red+"    ======================================================");
-                                            System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    |       MINIMUM BALANCE TRANSFER IS IDR. 10,000      |");
-                                            System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    ======================================================"+reset);
-                                            System.out.println();
-                                            transferSaldo();
-                                        }
+                            if (nomTF > 0 && nomTF <= saldoUser) {
+                                saldoUser -= nomTF;
+                                NumberFormat format = NumberFormat.getCurrencyInstance();
+                                String balance = format.format(saldoUser);
+                                String nominal = format.format(nomTF);
+                                dataNasabah[index][5] = String.valueOf(saldoUser);
+                                System.out.println("    =======================================================");
+                                System.out.println("    [  ____________________________________________________");
+                                System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
+                                System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                System.out.println("    [  ----------------------------------------------------");
+                                System.out.println("    =======================================================");
+                                System.out.println();
+                                System.out.print("Confirm balance transfer to account " + rekTujuan + " with amount " + nominal + "(y/n) : ");
+                                pilih = input.next();
+                                if (pilih.equals("y")) {
+                                    System.out.println(green+"    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|           \tPAYMENT DETAILS \t\t\t");
+                                    System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                    System.out.printf("    [\t|  Name                   : %s\n", dataNasabah[j][2]);
+                                    System.out.printf("    [\t|  Amount transfer        : %s\n", nominal);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.printf("    [\t|  Your remaining balance : %s\n", balance);
+                                    System.out.println("    [  ---------------------------------------------------");
+                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Has made balance transfer to account number %s with amount %s", rekTujuan, nominal);
+                                    riw++;
+                                    System.out.print("\n    [   Want to continue the transaction y/n: ");
+                                    pilih = input.next();
+                                    if (pilih.equals("y")) {
+                                        menu();
                                     } else {
-                                        System.out.println(red+"    ======================================================");
+                                        System.out.println(green+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                                        System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================"+reset);
-                                        System.out.println();
-                                        transferSaldo();
+                                        System.exit(0);
                                     }
                                 } else {
                                     System.out.println(red+"    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |               INVALID ACCOUNT NUMBER               |");
+                                    System.out.println("    |               TRANSACTION CANCELLED                |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================"+reset);
-                                    System.out.println();
-                                    transferSaldo();
+                                    menu();
                                 }
+                            } else {
+                                System.out.println(red+"    ======================================================");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    ======================================================"+reset);
+                                System.out.println();
+                                menu();
                             }
-
                         }
                     }
                 }
@@ -746,11 +1084,11 @@ public class Bilingual {
         } else {
             System.out.println(red+"    ======================================================");
             System.out.println("    |----------------------------------------------------|");
-            System.out.println("    |                  REKENING INVALID                  |");
+            System.out.println("    |               INVALID ACCOUNT NUMBER               |");
             System.out.println("    |----------------------------------------------------|");
             System.out.println("    ======================================================"+reset);
             System.out.println();
-            transferSaldo();
+            menu();
         }
     }
 
