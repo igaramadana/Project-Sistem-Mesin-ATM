@@ -405,114 +405,468 @@ public class SistemMesinAtm {
     }
 
     static void tarikTunai() {
+        double[] tarik = {50000, 100000, 200000, 400000};
+        double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    |                    TARIK TUNAI                     |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
-        System.out.println("    =======================================================");
-        System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Masukkan saldo yang ingin ditarik : IDR  ");
-        double nominalTarik = input.nextDouble();
-        double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
-        System.out.println("    -------------------------------------------------------");
-        System.out.println("    =======================================================");
+        System.out.println("""
+                [       Silahkan pilih menu dibawah ini :
+                [       1. IDR 50.000
+                [       2. IDR 100.000
+                [       3. IDR 200.000
+                [       4. IDR 400.000
+                [       5. Masukkan nominal lain.
+                [       0. Kembali ke Menu Utama
+                """);
+        System.out.print("\t[   Menu yang dipilih : ");
+        int menu = input.nextInt();
 
-        if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
-            if (nominalTarik >= 50000) {
-                sisaSaldo -= nominalTarik;
-                NumberFormat format = NumberFormat.getCurrencyInstance();
-                String balance = format.format(sisaSaldo);
-                String nominal = format.format(nominalTarik);
-                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+        switch (menu) {
+            case 1:
+                if (tarik[0] <= sisaSaldo) {
+                    sisaSaldo -= tarik[0];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance1 = format1.format(sisaSaldo);
+                    String nominal1 = format1.format(tarik[0]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
-                System.out.println("    ======================================================");
-                System.out.println("    [  ___________________________________________________");
-                System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
-                System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
-                System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal);
-                System.out.println("    [  ---------------------------------------------------");
-                System.out.println("    ======================================================");
-                System.out.println();
-                System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal);
-                pilih = input.next();
-                if (pilih.equalsIgnoreCase("y")) {
-                    System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
-                    String inPin = input.next();
-
-                    int index = 0;
-                    if (inPin.equals(dataNasabah[hasil][3])) {
-                        for (int i = 0; i < dataNasabah.length; i++) {
-                            if (dataNasabah[i][3].equals(inPin)) {
-                                index = 1;
-                                System.out.println();
-                                System.out.println(green+"    ======================================================");
-                                System.out.println("    ------------------------------------------------------");
-                                System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
-                                System.out.println("    ------------------------------------------------------");
-                                System.out.println("    ======================================================");
-                                System.out.println("    ======================================================");
-                                System.out.println("    [  ___________________________________________________");
-                                System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
-                                System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
-                                System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance);
-                                System.out.println("    [  ----------------------------------------------------");
-                                System.out.println("    ======================================================="+reset);
-                                System.out.println();
-                                riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal);
-                                riw++;
-                                System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
-                                pilih = input.next();
-                                if (pilih.equalsIgnoreCase("y")) {
-                                    menu();
-                                } else {
-                                    System.out.println(green+"    ======================================================");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================"+reset);
-                                    System.exit(0);
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                    System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal1);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal1);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                                    System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance1);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    =======================================================" + reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal1);
+                                    riw++;
+                                    System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green + "    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================" + reset);
+                                        System.exit(0);
+                                    }
                                 }
                             }
+                        } else {
+                            System.out.println(red + "    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                            System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    =======================================================" + reset);
+                            tarikTunai();
                         }
-                    }else {
+                    } else {
                         System.out.println(red+"    =======================================================");
                         System.out.println("    |-----------------------------------------------------|");
-                        System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                        System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                        System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
                         System.out.println("    |-----------------------------------------------------|");
                         System.out.println("    ======================================================="+reset);
                         tarikTunai();
                     }
-                    } else {
-                    System.out.println(red+"    =======================================================");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    ======================================================="+reset);
-                    menu();
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
                 }
-            } else {
-                System.out.println(red+"    =======================================================");
-                System.out.println("    |-----------------------------------------------------|");
-                System.out.println("    |      (!) MINIMAL PENARIKAN TUNAI RP. 50.000(!)      |");
-                System.out.println("    |              Silahkan Ulangi Kembali.               |");
-                System.out.println("    |-----------------------------------------------------|");
-                System.out.println("    ======================================================="+reset);
-                tarikTunai();
-            }
-        } else {
-            System.out.println(red+"    ======================================================");
-            System.out.println("    |----------------------------------------------------|");
-            System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
-            System.out.println("    |----------------------------------------------------|");
-            System.out.println("    ======================================================"+reset);
-            System.out.println();
-            tarikTunai();
-        }
-    }
+            case 2:
+                if (tarik[1] <= sisaSaldo) {
+                    sisaSaldo -= tarik[1];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance2 = format1.format(sisaSaldo);
+                    String nominal2 = format1.format(tarik[1]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                    System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal2);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal2);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                                    System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance2);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    =======================================================" + reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal2);
+                                    riw++;
+                                    System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green + "    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================" + reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        } else {
+                            System.out.println(red + "    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                            System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    =======================================================" + reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 3:
+                if (tarik[2] <= sisaSaldo) {
+                    sisaSaldo -= tarik[2];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance3 = format1.format(sisaSaldo);
+                    String nominal3 = format1.format(tarik[2]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                    System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal3);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal3);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green+"    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                                    System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance3);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal3);
+                                    riw++;
+                                    System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================"+reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        }else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                            System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 4:
+                if (tarik[3] <= sisaSaldo) {
+                    sisaSaldo -= tarik[3];
+                    NumberFormat format1 = NumberFormat.getCurrencyInstance();
+                    String balance4 = format1.format(sisaSaldo);
+                    String nominal4 = format1.format(tarik[3]);
+                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                    System.out.println("    ======================================================");
+                    System.out.println("    [  ___________________________________________________");
+                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                    System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                    System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal4);
+                    System.out.println("    [  ---------------------------------------------------");
+                    System.out.println("    ======================================================");
+                    System.out.println();
+                    System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal4);
+                    pilih = input.next();
+                    if (pilih.equalsIgnoreCase("y")) {
+                        System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                        String inPin = input.next();
+                        int index = 0;
+                        if (inPin.equals(dataNasabah[hasil][3])) {
+                            for (int i = 0; i < dataNasabah.length; i++) {
+                                if (dataNasabah[i][3].equals(inPin)) {
+                                    index = 1;
+                                    System.out.println();
+                                    System.out.println(green+"    ======================================================");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                    System.out.println("    ------------------------------------------------------");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    ======================================================");
+                                    System.out.println("    [  ___________________________________________________");
+                                    System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                                    System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                    System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance4);
+                                    System.out.println("    [  ----------------------------------------------------");
+                                    System.out.println("    ======================================================="+reset);
+                                    System.out.println();
+                                    riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal4);
+                                    riw++;
+                                    System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                    pilih = input.next();
+                                    if (pilih.equalsIgnoreCase("y")) {
+                                        menu();
+                                    } else {
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                        System.out.println("    |----------------------------------------------------|");
+                                        System.out.println("    ======================================================"+reset);
+                                        System.exit(0);
+                                    }
+                                }
+                            }
+                        }else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                            System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red + "    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================" + reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 5:
+                System.out.println("    =======================================================");
+                System.out.println("    -------------------------------------------------------");
+                System.out.print("      [   Masukkan saldo yang ingin ditarik : IDR  ");
+                double nominalTarik = input.nextDouble();
+                System.out.println("    -------------------------------------------------------");
+                System.out.println("    =======================================================");
+
+                if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
+                    if (nominalTarik >= 50000) {
+                        sisaSaldo -= nominalTarik;
+                        NumberFormat format = NumberFormat.getCurrencyInstance();
+                        String balance = format.format(sisaSaldo);
+                        String nominal = format.format(nominalTarik);
+                        dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
+                        System.out.println("    ======================================================");
+                        System.out.println("    [  ___________________________________________________");
+                        System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                        System.out.printf("    [\t|  Nama                       : %s\n", dataNasabah[hasil][2]);
+                        System.out.printf("    [\t|  Jumlah Saldo yang ditarik  : %s\n", nominal);
+                        System.out.println("    [  ---------------------------------------------------");
+                        System.out.println("    ======================================================");
+                        System.out.println();
+                        System.out.printf("\n    [   Konfirmasi penarikan tunai sebesar %s? y/t: ", nominal);
+                        pilih = input.next();
+                        if (pilih.equalsIgnoreCase("y")) {
+                            System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                            String inPin = input.next();
+
+                            int index = 0;
+                            if (inPin.equals(dataNasabah[hasil][3])) {
+                                for (int i = 0; i < dataNasabah.length; i++) {
+                                    if (dataNasabah[i][3].equals(inPin)) {
+                                        index = 1;
+                                        System.out.println();
+                                        System.out.println(green+"    ======================================================");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                        System.out.println("    ------------------------------------------------------");
+                                        System.out.println("    ======================================================");
+                                        System.out.println("    ======================================================");
+                                        System.out.println("    [  ___________________________________________________");
+                                        System.out.println("    [\t|             \tTARIK TUNAI       \t\t\t");
+                                        System.out.printf("    [\t|  Nama           : %s\n", dataNasabah[hasil][2]);
+                                        System.out.printf("    [\t|  Sisa Saldo     : %s\n", balance);
+                                        System.out.println("    [  ----------------------------------------------------");
+                                        System.out.println("    ======================================================="+reset);
+                                        System.out.println();
+                                        riwayat[riw] = String.format("Telah melakukan tarik tunai sebesar %s", nominal);
+                                        riw++;
+                                        System.out.print("      [   Ingin melanjutkan transaksi y/t: ");
+                                        pilih = input.next();
+                                        if (pilih.equalsIgnoreCase("y")) {
+                                            menu();
+                                        } else {
+                                            System.out.println(green+"    ======================================================");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                            System.out.println("    |----------------------------------------------------|");
+                                            System.out.println("    ======================================================"+reset);
+                                            System.exit(0);
+                                        }
+                                    }
+                                }
+                            }else {
+                                System.out.println(red+"    =======================================================");
+                                System.out.println("    |-----------------------------------------------------|");
+                                System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
+                                System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                                System.out.println("    |-----------------------------------------------------|");
+                                System.out.println("    ======================================================="+reset);
+                                tarikTunai();
+                            }
+                        } else {
+                            System.out.println(red+"    =======================================================");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    |                 TRANSAKSI DIBATALKAN                |");
+                            System.out.println("    |-----------------------------------------------------|");
+                            System.out.println("    ======================================================="+reset);
+                            tarikTunai();
+                        }
+                    } else {
+                        System.out.println(red+"    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |      (!) MINIMAL PENARIKAN TUNAI RP. 50.000(!)      |");
+                        System.out.println("    |              Silahkan Ulangi Kembali.               |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    ======================================================="+reset);
+                        tarikTunai();
+                    }
+                } else {
+                    System.out.println(red+"    ======================================================");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                    System.out.println("    |----------------------------------------------------|");
+                    System.out.println("    ======================================================"+reset);
+                    System.out.println();
+                    tarikTunai();
+                }
+            case 0:
+                menu();
+                break;
+            default:
+                System.out.println(red+"    ======================================================");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    |           MENU YANG ANDA PILIH TIDAK VALID         |");
+                System.out.println("    |----------------------------------------------------|");
+                System.out.println("    ======================================================"+reset);
+                tarikTunai();
+                break;
+        }
+        }
     static void keluarMenu() {
         System.out.print("      [   Apakah anda yakin ingin keluar y/t: ");
         pilih = input.next();
@@ -3794,12 +4148,11 @@ public class SistemMesinAtm {
             Bilingual.main(args);
         } else {
             if (menu != 1 && menu != 2) {
-                System.out.println(red + "      ======================================================");
+                System.out.println(red+"      ======================================================");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    |     (!) MENU YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    ======================================================"+ reset);
-                System.exit(0);
             }
     
         }
