@@ -4142,19 +4142,21 @@ public class SistemMesinAtm {
                 """);
         System.out.print("    [       Bahasa yang dipilih : ");
         int menu = input.nextInt();
-        if (menu == 1) {
-            login();
-        } if (menu == 2) {
-            Bilingual.main(args);
-        } else {
-            if (menu != 1 && menu != 2) {
+
+        switch (menu) {
+            case 1:
+                login();
+                break;
+            case 2:
+                Bilingual.main(args);
+                break;
+            default:
                 System.out.println(red+"      ======================================================");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    |     (!) MENU YANG ANDA MASUKKAN TIDAK VALID (!)    |");
                 System.out.println("    |----------------------------------------------------|");
                 System.out.println("    ======================================================"+ reset);
-            }
-    
+                main(args);
         }
     }
 }
