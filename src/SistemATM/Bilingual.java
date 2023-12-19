@@ -907,77 +907,87 @@ public class Bilingual {
         System.out.println("    =======================================================");
 
         if (nominalSetor <= 5000000) {
-            sisaSaldo += nominalSetor;
-            NumberFormat format = NumberFormat.getCurrencyInstance();
-            String balance = format.format(sisaSaldo);
-            String nominal = format.format(nominalSetor);
-            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+            if (nominalSetor >= 50000) {
+                sisaSaldo += nominalSetor;
+                NumberFormat format = NumberFormat.getCurrencyInstance();
+                String balance = format.format(sisaSaldo);
+                String nominal = format.format(nominalSetor);
+                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
-            System.out.println("    =======================================================");
-            System.out.println("    [  ____________________________________________________");
-            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
-            System.out.printf("    [\t|  Name           : %s\n", dataNasabah[hasil][2]);
-            System.out.printf("    [\t|  Deposit amount : %s\n", nominal);
-            System.out.println("    [  ----------------------------------------------------");
-            System.out.println("    =======================================================");
-            System.out.println();
-            System.out.printf("\n    [   Confirm cash deposit amounting to %s? y/n: ", nominal);
-            pilih = input.next();
-            if (pilih.equalsIgnoreCase("y")) {
-                System.out.print("      [   Enter your PIN to continue the transaction : ");
-                String inPin = input.next();
+                System.out.println("    =======================================================");
+                System.out.println("    [  ____________________________________________________");
+                System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
+                System.out.printf("    [\t|  Name           : %s\n", dataNasabah[hasil][2]);
+                System.out.printf("    [\t|  Deposit amount : %s\n", nominal);
+                System.out.println("    [  ----------------------------------------------------");
+                System.out.println("    =======================================================");
+                System.out.println();
+                System.out.printf("\n    [   Confirm cash deposit amounting to %s? y/n: ", nominal);
+                pilih = input.next();
+                if (pilih.equalsIgnoreCase("y")) {
+                    System.out.print("      [   Enter your PIN to continue the transaction : ");
+                    String inPin = input.next();
 
-                int index = 0;
-                if (inPin.equals(dataNasabah[hasil][3])) {
-                    for (int i = 0; i < dataNasabah.length; i++) {
-                        if (dataNasabah[i][3].equals(inPin)) {
-                            index = 1;
-                            System.out.println(green+"    ======================================================");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
-                            System.out.println("    ------------------------------------------------------");
-                            System.out.println("    ======================================================");
-                            System.out.println("    ======================================================");
-                            System.out.println("    [  ___________________________________________________");
-                            System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
-                            System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
-                            System.out.printf("    [\t|  Remaining balance  : %sn", balance);
-                            System.out.println("    [  ---------------------------------------------------");
-                            System.out.println("    ======================================================="+reset);
-                            System.out.println();
-                            riwayat[riw] = String.format("Has made cash deposit amounting to %s", nominal);
-                            riw++;
-                            System.out.print("\n    [   Want to continue the transaction y/n: ");
-                            pilih = input.next();
-                            if (pilih.equalsIgnoreCase("y")) {
-                                menu();
-                            } else {
-                                System.out.println(green+"    ======================================================");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
-                                System.out.println("    |----------------------------------------------------|");
-                                System.out.println("    ======================================================"+reset);
-                                System.exit(0);
+                    int index = 0;
+                    if (inPin.equals(dataNasabah[hasil][3])) {
+                        for (int i = 0; i < dataNasabah.length; i++) {
+                            if (dataNasabah[i][3].equals(inPin)) {
+                                index = 1;
+                                System.out.println(green + "    ======================================================");
+                                System.out.println("    ------------------------------------------------------");
+                                System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                System.out.println("    ------------------------------------------------------");
+                                System.out.println("    ======================================================");
+                                System.out.println("    ======================================================");
+                                System.out.println("    [  ___________________________________________________");
+                                System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
+                                System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
+                                System.out.printf("    [\t|  Remaining balance  : %sn", balance);
+                                System.out.println("    [  ---------------------------------------------------");
+                                System.out.println("    =======================================================" + reset);
+                                System.out.println();
+                                riwayat[riw] = String.format("Has made cash deposit amounting to %s", nominal);
+                                riw++;
+                                System.out.print("\n    [   Want to continue the transaction y/n: ");
+                                pilih = input.next();
+                                if (pilih.equalsIgnoreCase("y")) {
+                                    menu();
+                                } else {
+                                    System.out.println(green + "    ======================================================");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    |            THANKS FOR USING THIS ATM :).           |");
+                                    System.out.println("    |----------------------------------------------------|");
+                                    System.out.println("    ======================================================" + reset);
+                                    System.exit(0);
+                                }
                             }
                         }
+                    } else {
+                        System.out.println(red + "    =======================================================");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    |          (!) You entered the wrong PIN (!)          |");
+                        System.out.println("    |                Please Re-enter Again.               |");
+                        System.out.println("    |-----------------------------------------------------|");
+                        System.out.println("    =======================================================" + reset);
+                        setorTunai();
                     }
                 } else {
-                    System.out.println(red+"    =======================================================");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    |          (!) You entered the wrong PIN (!)          |");
-                    System.out.println("    |                Please Re-enter Again.               |");
-                    System.out.println("    |-----------------------------------------------------|");
-                    System.out.println("    ======================================================="+reset);
-                    setorTunai();
-                }
-            } else {
-                    System.out.println(red+"    ======================================================");
+                    System.out.println(red + "    ======================================================");
                     System.out.println("    |----------------------------------------------------|");
                     System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
                     System.out.println("    |----------------------------------------------------|");
-                    System.out.println("    ======================================================"+reset);
-                    menu();
-                } 
+                    System.out.println("    ======================================================" + reset);
+                    setorTunai();
+                }
+            } else {
+                System.out.println(red+"    =======================================================");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    |  (!) Minimum cash deposit amount is IDR 50,000 (!)  |");
+                System.out.println("    |                   Please try again.                 |");
+                System.out.println("    |-----------------------------------------------------|");
+                System.out.println("    ======================================================="+reset);
+                setorTunai();
+            }
         } else {
             System.out.println(red+"    =======================================================");
             System.out.println("    |-----------------------------------------------------|");
