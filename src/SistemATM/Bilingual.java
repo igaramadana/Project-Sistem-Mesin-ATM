@@ -436,11 +436,8 @@ public class Bilingual {
         switch (menu) {
             case 1:
                 if (tarik[0] <= sisaSaldo) {
-                    sisaSaldo -= tarik[0];
                     NumberFormat format1 = NumberFormat.getCurrencyInstance();
-                    String balance1 = format1.format(sisaSaldo);
                     String nominal1 = format1.format(tarik[0]);
-                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                     System.out.println("    ======================================================");
                     System.out.println("    [  ___________________________________________________");
@@ -457,6 +454,10 @@ public class Bilingual {
                         String inPin = input.next();
                         int index = 0;
                         if (inPin.equals(dataNasabah[hasil][3])) {
+                            sisaSaldo -= tarik[0];
+                            String balance1 = format1.format(sisaSaldo);
+                            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
+
                             for (int i = 0; i < dataNasabah.length; i++) {
                                 if (dataNasabah[i][3].equals(inPin)) {
                                     index = 1;
@@ -491,6 +492,7 @@ public class Bilingual {
                                 }
                             }
                         } else {
+                            sisaSaldo += tarik[0];
                             System.out.println(red+"    =======================================================");
                             System.out.println("    |-----------------------------------------------------|");
                             System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -518,11 +520,8 @@ public class Bilingual {
                 }
             case 2:
                 if (tarik[1] <= sisaSaldo) {
-                    sisaSaldo -= tarik[1];
                     NumberFormat format1 = NumberFormat.getCurrencyInstance();
-                    String balance2 = format1.format(sisaSaldo);
                     String nominal2 = format1.format(tarik[1]);
-                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                     System.out.println("    ======================================================");
                     System.out.println("    [  ___________________________________________________");
@@ -539,6 +538,9 @@ public class Bilingual {
                         String inPin = input.next();
                         int index = 0;
                         if (inPin.equals(dataNasabah[hasil][3])) {
+                            sisaSaldo -= tarik[1];
+                            String balance2 = format1.format(sisaSaldo);
+                            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
                             for (int i = 0; i < dataNasabah.length; i++) {
                                 if (dataNasabah[i][3].equals(inPin)) {
                                     index = 1;
@@ -573,6 +575,7 @@ public class Bilingual {
                                 }
                             }
                         } else {
+                            sisaSaldo += tarik[1];
                             System.out.println(red+"    =======================================================");
                             System.out.println("    |-----------------------------------------------------|");
                             System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -600,11 +603,8 @@ public class Bilingual {
                 }
             case 3:
                 if (tarik[2] <= sisaSaldo) {
-                    sisaSaldo -= tarik[2];
                     NumberFormat format1 = NumberFormat.getCurrencyInstance();
-                    String balance3 = format1.format(sisaSaldo);
                     String nominal3 = format1.format(tarik[2]);
-                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                     System.out.println("    ======================================================");
                     System.out.println("    [  ___________________________________________________");
@@ -621,6 +621,9 @@ public class Bilingual {
                         String inPin = input.next();
                         int index = 0;
                         if (inPin.equals(dataNasabah[hasil][3])) {
+                            sisaSaldo -= tarik[2];
+                            String balance3 = format1.format(sisaSaldo);
+                            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
                             for (int i = 0; i < dataNasabah.length; i++) {
                                 if (dataNasabah[i][3].equals(inPin)) {
                                     index = 1;
@@ -655,6 +658,7 @@ public class Bilingual {
                                 }
                             }
                         }else {
+                            sisaSaldo += tarik[2];
                             System.out.println(red+"    =======================================================");
                             System.out.println("    |-----------------------------------------------------|");
                             System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -682,11 +686,8 @@ public class Bilingual {
                 }
             case 4:
                 if (tarik[3] <= sisaSaldo) {
-                    sisaSaldo -= tarik[3];
                     NumberFormat format1 = NumberFormat.getCurrencyInstance();
-                    String balance4 = format1.format(sisaSaldo);
                     String nominal4 = format1.format(tarik[3]);
-                    dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                     System.out.println("    ======================================================");
                     System.out.println("    [  ___________________________________________________");
@@ -703,6 +704,9 @@ public class Bilingual {
                         String inPin = input.next();
                         int index = 0;
                         if (inPin.equals(dataNasabah[hasil][3])) {
+                            sisaSaldo -= tarik[3];
+                            String balance4 = format1.format(sisaSaldo);
+                            dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
                             for (int i = 0; i < dataNasabah.length; i++) {
                                 if (dataNasabah[i][3].equals(inPin)) {
                                     index = 1;
@@ -737,6 +741,7 @@ public class Bilingual {
                                 }
                             }
                         }else {
+                            sisaSaldo += tarik[3];
                             System.out.println(red+"    =======================================================");
                             System.out.println("    |-----------------------------------------------------|");
                             System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -774,11 +779,8 @@ public class Bilingual {
 
                 if (nominalTarik > 0 && nominalTarik <= sisaSaldo) {
                     if (nominalTarik >= 50000) {
-                        sisaSaldo -= nominalTarik;
                         NumberFormat format = NumberFormat.getCurrencyInstance();
-                        String balance = format.format(sisaSaldo);
                         String nominal = format.format(nominalTarik);
-                        dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                         System.out.println("    ======================================================");
                         System.out.println("    [  ___________________________________________________");
@@ -796,6 +798,9 @@ public class Bilingual {
 
                             int index = 0;
                             if (inPin.equals(dataNasabah[hasil][3])) {
+                                sisaSaldo -= nominalTarik;
+                                String balance = format.format(sisaSaldo);
+                                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
                                 for (int i = 0; i < dataNasabah.length; i++) {
                                     if (dataNasabah[i][3].equals(inPin)) {
                                         index = 1;
@@ -830,6 +835,7 @@ public class Bilingual {
                                     }
                                 }
                             }else {
+                                sisaSaldo += nominalTarik;
                                 System.out.println(red+"    =======================================================");
                                 System.out.println("    |-----------------------------------------------------|");
                                 System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -911,11 +917,8 @@ public class Bilingual {
 
         if (nominalSetor <= 5000000) {
             if (nominalSetor >= 50000) {
-                sisaSaldo += nominalSetor;
                 NumberFormat format = NumberFormat.getCurrencyInstance();
-                String balance = format.format(sisaSaldo);
                 String nominal = format.format(nominalSetor);
-                dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
 
                 System.out.println("    =======================================================");
                 System.out.println("    [  ____________________________________________________");
@@ -933,6 +936,9 @@ public class Bilingual {
 
                     int index = 0;
                     if (inPin.equals(dataNasabah[hasil][3])) {
+                        sisaSaldo += nominalSetor;
+                        String balance = format.format(sisaSaldo);
+                        dataNasabah[hasil][5] = String.valueOf(sisaSaldo);
                         for (int i = 0; i < dataNasabah.length; i++) {
                             if (dataNasabah[i][3].equals(inPin)) {
                                 index = 1;
@@ -945,7 +951,7 @@ public class Bilingual {
                                 System.out.println("    [  ___________________________________________________");
                                 System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
                                 System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
-                                System.out.printf("    [\t|  Remaining balance  : %s\n", balance);
+                                System.out.printf("    [\t|  Remaining balance  : %sn", balance);
                                 System.out.println("    [  ---------------------------------------------------");
                                 System.out.println("    =======================================================" + reset);
                                 System.out.println();
@@ -966,6 +972,7 @@ public class Bilingual {
                             }
                         }
                     } else {
+                        sisaSaldo -= nominalSetor;
                         System.out.println(red + "    =======================================================");
                         System.out.println("    |-----------------------------------------------------|");
                         System.out.println("    |          (!) You entered the wrong PIN (!)          |");
@@ -1032,11 +1039,8 @@ public class Bilingual {
 
                                     if (nomTF >= 0 && nomTF <= saldoUser) {
                                         if (nomTF >= 10000) {
-                                            saldoUser -= nomTF;
                                             NumberFormat format = NumberFormat.getCurrencyInstance();
-                                            String balance = format.format(saldoUser);
                                             String nominal = format.format(nomTF);
-                                            dataNasabah[index][5] = String.valueOf(saldoUser);
                                             System.out.println("    =======================================================");
                                             System.out.println("    [  ____________________________________________________");
                                             System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
@@ -1052,6 +1056,9 @@ public class Bilingual {
                                                 String inPin = input.next();
 
                                                 if (inPin.equals(dataNasabah[hasil][3])) {
+                                                    saldoUser -= nomTF;
+                                                    String balance = format.format(saldoUser);
+                                                    dataNasabah[index][5] = String.valueOf(saldoUser);
                                                     for (int k = 0; k < dataNasabah.length; k++) {
                                                         if (dataNasabah[k][3].equals(inPin)) {
                                                             System.out.println(green + "    ======================================================");
@@ -1087,6 +1094,7 @@ public class Bilingual {
                                                         }
                                                     }
                                                 } else {
+                                                    saldoUser += nomTF;
                                                     System.out.println(red + "    =======================================================");
                                                     System.out.println("    |-----------------------------------------------------|");
                                                     System.out.println("    |          (!) YOU ENTERED THE WRONG PIN (!)          |");
