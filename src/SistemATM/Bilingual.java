@@ -333,7 +333,7 @@ public class Bilingual {
                     System.out.printf("    [\t|  Name            : %s\n", dataNasabah[i][2]);
                     System.out.printf("    [\t|  Account number  : %s\n", dataNasabah[i][1]);
                     System.out.printf("    [\t|  Address         : %s\n", dataNasabah[i][4]);
-                    System.out.printf("    [\t|  Phone number\t\t: %s\n", dataNasabah[i][7]);
+                    System.out.printf("    [\t|  Phone number    : %s\n", dataNasabah[i][7]);
                     System.out.println("    [  ----------------------------------------------------");
                     System.out.printf(green+"    [\t|  Account status   : %s\n"+reset, dataNasabah[i][6]);
                     System.out.println("    [  ----------------------------------------------------");
@@ -765,7 +765,9 @@ public class Bilingual {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    -------------------------------------------------------");
-                System.out.print("      [   Enter balance you want to withdraw : IDR  ");
+                System.out.println("    [   Minimum withdrawal amount IDR 50.000");
+                System.out.println("    -------------------------------------------------------");
+                System.out.print("    [   Enter balance you want to withdraw : IDR  ");
                 double nominalTarik = input.nextDouble();
                 System.out.println("    -------------------------------------------------------");
                 System.out.println("    =======================================================");
@@ -899,7 +901,9 @@ public class Bilingual {
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Enter the balance you want to deposit : IDR ");
+        System.out.println("    [   Maximal cash deposit is IDR 5.000.000");
+        System.out.println("    -------------------------------------------------------");
+        System.out.print("    [   Enter the balance you want to deposit : IDR ");
         double nominalSetor = input.nextDouble();
         double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    -------------------------------------------------------");

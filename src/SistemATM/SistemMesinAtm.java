@@ -894,7 +894,9 @@ public class SistemMesinAtm {
         System.out.println();
         System.out.println("    =======================================================");
         System.out.println("    -------------------------------------------------------");
-        System.out.print("      [   Masukkan saldo yang ingin disetor : IDR ");
+        System.out.println("    [   Maximal setor tunai adalah IDR 5.000.000");
+        System.out.println("    -------------------------------------------------------");
+        System.out.print("    [   Masukkan saldo yang ingin disetor : IDR ");
         double nominalSetor = input.nextDouble();
         double sisaSaldo = Double.parseDouble(dataNasabah[hasil][5]);
         System.out.println("    -------------------------------------------------------");
