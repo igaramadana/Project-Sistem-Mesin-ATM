@@ -890,7 +890,6 @@ public class Bilingual {
             menu();
         }
     }
-
     static void setorTunai() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");

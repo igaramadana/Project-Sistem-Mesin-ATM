@@ -757,7 +757,9 @@ public class SistemMesinAtm {
             case 5:
                 System.out.println("    =======================================================");
                 System.out.println("    -------------------------------------------------------");
-                System.out.print("      [   Masukkan saldo yang ingin ditarik : IDR  ");
+                System.out.println("    [  Jumlah penarikan minimal IDR 50.000");
+                System.out.println("    -------------------------------------------------------");
+                System.out.print("    [   Masukkan saldo yang ingin ditarik : IDR  ");
                 double nominalTarik = input.nextDouble();
                 System.out.println("    -------------------------------------------------------");
                 System.out.println("    =======================================================");
