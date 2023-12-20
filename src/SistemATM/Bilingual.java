@@ -1005,11 +1005,11 @@ public class Bilingual {
     static void transferSaldo() {
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
-        System.out.println("    |                   TRANSFER SALDO                   |");
+        System.out.println("    |                  BALANCE TRANSFER                  |");
         System.out.println("    |----------------------------------------------------|");
         System.out.println("    ======================================================");
         System.out.println();
-        System.out.print("  [   Masukkan nomor rekening anda : ");
+        System.out.print("  [   Enter your number account : ");
         String inRek = input.next();
 
         int index = -1;
@@ -1018,7 +1018,7 @@ public class Bilingual {
                 if (dataNasabah[i][1].equals(inRek)) {
                     index = i;
                     if (index != -1) {
-                        System.out.print("  [   Masukkan nomor rekening tujuan : ");
+                        System.out.print("  [   Enter destination number account : ");
                         String rekTujuan = input.next();
 
                         int indexTujuan = -1;
@@ -1026,7 +1026,7 @@ public class Bilingual {
                             if (rekTujuan.equals(dataNasabah[j][1])) {
                                 indexTujuan = j;
                                 if (indexTujuan != -1) {
-                                    System.out.print("  [   Masukkan nominal transfer : IDR ");
+                                    System.out.print("  [   Enter transfer nominal : IDR ");
                                     double nomTF = input.nextDouble();
                                     double saldoUser = Double.parseDouble(dataNasabah[hasil][5]);
 
@@ -1039,16 +1039,16 @@ public class Bilingual {
                                             dataNasabah[index][5] = String.valueOf(saldoUser);
                                             System.out.println("    =======================================================");
                                             System.out.println("    [  ____________________________________________________");
-                                            System.out.println("    [\t|        \tTRANSFER SALDO    \t\t\t");
-                                            System.out.printf("    [\t|  Rekening Tujuan        : %s\n", rekTujuan);
-                                            System.out.printf("    [\t|  Nominal Transfer       : %s\n", nominal);
+                                            System.out.println("    [\t|        \tBALANCE TRANSFER    \t\t\t");
+                                            System.out.printf("    [\t|  Account destination    : %s\n", rekTujuan);
+                                            System.out.printf("    [\t|  Transfer amount       : %s\n", nominal);
                                             System.out.println("    [  ----------------------------------------------------");
                                             System.out.println("    =======================================================");
                                             System.out.println();
-                                            System.out.print("Konfirmasi transfer SALDO ke rekening " + rekTujuan + " dengan nominal " + nominal + "(y/t) : ");
+                                            System.out.print("Balance transfer confirmation with account destination " + rekTujuan + " with amount " + nominal + "(y/n) : ");
                                             pilih = input.next();
                                             if (pilih.equals("y")) {
-                                                System.out.print("      [   Masukkan PIN anda untuk melanjutkan transaksi : ");
+                                                System.out.print("      [   Enter your PIN to continue the transaction : ");
                                                 String inPin = input.next();
 
                                                 if (inPin.equals(dataNasabah[hasil][3])) {
@@ -1056,30 +1056,30 @@ public class Bilingual {
                                                         if (dataNasabah[k][3].equals(inPin)) {
                                                             System.out.println(green + "    ======================================================");
                                                             System.out.println("    ------------------------------------------------------");
-                                                            System.out.println("     ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSAKSI BERHASIL ~ ~ ~ ~ ~ ~ ~ ~ ");
+                                                            System.out.println("    ~ ~ ~ ~ ~ ~ ~ ~ ~ TRANSACTION SUCCESS ~ ~ ~ ~ ~ ~ ~ ~ ");
                                                             System.out.println("    ------------------------------------------------------");
                                                             System.out.println("    ======================================================");
                                                             System.out.println("    ========================================================");
                                                             System.out.println("    [  _____________________________________________________");
-                                                            System.out.println("    [\t|           \tRINCIAN PEMBAYARAN \t\t\t");
-                                                            System.out.printf("    [\t|  Rekening tujuan        : %s\n", rekTujuan);
-                                                            System.out.printf("    [\t|  Nama user              : %s\n", dataNasabah[j][2]);
-                                                            System.out.printf("    [\t|  Nominal transfer       : %s\n", nominal);
+                                                            System.out.println("    [\t|           \tDETAILS PAYMENT    \t\t\t");
+                                                            System.out.printf("    [\t|  Account destinatio     : %s\n", rekTujuan);
+                                                            System.out.printf("    [\t|  User name              : %s\n", dataNasabah[j][2]);
+                                                            System.out.printf("    [\t|  Transfer amount        : %s\n", nominal);
                                                             System.out.println("    [  ----------------------------------------------------");
-                                                            System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                                            System.out.printf("    [\t|  Remaining balance      : %s\n", balance);
                                                             System.out.println("    [  ----------------------------------------------------");
                                                             System.out.println("    =======================================================" + reset);
                                                             System.out.println();
-                                                            riwayat[riw] = String.format("Telah melakukan transfer saldo ke nomor rekening %s sebesar %s", rekTujuan, nominal);
+                                                            riwayat[riw] = String.format("Has made a transfer to account number %s with amount %s", rekTujuan, nominal);
                                                             riw++;
-                                                            System.out.print("\n    [   Ingin melanjutkan transaksi y/t: ");
+                                                            System.out.print("\n    [   Want to continue the transaction y/n: ");
                                                             pilih = input.next();
                                                             if (pilih.equalsIgnoreCase("y")) {
                                                                 menu();
                                                             } else {
                                                                 System.out.println(green + "    ======================================================");
                                                                 System.out.println("    |----------------------------------------------------|");
-                                                                System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
+                                                                System.out.println("    |             THANKS FOR USING THIS ATM :).          |");
                                                                 System.out.println("    |----------------------------------------------------|");
                                                                 System.out.println("    ======================================================" + reset);
                                                                 System.exit(0);
@@ -1089,8 +1089,8 @@ public class Bilingual {
                                                 } else {
                                                     System.out.println(red + "    =======================================================");
                                                     System.out.println("    |-----------------------------------------------------|");
-                                                    System.out.println("    |       (!) Anda memasukkan PIN yang salah (!)        |");
-                                                    System.out.println("    |              Silahkan Masukkan Kembali.             |");
+                                                    System.out.println("    |          (!) YOU ENTERED THE WRONG PIN (!)          |");
+                                                    System.out.println("    |                   PLEASE RE-ENTER                   |");
                                                     System.out.println("    |-----------------------------------------------------|");
                                                     System.out.println("    =======================================================" + reset);
                                                     transferSaldo();
@@ -1098,7 +1098,7 @@ public class Bilingual {
                                             } else {
                                                 System.out.println(red + "    ======================================================");
                                                 System.out.println("    |----------------------------------------------------|");
-                                                System.out.println("    |                TRANSAKSI DIBATALKAN                |");
+                                                System.out.println("    |                TRANSACTION CANCELLED                |");
                                                 System.out.println("    |----------------------------------------------------|");
                                                 System.out.println("    ======================================================" + reset);
                                                 transferSaldo();
@@ -1106,7 +1106,7 @@ public class Bilingual {
                                         } else {
                                             System.out.println(red+"    ======================================================");
                                             System.out.println("    |----------------------------------------------------|");
-                                            System.out.println("    |      MINIMAL TRANSFER SALDO ADALAH IDR. 10.000     |");
+                                            System.out.println("    |      MINIMUM BALANCE TRANSFER IS IDR 10.000,00     |");
                                             System.out.println("    |----------------------------------------------------|");
                                             System.out.println("    ======================================================"+reset);
                                             System.out.println();
@@ -1115,7 +1115,7 @@ public class Bilingual {
                                     } else {
                                         System.out.println(red+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |   SALDO TIDAK CUKUP UNTUK MELAKUKAN TRANSAKSI INI. |");
+                                        System.out.println("    |     NOT ENOUGH BALANCE TO MAKE THIS TRANSACTION.   |");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================"+reset);
                                         System.out.println();
@@ -1124,7 +1124,7 @@ public class Bilingual {
                                 } else {
                                     System.out.println(red + "    ======================================================");
                                     System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |            REKENING TUJUAN TIDAK VALID             |");
+                                    System.out.println("    |         INVALID ACCOUNT NUMBER DESTINATION         |");
                                     System.out.println("    |----------------------------------------------------|");
                                     System.out.println("    ======================================================" + reset);
                                     System.out.println();
@@ -1139,7 +1139,7 @@ public class Bilingual {
         } else {
             System.out.println(red+"    ======================================================");
             System.out.println("    |----------------------------------------------------|");
-            System.out.println("    |                REKENING TIDAK VALID                |");
+            System.out.println("    |                INVALID ACCOUNT NUMBER                |");
             System.out.println("    |----------------------------------------------------|");
             System.out.println("    ======================================================"+reset);
             System.out.println();
@@ -3277,7 +3277,7 @@ public class Bilingual {
                                     System.out.printf("    [\t|  Phone number           : %s\n", "083-" + nomTelp);
                                     System.out.printf("    [\t|  Total credit payment   : %s\n", nominal);
                                     System.out.println("    [  ----------------------------------------------------");
-                                    System.out.printf("    [\t|  Remaining balance : %s\n", balance);
+                                    System.out.printf("    [\t|  Remaining balance      : %s\n", balance);
                                     System.out.println("    [  ----------------------------------------------------");
                                     System.out.println("    ======================================================"+reset);
                                     System.out.println();
@@ -3728,14 +3728,14 @@ public class Bilingual {
                                                         System.out.println();
                                                         System.out.println("    ======================================================");
                                                         System.out.println("    [  ___________________________________________________");
-                                                        System.out.println("    [\t|        \tPembayaran UKT           \t\t\t");
-                                                        System.out.printf("    [\t|  ID Perguruan Tinggi    : %s\n", dataUniv[i][0]);
-                                                        System.out.printf("    [\t|  Nama Perguruan TInggi  : %s\n", dataUniv[i][1]);
-                                                        System.out.printf("    [\t|  Nama Mahasiswa         : %s\n", dataUniv[i][3]);
-                                                        System.out.printf("    [\t|  Jurusan                : %s\n", dataUniv[i][4]);
-                                                        System.out.printf("    [\t|  Nominal dibayarkan     : %s\n", nominal);
+                                                        System.out.println("    [\t|        \tSINGLE TUITON PAYMENT    \t\t\t");
+                                                        System.out.printf("    [\t|  Collage ID             : %s\n", dataUniv[i][0]);
+                                                        System.out.printf("    [\t|  Collage name           : %s\n", dataUniv[i][1]);
+                                                        System.out.printf("    [\t|  Student name           : %s\n", dataUniv[i][3]);
+                                                        System.out.printf("    [\t|  Major                  : %s\n", dataUniv[i][4]);
+                                                        System.out.printf("    [\t|  Nominal paid           : %s\n", nominal);
                                                         System.out.println("    [  ---------------------------------------------------");
-                                                        System.out.printf("    [\t|  Sisa saldo anda        : %s\n", balance);
+                                                        System.out.printf("    [\t|  Remaining balance      : %s\n", balance);
                                                         System.out.println("    [  ---------------------------------------------------");
                                                         System.out.println("    ======================================================="+reset);
                                                         System.out.println();
@@ -3774,7 +3774,7 @@ public class Bilingual {
                                     } else {
                                         System.out.println(red+"    ======================================================");
                                         System.out.println("    |----------------------------------------------------|");
-                                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ Transaction canceled (!) ~ ~ ~ ~ ~ ~ ~|");
+                                        System.out.println("    |~ ~ ~ ~ ~ ~ ~ TRANSACTION CANCELED (!) ~ ~ ~ ~ ~ ~ ~|");
                                         System.out.println("    |----------------------------------------------------|");
                                         System.out.println("    ======================================================"+reset);
                                         menu();
