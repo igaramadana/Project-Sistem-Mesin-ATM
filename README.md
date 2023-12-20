@@ -11,7 +11,7 @@ Ini adalah implementasi sederhana dari Sistem Mesin ATM menggunakan bahasa pemro
 - cetak struk transaksi ATM
 
 ## Fitur Tambahan
-- Pembayaran lain : beli pulsa, bayar listrik, bayar UKT
+- Pembayaran lain : beli pulsa, bayar listrik, bayar PDAM/Air, bayar UKT
 - bilingual
 ## Kontributor
 - Annisa 
