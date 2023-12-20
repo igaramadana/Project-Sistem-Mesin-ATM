@@ -945,7 +945,7 @@ public class Bilingual {
                                 System.out.println("    [  ___________________________________________________");
                                 System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
                                 System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
-                                System.out.printf("    [\t|  Remaining balance  : %sn", balance);
+                                System.out.printf("    [\t|  Remaining balance  : %s\n", balance);
                                 System.out.println("    [  ---------------------------------------------------");
                                 System.out.println("    =======================================================" + reset);
                                 System.out.println();
