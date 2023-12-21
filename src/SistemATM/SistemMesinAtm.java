@@ -383,7 +383,7 @@ public class SistemMesinAtm {
                         System.out.println("    |       TERIMAKASIH TELAH MENGGUNAKAN ATM INI :).    |");
                         System.out.println("    |----------------------------------------------------|");
                         System.out.println("    ======================================================"+reset);
-                        break;
+                        System.exit(0);
                     }
                 }
             }
