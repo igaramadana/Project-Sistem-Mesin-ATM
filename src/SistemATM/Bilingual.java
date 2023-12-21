@@ -17,7 +17,8 @@ public class Bilingual {
             {"02", "334455", "Iga", "3344", "Dampit", "5000000", "Verified", "081123456"},
             {"03", "556677", "Firman", "4455", "Blitar", "3500000", "Verified", "087123456"},
             {"04", "889911", "Bayu", "6677", "Jombang", "3000000", "Verified", "08912345"},
-            {"05", "123456", "Novita", "8899", "Watugong", "10000000", "Verified", "088123456"}
+            {"05", "123456", "Novita", "8899", "Watugong", "10000000", "Verified", "088123456"},
+            {"06", "990088", "Naufal", "0099", "Sawojajar", "500000", "Disabled", "0812938219"}
     };
     static String[][] datapdam = {
             {"Kota Malang", "MLG1234", "100000"},
@@ -90,7 +91,7 @@ public class Bilingual {
                     System.out.println("    |-----------------------------------------------------|");
                     System.out.println("    ======================================================="+reset);
                     dataNasabah[hasil][6] = "Disabled";
-                    break;
+                    System.exit(0);
                 }
             }
         }
@@ -951,7 +952,7 @@ public class Bilingual {
                                 System.out.println("    [  ___________________________________________________");
                                 System.out.println("    [\t|             \tCASH DEPOSIT       \t\t\t");
                                 System.out.printf("    [\t|  Name               : %s\n", dataNasabah[i][2]);
-                                System.out.printf("    [\t|  Remaining balance  : %sn", balance);
+                                System.out.printf("    [\t|  Remaining balance  : %sn\n", balance);
                                 System.out.println("    [  ---------------------------------------------------");
                                 System.out.println("    =======================================================" + reset);
                                 System.out.println();
@@ -3664,7 +3665,7 @@ public class Bilingual {
     static void bayarUkt() {
         String[][] dataUniv = {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
-                {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
+                {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana Sahputra", "Sistem Informasi Bisnis", "5000000"},
                 {"10074", "Universitas Negeri Malang", "2309876", "Annisa", "Teknik Sipil", "4500000"},
                 {"071027", "Universitas Islam Malang", "2212345", "Naufal", "Pendidikan Agama Islam", "3000000"},
                 {"071024", "Universitas Muhammadiyah Malang", "23123456", "Bayu", "Teknik Mesin", "5000000"}
@@ -3787,14 +3788,14 @@ public class Bilingual {
                                         System.out.println("    ======================================================"+reset);
                                         menu();
                                         }
-                                } else {
-                                    System.out.println(red+"    ======================================================");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |    (!) THE NIM YOU ENTERED IS NOT REGISTERED (!)   |");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================"+reset);
-                                    bayarUkt();
                                 }
+                            } else {
+                                System.out.println(red+"    ======================================================");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    |    (!) THE NIM YOU ENTERED IS NOT REGISTERED (!)   |");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    ======================================================"+reset);
+                                bayarUkt();
                             }
                         }
                     }

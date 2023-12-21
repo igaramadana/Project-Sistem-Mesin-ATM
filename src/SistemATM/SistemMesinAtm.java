@@ -3684,7 +3684,7 @@ public class SistemMesinAtm {
     static void bayarUkt() {
         String[][] dataUniv = {
                 {"1019", "Universitas Brawijaya", "232101050", "Firman Dzaki", "Ilmu Hukum", "7500000"},
-                {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana", "Sistem Informasi Bisnis", "5000000"},
+                {"10136", "Politeknik Negeri Malang", "2341760083", "Iga Ramadana Sahputra", "Sistem Informasi Bisnis", "5000000"},
                 {"10074", "Universitas Negeri Malang", "2309876", "Annisa", "Teknik Sipil", "4500000"},
                 {"071027", "Universitas Islam Malang", "2212345", "Naufal", "Pendidikan Agama Islam", "3000000"},
                 {"071024", "Universitas Muhammadiyah Malang", "23123456", "Bayu", "Teknik Mesin", "5000000"}
@@ -3800,14 +3800,14 @@ public class SistemMesinAtm {
                                             bayarUkt();
                                         }
                                     }
-                                } else {
-                                    System.out.println(red + "    ======================================================");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    |   (!) NIM YANG ANDA MASUKKAN TIDAK TERDAFTAR (!)   |");
-                                    System.out.println("    |----------------------------------------------------|");
-                                    System.out.println("    ======================================================"+ reset);
-                                    bayarUkt();
                                 }
+                            }else {
+                                System.out.println(red + "    ======================================================");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    |   (!) NIM YANG ANDA MASUKKAN TIDAK TERDAFTAR (!)   |");
+                                System.out.println("    |----------------------------------------------------|");
+                                System.out.println("    ======================================================"+ reset);
+                                bayarUkt();
                             }
                         }
                     }
