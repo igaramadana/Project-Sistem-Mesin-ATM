@@ -102,16 +102,16 @@ public class Bilingual {
             System.out.println("    =======================================================");
             System.out.println("    -------------------------------------------------------");
             System.out.println("""
-                    [       Choose the menu below :
-                    [       1. Customer data
-                    [       2. Balance check
-                    [       3. Cash Withdraw
-                    [       4. Cash Deposit
-                    [       5. Balance transfer
-                    [       6. Transaction history
-                    [       7. Other payments
-                    [       8. Account settings
-                    [       0. Exit
+                        [       Choose the menu below :
+                        [       1. Customer data
+                        [       2. Balance check
+                        [       3. Cash Withdraw
+                        [       4. Cash Deposit
+                        [       5. Balance transfer
+                        [       6. Transaction history
+                        [       7. Other payments
+                        [       8. Account settings
+                        [       0. Exit
                     """);
             System.out.print("\tMenu selected : ");
             int menu = input.nextInt();
@@ -169,10 +169,10 @@ public class Bilingual {
         System.out.println();
 
         System.out.println("""
-                [       Choose the menu below :
-                [       1. Change PIN
-                [       2. Change phone number
-                [       0. Back to Main Menu
+                    [       Choose the menu below :
+                    [       1. Change PIN
+                    [       2. Change phone number
+                    [       0. Back to Main Menu
                 """);
         System.out.print("\t[   Menu selected : ");
         int menu = input.nextInt();
@@ -292,7 +292,7 @@ public class Bilingual {
         System.out.println();
         System.out.println("    [       Transaction history : ");
 
-        SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm;ss"));
+        SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm"));
         String tanggal = formatTgl.format(new Date());
 
         for (int i = 0; i < riw; i++) {
@@ -3420,9 +3420,9 @@ public class Bilingual {
 
     static void bayarListrik() {
         String[][] dataListrik = {
-                {"qwerty0987", "100000", "Supeno"},
-                {"zxcvbn1234", "125000", "Paijo"},
-                {"poiuyt5678", "150000", "Supri"},
+                {"qwerty0987", "100000", "Alex"},
+                {"zxcvbn1234", "125000", "Kevin"},
+                {"poiuyt5678", "150000", "Firda Us"},
         };
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -3541,8 +3541,8 @@ public class Bilingual {
 
     static void bayarAir() {
         String[][] datapdam = {
-                {"Kota Malang", "MLG1234", "100000", "Supeno"},
-                {"Kab. Malang", "MLGK123", "120000", "Supri"},
+                {"Kota Malang", "MLG1234", "100000", "Alpinus"},
+                {"Kab. Malang", "MLGK123", "120000", "Nopal"},
                 {"Surabaya", "SBY1234", "140000", "Annisa"},
                 {"Sidoarjo", "SDJ1234", "125000", "Iga"},
         };

@@ -156,10 +156,10 @@ public class SistemMesinAtm {
         System.out.println();
 
         System.out.println("""
-                [       Silahkan pilih menu dibawah ini :
-                [       1. Ubah PIN
-                [       2. Ubah nomor telepon
-                [       0. Kembali ke Menu Utama
+                    [       Silahkan pilih menu dibawah ini :
+                    [       1. Ubah PIN
+                    [       2. Ubah nomor telepon
+                    [       0. Kembali ke Menu Utama
                 """);
         System.out.print("\t[   Menu yang dipilih : ");
         int menu = input.nextInt();
@@ -277,7 +277,7 @@ public class SistemMesinAtm {
         System.out.println();
         System.out.println("    [   Riwayat Transaksi : ");
 
-        SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm;ss"));
+        SimpleDateFormat formatTgl = new SimpleDateFormat(("dd-MM-yyyy HH;mm"));
         String tanggal = formatTgl.format(new Date());
 
         for (int i = 0; i < riw; i++) {
@@ -3439,9 +3439,9 @@ public class SistemMesinAtm {
 
     static void bayarListrik() {
         String[][] dataListrik = {
-                {"qwerty0987", "100000", "Supeno"},
-                {"zxcvbn1234", "125000", "Paijo"},
-                {"poiuyt5678", "150000", "Supri"},
+                {"qwerty0987", "100000", "Alex"},
+                {"zxcvbn1234", "125000", "Kevin"},
+                {"poiuyt5678", "150000", "Firda Us"},
         };
         System.out.println("    ======================================================");
         System.out.println("    |----------------------------------------------------|");
@@ -3560,8 +3560,8 @@ public class SistemMesinAtm {
 
     static void bayarAir() {
         String[][] datapdam = {
-                {"Kota Malang", "MLG1234", "100000", "Supeno"},
-                {"Kab. Malang", "MLGK123", "120000", "Supri"},
+                {"Kota Malang", "MLG1234", "100000", "Alpinus"},
+                {"Kab. Malang", "MLGK123", "120000", "Nopal"},
                 {"Surabaya", "SBY1234", "140000", "Annisa"},
                 {"Sidoarjo", "SDJ1234", "125000", "Iga"},
         };
